@@ -727,7 +727,10 @@ export const deleteListingRequest = async (req, res) => {
           );
           
           // Delete the company
-          await CompanyTeamData.findByIdAndDelete(company._id);
+          await CompanyTeamData.findOneAndUpdate(
+            { _id: company._id, deletedAt: null },
+            { deletedAt: new Date() }
+          );
           companyDeleted = true;
         }
       } catch (companyError) {

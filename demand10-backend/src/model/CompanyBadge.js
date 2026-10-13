@@ -17,7 +17,7 @@ const companyBadgeSchema = new mongoose.Schema({
   },
   assignedBy: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "AdminUser",
+    ref: "User",
   },
   isActive: {
     type: Boolean,

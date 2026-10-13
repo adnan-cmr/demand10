@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "migrate:admins": "node src/scripts/migrate-admins-to-users.js"
   },
   "keywords": [],
   "author": "",

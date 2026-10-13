@@ -1054,7 +1054,10 @@ export const deleteCompanyTeam = async (req, res) => {
     }
 
     // Delete the company
-    await CompanyTeamData.findByIdAndDelete(id);
+    await CompanyTeamData.findOneAndUpdate(
+      { _id: id, deletedAt: null },
+      { deletedAt: new Date() }
+    );
 
     // Remove company from subcategory
     if (deletedCompany.subcategory) {

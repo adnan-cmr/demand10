@@ -27,21 +27,15 @@ export default function Sidebar({
       const response = await userLogout();
       
       if (response.ok) {
-        // Clear user token from cookies (additional safety measure)
-        document.cookie = "userToken=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
         // Redirect to home page
         router.push('/');
         toast.success("Logged out successfully");
       } else {
-        // Even if the API call fails, still clear the cookie and redirect
-        document.cookie = "userToken=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
         router.push('/');
         toast.warn("Session ended");
       }
     } catch (error) {
       console.error("Logout error:", error);
-      // Even if the API call fails, still clear the cookie and redirect
-      document.cookie = "userToken=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
       router.push('/');
       toast.warn("Session ended due to an error");
     }

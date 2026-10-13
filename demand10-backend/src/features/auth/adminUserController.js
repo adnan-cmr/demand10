@@ -36,7 +36,7 @@ export async function updateUserRole(req, res) {
  */
 export async function listUsers(req, res) {
   try {
-    const users = await User.find()
+    const users = await User.find({ deletedAt: null })
       .select('-password')
       .sort({ createdAt: -1 })
       .lean();

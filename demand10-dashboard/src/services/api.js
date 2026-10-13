@@ -2,6 +2,14 @@ import axios from "axios";
 
 const API_BASE_URL = `${process.env.NEXT_PUBLIC_API_URL}/api/v1`;
 
+export const checkCurrentUser = async () => {
+  const response = await fetch(`${API_BASE_URL}/auth/me`, {
+    credentials: "include",
+    cache: "no-store",
+  });
+  if (!response.ok) return { ok: false, status: response.status };
+  return response.json();
+};
 
 export const getUsers = async () => {
   const response = await fetch(`${API_BASE_URL}/users`, {
@@ -69,7 +77,7 @@ export const activateUserById = async (userId) => {
 
 export const loginUser = async (loginData) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/login`, {
+    const response = await fetch(`${API_BASE_URL}/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -79,6 +87,9 @@ export const loginUser = async (loginData) => {
     });
 
     const data = await response.json();
+    if (data.ok && typeof window !== 'undefined') {
+      window.localStorage.setItem('demand10.user', JSON.stringify(data.user));
+    }
     return data;
   } catch (error) {
     throw new Error("Network error");
@@ -87,7 +98,7 @@ export const loginUser = async (loginData) => {
 
 export const signinUser = async (signinData) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/signin`, {
+    const response = await fetch(`${API_BASE_URL}/auth/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -885,7 +896,7 @@ export const rejectCompanyListingRequest = async (requestId) => {
 // 🆕 Enhanced error handling for approveReview
 export const approveReview = async (reviewId) => {
   try {
-    const token = localStorage.getItem('adminToken');
+    const token = null;
     
     const response = await axios.put(
       `${API_BASE_URL}/approve/${reviewId}`,
@@ -903,7 +914,7 @@ export const approveReview = async (reviewId) => {
     // Handle authentication errors
     if (error.response && error.response.status === 401) {
       // Token is invalid or expired, redirect to login
-      localStorage.removeItem('adminToken');
+      localStorage.removeItem('demand10.user');
       window.location.href = '/login';
       throw new Error('Session expired. Please login again.');
     }
@@ -915,7 +926,7 @@ export const approveReview = async (reviewId) => {
 // 🆕 Enhanced error handling for rejectReview
 export const rejectReview = async (reviewId) => {
   try {
-    const token = localStorage.getItem('adminToken');
+    const token = null;
     
     const response = await axios.put(
       `${API_BASE_URL}/reject/${reviewId}`,
@@ -933,7 +944,7 @@ export const rejectReview = async (reviewId) => {
     // Handle authentication errors
     if (error.response && error.response.status === 401) {
       // Token is invalid or expired, redirect to login
-      localStorage.removeItem('adminToken');
+      localStorage.removeItem('demand10.user');
       window.location.href = '/login';
       throw new Error('Session expired. Please login again.');
     }
@@ -945,7 +956,7 @@ export const rejectReview = async (reviewId) => {
 // 🆕 Enhanced error handling for deleteReview
 export const deleteReview = async (reviewId) => {
   try {
-    const token = localStorage.getItem('adminToken');
+    const token = null;
     
     const response = await axios.delete(
       `${API_BASE_URL}/delete/${reviewId}`,
@@ -962,7 +973,7 @@ export const deleteReview = async (reviewId) => {
     // Handle authentication errors
     if (error.response && error.response.status === 401) {
       // Token is invalid or expired, redirect to login
-      localStorage.removeItem('adminToken');
+      localStorage.removeItem('demand10.user');
       window.location.href = '/login';
       throw new Error('Session expired. Please login again.');
     }
@@ -974,7 +985,7 @@ export const deleteReview = async (reviewId) => {
 // 🆕 Enhanced error handling for fetchAllReviews
 export const fetchAllReviews = async () => {
   try {
-    const token = localStorage.getItem('adminToken');
+    const token = null;
     
     const response = await axios.get(`${API_BASE_URL}/all`, {
       headers: {
@@ -988,7 +999,7 @@ export const fetchAllReviews = async () => {
     // Handle authentication errors
     if (error.response && error.response.status === 401) {
       // Token is invalid or expired, redirect to login
-      localStorage.removeItem('adminToken');
+      localStorage.removeItem('demand10.user');
       window.location.href = '/login';
       throw new Error('Session expired. Please login again.');
     }
@@ -1048,7 +1059,7 @@ export const deleteCompanyListingRequest = async (requestId) => {
 };
 
 export const getAdminUsers = async () => {
-  const response = await fetch(`${API_BASE_URL}/getuser`, {
+  const response = await fetch(`${API_BASE_URL}/admin/users`, {
     credentials: "include"
   });
 
@@ -1061,7 +1072,7 @@ export const getAdminUsers = async () => {
 };
 
 export const deleteAdminUserById = async (userId) => {
-  const response = await fetch(`${API_BASE_URL}/users/${userId}`, {
+  const response = await fetch(`${API_BASE_URL}/user/${userId}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -1502,4 +1513,3 @@ export const getAllCompanyBadges = async (filters = {}) => {
     };
   }
 };
-

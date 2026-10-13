@@ -28,7 +28,7 @@ export async function fetchCategories() {
 // User authentication API functions
 export const loginUser = async (credentials) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/user/login`, {
+    const response = await fetch(`${API_BASE_URL}/auth/login`, {
       method: "POST",
       credentials: "include",
       headers: {
@@ -38,6 +38,9 @@ export const loginUser = async (credentials) => {
     });
 
     const data = await response.json();
+    if (data.ok && typeof window !== 'undefined') {
+      window.localStorage.setItem('demand10.user', JSON.stringify(data.user));
+    }
     return data;
   } catch (error) {
     console.error('Login failed:', error);
@@ -47,7 +50,7 @@ export const loginUser = async (credentials) => {
 // User Authentication APIs
 export const userSignup = async (userData) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/user/signup`, {
+    const response = await fetch(`${API_BASE_URL}/auth/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -66,7 +69,7 @@ export const userSignup = async (userData) => {
 // Verify email
 export const verifyEmail = async (token) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/user/verify-email?token=${token}`, {
+    const response = await fetch(`${API_BASE_URL}/auth/verify-email?token=${encodeURIComponent(token)}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -83,7 +86,7 @@ export const verifyEmail = async (token) => {
 
 export const userLogin = async (loginData) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/user/login`, {
+    const response = await fetch(`${API_BASE_URL}/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -111,7 +114,7 @@ export const userLogin = async (loginData) => {
 
 export const userLogout = async () => {
   try {
-    const response = await fetch(`${API_BASE_URL}/user/logout`, {
+    const response = await fetch(`${API_BASE_URL}/auth/logout`, {
       method: "POST",
       credentials: "include",
       headers: {
@@ -120,6 +123,9 @@ export const userLogout = async () => {
     });
 
     const data = await response.json();
+    if (typeof window !== 'undefined') {
+      window.localStorage.removeItem('demand10.user');
+    }
     return data;
   } catch (error) {
     console.error("Logout error:", error);
@@ -134,7 +140,7 @@ export const checkUserAuth = async (retryCount = 0) => {
       await new Promise(resolve => setTimeout(resolve, 100));
     }
     
-    const response = await fetch(`${API_BASE_URL}/user`, {
+    const response = await fetch(`${API_BASE_URL}/auth/me`, {
       method: "GET",
       credentials: "include",
       headers: {
@@ -175,7 +181,7 @@ export const checkUserAuth = async (retryCount = 0) => {
 // Forgot password
 export const forgotPassword = async (email) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/user/forgot-password`, {
+    const response = await fetch(`${API_BASE_URL}/auth/forgot-password`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -194,7 +200,7 @@ export const forgotPassword = async (email) => {
 // Reset password
 export const resetPassword = async (token, newPassword) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/user/reset-password`, {
+    const response = await fetch(`${API_BASE_URL}/auth/reset-password`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

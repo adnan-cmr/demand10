@@ -36,7 +36,7 @@ const companyTeamSchema = new mongoose.Schema({
   homepage:{ type: Boolean, default: false }, // Add homepage field
   claimedBy: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'WebsiteUser'
+    ref: 'User'
   },
   // Field to indicate if company was submitted through listing form
   submittedThroughListingForm: {
@@ -79,9 +79,20 @@ const companyTeamSchema = new mongoose.Schema({
     clientSegment: { type: String },
     percentage: { type: Number, min: 10, max: 100 }
   }],
+  deletedAt: { type: Date, default: null, index: true },
 
 }, {
   timestamps: true // This will add createdAt and updatedAt fields
+});
+
+companyTeamSchema.index({ slug: 1 }, { unique: true });
+companyTeamSchema.index({ subcategory: 1 });
+companyTeamSchema.index({ companyCountry: 1 });
+companyTeamSchema.pre(/^find/, function excludeDeleted(next) {
+  if (!Object.prototype.hasOwnProperty.call(this.getFilter(), 'deletedAt')) {
+    this.where({ deletedAt: null });
+  }
+  next();
 });
 
 const CompanyTeamData = mongoose.model("companyTeam", companyTeamSchema);

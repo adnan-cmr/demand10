@@ -1,7 +1,6 @@
 import Review from "../model/Review.js";
 import CompanyTeamData from "../model/TeamCompany.js";
 import User from "../model/User.js";
-import AdminModel from "../model/AdminUser.js";
 import mongoose from "mongoose"; // Add mongoose import
 // Replace the direct import of send-email with the new notification emails helper
 import {
@@ -534,7 +533,10 @@ export const deleteReview = async (req, res) => {
     };
 
     // Delete the review from database
-    await Review.findByIdAndDelete(reviewId);
+    await Review.findOneAndUpdate(
+      { _id: reviewId, deletedAt: null },
+      { deletedAt: new Date() }
+    );
 
     // Send confirmation email to admin
     if (review.company && review.company.companyName) {

@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const companyClaimSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'WebsiteUser',
+    ref: 'User',
     required: true
   },
   company: {
@@ -47,5 +47,8 @@ const companyClaimSchema = new mongoose.Schema({
   timestamps: true
 });
 
-const CompanyClaim = mongoose.model('CompanyClaim', companyClaimSchema);
+companyClaimSchema.index({ user: 1, status: 1, createdAt: -1 });
+companyClaimSchema.index({ company: 1, status: 1 });
+
+const CompanyClaim = mongoose.models.CompanyClaim || mongoose.model('CompanyClaim', companyClaimSchema);
 export default CompanyClaim;

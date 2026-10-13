@@ -33,9 +33,6 @@ const LoginPage = () => {
 
   const validateLoginForm = () => {
     const newErrors = {};
-    if (!loginData.name) {
-      newErrors.name = "Name is required";
-    }
     if (!loginData.email) {
       newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(loginData.email)) {
@@ -63,12 +60,19 @@ const LoginPage = () => {
     setIsLoading(true);
 
     try {
-      const data = await loginUser(normalizedLoginData);
+      const data = await loginUser({
+        email: normalizedLoginData.email,
+        password: normalizedLoginData.password,
+      });
 
       if (data.ok) {
         console.log("Login successful:", data);
         setLoginData({ name: "", email: "", password: "" });
-        router.push("/intent-admin/dashboard");
+        if (['admin', 'superadmin'].includes(data.user?.role)) {
+          router.push("/intent-admin/dashboard");
+        } else {
+          setErrors({ general: "This account does not have administrator access." });
+        }
       } else {
         setErrors({ general: data.message || "Login failed" });
       }

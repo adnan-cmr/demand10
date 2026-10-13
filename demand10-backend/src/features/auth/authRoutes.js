@@ -19,7 +19,7 @@ router.post('/auth/register', authLimiter, register);
 router.get('/auth/verify-email', verifyEmail);
 router.post('/auth/login', authLimiter, login);
 router.post('/auth/refresh', refresh);
-router.post('/auth/logout', logout);
+router.post('/auth/logout', authenticate, logout);
 router.get('/auth/me', authenticate, me);
 router.post('/auth/forgot-password', authLimiter, forgotPassword);
 router.post('/auth/reset-password', authLimiter, resetPassword);
