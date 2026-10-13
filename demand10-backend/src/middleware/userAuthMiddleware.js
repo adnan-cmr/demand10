@@ -1,0 +1,1 @@
+export { authenticate as userAuthMiddleware } from './auth.js';
