@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Block access to sensitive and internal paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /dashboard/
+Disallow: /intent-admin/
+
+# Block access to user-specific pages
+Disallow: /user-dashboard/
+
+
+
+
+
+
+# Sitemap
+Sitemap: https://demand10.com/sitemap.xml
+
+# Host
+Host: https://demand10.com
