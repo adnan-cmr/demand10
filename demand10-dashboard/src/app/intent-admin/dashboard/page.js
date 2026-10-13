@@ -1,5 +1,7 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { checkCurrentUser } from "@/services/api";
 import Sidebar from "@/Componenets/Dashboard/Sidebar";
 import Header from "@/Componenets/Dashboard/Header";
 import AllBlogs from "@/Componenets/Dashboard/AllBlogs";
@@ -21,8 +23,25 @@ import SubcategoryContent from "@/Componenets/Dashboard/SubcategoryContent";
 import SubcategoryFAQs from "@/Componenets/Dashboard/SubcategoryFAQs"; // New import
 
 export default function Dashboard() {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState("blog");
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [authorized, setAuthorized] = useState(false);
+
+  useEffect(() => {
+    let mounted = true;
+    checkCurrentUser().then((result) => {
+      if (!mounted) return;
+      if (!result.ok || !['admin', 'superadmin'].includes(result.user?.role)) {
+        router.replace('/');
+        return;
+      }
+      setAuthorized(true);
+    }).catch(() => router.replace('/'));
+    return () => {
+      mounted = false;
+    };
+  }, [router]);
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
@@ -68,6 +87,10 @@ export default function Dashboard() {
         return <AllBlogs />;
     }
   };
+
+  if (!authorized) {
+    return <div className="min-h-screen bg-gray-100" />;
+  }
 
   return (
     <div className="flex h-screen bg-gray-100">

@@ -265,7 +265,7 @@ export async function fetchSubcategoryDetails(slug) {
 
 export const loginUser = async (credentials) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/user/login`, {
+    const response = await fetch(`${API_BASE_URL}/auth/login`, {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -280,7 +280,7 @@ export const loginUser = async (credentials) => {
 
 export const signupUser = async (userData) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/user/signup`, {
+    const response = await fetch(`${API_BASE_URL}/auth/register`, {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },

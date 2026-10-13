@@ -18,10 +18,27 @@ export async function safeJson(res) {
 
 export async function request(path, options = {}) {
   try {
-    const res = await fetch(`${API_BASE}${path}`, {
+    let res = await fetch(`${API_BASE}${path}`, {
       credentials: 'include',
       ...options,
     });
+
+    if (res.status === 401) {
+      const body = await res.clone().json().catch(() => ({}));
+      if (body.code === 'TOKEN_EXPIRED') {
+        const refreshRes = await fetch(`${API_BASE}/auth/refresh`, {
+          method: 'POST',
+          credentials: 'include',
+        });
+        if (refreshRes.ok) {
+          res = await fetch(`${API_BASE}${path}`, {
+            credentials: 'include',
+            ...options,
+          });
+        }
+      }
+    }
+
     const data = await safeJson(res);
     if (!res.ok) {
       return {

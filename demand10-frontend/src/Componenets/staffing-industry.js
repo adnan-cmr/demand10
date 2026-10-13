@@ -413,7 +413,7 @@ const StaffingIndustryPage = () => {
                  ))}
               </div>
             </div>
-            <p className="text-left my-2 md:my-2.5 text-sm md:text-base text-[#444]"><strong>Research Value:</strong> Demand10 benchmarking validated the platform's above-market performance profile, supporting a compelling investment narrative and informed valuation approach.</p>
+            <p className="text-left my-2 md:my-2.5 text-sm md:text-base text-[#444]"><strong>Research Value:</strong> Demand10 benchmarking validated the platform&apos;s above-market performance profile, supporting a compelling investment narrative and informed valuation approach.</p>
           </div>
         </div>
       </section>

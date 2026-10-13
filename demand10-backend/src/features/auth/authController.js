@@ -8,7 +8,7 @@ import {
   hashRefreshToken,
   generateOpaqueToken,
 } from '../../utils/tokens.js';
-import { setAuthCookies, clearAuthCookies, clearLegacyCookies } from '../../utils/cookies.js';
+import { setAuthCookies, clearAuthCookies } from '../../utils/cookies.js';
 import sendEmail from '../../utils/sendEmail.js';
 import {
   generateVerificationEmailTemplate,
@@ -45,7 +45,7 @@ export async function register(req, res) {
     // Only allow 'user' or 'vendor' at registration. Admin must be promoted by superadmin.
     const desiredRole = role === 'vendor' ? 'vendor' : 'user';
 
-    const existing = await User.findOne({ email: email.toLowerCase() });
+    const existing = await User.findOne({ email: email.toLowerCase(), deletedAt: null });
     if (existing) {
       return res.status(400).json({ ok: false, message: 'User already exists with this email' });
     }
@@ -116,8 +116,6 @@ export async function verifyEmail(req, res) {
 // ─────────────────────────────────────────────
 //  LOGIN
 // ─────────────────────────────────────────────
-import { setAuthCookies, setLegacyCookies, clearAuthCookies, clearLegacyCookies } from '../../utils/cookies.js';
-
 export async function login(req, res) {
   try {
     const { email, password } = req.body;
@@ -153,9 +151,6 @@ export async function login(req, res) {
     // New auth cookies
     setAuthCookies(res, accessToken, refreshRaw);
 
-    // Legacy cookies for routers still using old middleware (deleted in Phase 2D)
-    setLegacyCookies(res, accessToken);
-
     return res.json({ ok: true, user: publicUser(user) });
   } catch (err) {
     console.error('login error:', err);
@@ -175,6 +170,7 @@ export async function refresh(req, res) {
     const user = await User.findOne({
       refreshTokenHash: hashed,
       refreshTokenExpiresAt: { $gt: new Date() },
+      deletedAt: null,
     }).select('+refreshTokenHash +refreshTokenExpiresAt');
 
     if (!user) return res.status(401).json({ ok: false, message: 'Invalid refresh token' });
@@ -210,13 +206,11 @@ export async function logout(req, res) {
       );
     }
     clearAuthCookies(res);
-    clearLegacyCookies(res);
     return res.json({ ok: true, message: 'Logged out' });
   } catch (err) {
     console.error('logout error:', err);
     // Even if DB update failed, clear cookies
     clearAuthCookies(res);
-    clearLegacyCookies(res);
     return res.json({ ok: true, message: 'Logged out' });
   }
 }
@@ -226,7 +220,7 @@ export async function logout(req, res) {
 // ─────────────────────────────────────────────
 export async function me(req, res) {
   try {
-    const user = await User.findById(req.user.userId);
+    const user = await User.findOne({ _id: req.user.userId, deletedAt: null });
     if (!user) return res.status(404).json({ ok: false, message: 'User not found' });
     return res.json({ ok: true, user: publicUser(user) });
   } catch (err) {
@@ -243,7 +237,7 @@ export async function forgotPassword(req, res) {
     const { email } = req.body;
     if (!email) return res.status(400).json({ ok: false, message: 'Email required' });
 
-    const user = await User.findOne({ email: email.toLowerCase() });
+    const user = await User.findOne({ email: email.toLowerCase(), deletedAt: null });
     // Always return ok — don't leak which emails exist
     if (!user) return res.json({ ok: true, message: 'If that email exists, a reset link was sent.' });
 
@@ -281,6 +275,7 @@ export async function resetPassword(req, res) {
     const user = await User.findOne({
       passwordResetToken: token,
       passwordResetExpires: { $gt: new Date() },
+      deletedAt: null,
     }).select('+passwordResetToken +passwordResetExpires');
 
     if (!user) return res.status(400).json({ ok: false, message: 'Invalid or expired token' });

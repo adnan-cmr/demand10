@@ -69,14 +69,6 @@ const detailsSchema = new mongoose.Schema({
     cloudShift: { type: Number, default: 0 }, // % hybrid/multi-cloud
   },
 
-  // ❓ FAQs
-  faqs: [
-    {
-      question: String,
-      answer: String,
-    },
-  ],
-
 });
 
 const subcategorySchema = new mongoose.Schema({
@@ -106,6 +98,8 @@ const subcategorySchema = new mongoose.Schema({
     },
   ],
 });
+
+subcategorySchema.index({ category: 1 });
 
 const Subcategory = mongoose.model("Subcategory", subcategorySchema);
 export default Subcategory;

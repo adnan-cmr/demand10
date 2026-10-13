@@ -4,7 +4,7 @@ const reviewSchema = new mongoose.Schema({
   // Reviewer user (from your system)
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "WebsiteUser",
+    ref: "User",
     required: true,
   },
 
@@ -70,11 +70,21 @@ const reviewSchema = new mongoose.Schema({
 
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
+  deletedAt: { type: Date, default: null, index: true },
 });
 
 // Update the updatedAt field on save
 reviewSchema.pre("save", function (next) {
   this.updatedAt = Date.now();
+  next();
+});
+
+reviewSchema.index({ company: 1, status: 1, createdAt: -1 });
+reviewSchema.index({ user: 1, company: 1 }, { unique: true, partialFilterExpression: { deletedAt: null } });
+reviewSchema.pre(/^find/, function excludeDeleted(next) {
+  if (!Object.prototype.hasOwnProperty.call(this.getFilter(), 'deletedAt')) {
+    this.where({ deletedAt: null });
+  }
   next();
 });
 

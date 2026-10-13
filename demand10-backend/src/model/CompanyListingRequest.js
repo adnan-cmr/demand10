@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const companyListingRequestSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'WebsiteUser',
+    ref: 'User',
     required: true
   },
   companyName: {
@@ -108,5 +108,8 @@ const companyListingRequestSchema = new mongoose.Schema({
   timestamps: true
 });
 
-const CompanyListingRequest = mongoose.model('CompanyListingRequest', companyListingRequestSchema);
+companyListingRequestSchema.index({ user: 1, status: 1, createdAt: -1 });
+companyListingRequestSchema.index({ status: 1, createdAt: -1 });
+
+const CompanyListingRequest = mongoose.models.CompanyListingRequest || mongoose.model('CompanyListingRequest', companyListingRequestSchema);
 export default CompanyListingRequest;

@@ -1,23 +1,24 @@
 import express from 'express';
 const router = express.Router();
-import { signupUser, verifyEmail, loginUser, logoutUser, getCurrentUser, forgotPassword, resetPassword, getAllUsers, deleteUser, blockUser, activateUser } from '../controller/userController.js';
+import { getAllUsers, deleteUser, blockUser, activateUser } from '../controller/userController.js';
+import { register, verifyEmail, login, logout, me, forgotPassword, resetPassword } from '../features/auth/authController.js';
 import { authMiddleware } from '../middleware/authMiddleware.js';
 import { adminAuthMiddleware } from '../middleware/adminAuthMiddleware.js';
 
 // User signup
-router.post('/user/signup', signupUser);
+router.post('/user/signup', register);
 
 // Verify email
 router.get('/user/verify-email', verifyEmail);
 
 // User login
-router.post('/user/login', loginUser);
+router.post('/user/login', login);
 
 // User logout
-router.post('/user/logout', authMiddleware, logoutUser);
+router.post('/user/logout', authMiddleware, logout);
 
 // Get current authenticated user
-router.get('/user', authMiddleware, getCurrentUser);
+router.get('/user', authMiddleware, me);
 
 // Forgot password
 router.post('/user/forgot-password', forgotPassword);

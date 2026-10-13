@@ -42,35 +42,7 @@ const Navbar = ({ categories = [] }) => {
         }
       } catch (error) {
         console.error('Authentication check failed:', error);
-        // Even if there's an error, we should still check if there's a token in cookies
-        // This handles cases where the server is temporarily unavailable
-        checkTokenInCookies();
-      }
-    };
-
-    const checkTokenInCookies = () => {
-      // Check if userToken exists in cookies as a fallback
-      const cookies = document.cookie.split(';');
-      const tokenCookie = cookies.find(cookie => cookie.trim().startsWith('userToken='));
-      
-      if (tokenCookie) {
-        // If token exists, try to get user info again
-        // This handles cases where the page was refreshed but token is still valid
-        retryAuthCheck();
-      }
-    };
-
-    const retryAuthCheck = async () => {
-      try {
-        // Wait a bit for the server to be ready
-        await new Promise(resolve => setTimeout(resolve, 500));
-        
-        const data = await checkUserAuth();
-        if (data.ok) {
-          setUser(data.user);
-        }
-      } catch (retryError) {
-        console.error('Retry authentication check failed:', retryError);
+        setUser(null);
       }
     };
 

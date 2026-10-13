@@ -41,6 +41,7 @@ const userSchema = new mongoose.Schema(
     refreshTokenExpiresAt: { type: Date, select: false },
     lastLoginAt: Date,
     lastLoginIp: String,
+    deletedAt: { type: Date, default: null, index: true },
     claimedCompany: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'companyTeam',
@@ -51,7 +52,15 @@ const userSchema = new mongoose.Schema(
 );
 
 userSchema.index({ role: 1, status: 1 });
+userSchema.index({ email: 1, role: 1 });
 userSchema.index({ createdAt: -1 });
+
+userSchema.pre(/^find/, function excludeDeleted(next) {
+  if (!Object.prototype.hasOwnProperty.call(this.getFilter(), 'deletedAt')) {
+    this.where({ deletedAt: null });
+  }
+  next();
+});
 
 // Use the guard so hot-reload doesn't crash
 const User = mongoose.models.User || mongoose.model('User', userSchema);

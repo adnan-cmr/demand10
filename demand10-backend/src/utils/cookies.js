@@ -20,14 +20,3 @@ export function clearAuthCookies(res) {
   res.clearCookie('accessToken', BASE);
   res.clearCookie('refreshToken', BASE);
 }
-
-// Temporary: keeps old cookie names working during migration
-export function setLegacyCookies(res, token) {
-  res.cookie('userToken', token, { ...BASE, maxAge: REFRESH_MAX_AGE });
-  res.cookie('adminToken', token, { ...BASE, maxAge: REFRESH_MAX_AGE });
-}
-
-export function clearLegacyCookies(res) {
-  res.clearCookie('userToken', BASE);
-  res.clearCookie('adminToken', BASE);
-}
