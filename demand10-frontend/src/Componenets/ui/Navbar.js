@@ -20,6 +20,16 @@ import { IoMdArrowDropdown } from "react-icons/io";
 // Dynamically import the AuthForm to avoid SSR issues
 const AuthForm = dynamic(() => import('@/Componenets/ui/AuthForm'), { ssr: false });
 
+const getDashboardUrl = (user) => {
+  if (['admin', 'superadmin'].includes(user?.role)) {
+    return process.env.NEXT_PUBLIC_ADMIN_DASHBOARD_URL ||
+      'http://localhost:3008/intent-admin/dashboard';
+  }
+
+  return process.env.NEXT_PUBLIC_VENDOR_DASHBOARD_URL ||
+    'http://localhost:3006/user-dashboard';
+};
+
 const Navbar = ({ categories = [] }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [hoveredCategoryId, setHoveredCategoryId] = useState(null);
@@ -207,7 +217,7 @@ const handleSignOut = async () => {
               {user ? (
                <div className="relative cursor-pointer">
                     <Link
-      href="https://vendor.demand10.com/"
+      href={getDashboardUrl(user)}
       className="hidden lg:flex items-center cursor-pointer justify-center w-13 h-13 rounded-full bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] text-white transition-colors duration-300"
     >
       <User className="h-8 w-8" />
@@ -336,7 +346,7 @@ const handleSignOut = async () => {
               {/* Auth/Profile Button for Mobile */}
               {user ? (
                 <Link
-      href="https://vendor.demand10.com/"
+      href={getDashboardUrl(user)}
       onClick={toggleMobileMenu}
       className="w-full mb-6 bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] text-white py-3 rounded-lg font-semibold transition-colors duration-300 flex items-center justify-center"
     >
