@@ -5,7 +5,7 @@ import { generateRequestEmail } from "../utils/emailTemplates/requestTemplate.js
 
 export const createRequest = async (req, res) => {
   try {
-    const { fullName, email, phone, message, productTitle, categoryName } =
+    const { fullName, email, phone, companySize, city, message, productTitle, categoryName } =
       req.body;
     if (!fullName) {
       return res
@@ -17,6 +17,8 @@ export const createRequest = async (req, res) => {
       fullName,
       email,
       phone,
+      companySize,
+      city,
       message,
       productTitle,
       categoryName,
@@ -27,6 +29,8 @@ export const createRequest = async (req, res) => {
       fullName,
       email,
       phone,
+      companySize,
+      city,
       message,
       productTitle,
       categoryName,
@@ -42,6 +46,8 @@ New Client Request
 Name: ${fullName}
 Email: ${email}
 Phone: ${phone || "Not provided"}
+Company size: ${companySize || "Not provided"}
+City: ${city || "Not provided"}
 productTitle:${productTitle || "Null"}
 Sub Category Name:${categoryName}
 Message:

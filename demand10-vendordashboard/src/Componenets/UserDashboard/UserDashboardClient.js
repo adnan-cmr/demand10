@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { checkUserAuth } from '@/services/userApi';
 import Sidebar from '@/Componenets/UserDashboard/Sidebar';
-import Header from '@/Componenets/UserDashboard/Header';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Menu } from 'lucide-react';
@@ -119,13 +118,6 @@ export default function UserDashboardClient({ children }) {
       
       {/* Main Content Area - scrollable */}
       <div className="flex-1 flex flex-col min-h-0 w-full">
-        <div className="w-full">
-          <Header 
-            sidebarOpen={sidebarOpen} 
-            toggleSidebar={toggleSidebar} 
-            user={user}
-          />
-        </div>
         <main className="flex-1 overflow-y-auto p-2 md:p-3 bg-white">
           <div className="w-full mx-auto">
             {children}

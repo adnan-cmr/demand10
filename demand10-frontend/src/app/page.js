@@ -6,6 +6,7 @@ import ListProduct from "@/Componenets/Home/ListProduct";
 import SoftwareCategories from "@/Componenets/Home/Categories";
 import ReviewSection from "@/Componenets/Home/ClientReviews";
 import GartnerReviews from "@/Componenets/Home/GartnerReviews";
+import SectionErrorBoundary from "@/Componenets/Home/SectionErrorBoundary";
 
 export const metadata = {
   title: "Top Managed Service Providers & Security Solutions 2025",
@@ -64,15 +65,15 @@ export default async function Home({ searchParams }) {
         <ResetPasswordForm token={resetToken} />
       ) : (
         <>
-          <JobHeroSection homepageCompanies={homepageCompanies} />
-          <SoftwareCategories categories={categories} />
-          <ListProduct />
+          <SectionErrorBoundary><JobHeroSection homepageCompanies={homepageCompanies} /></SectionErrorBoundary>
+          <SectionErrorBoundary><SoftwareCategories categories={categories} /></SectionErrorBoundary>
+          <SectionErrorBoundary><ListProduct /></SectionErrorBoundary>
           
           
        
-             <GartnerReviews/>
-          <ReviewSection/>
-          <Testimonials />
+             <SectionErrorBoundary><GartnerReviews/></SectionErrorBoundary>
+          <SectionErrorBoundary><ReviewSection/></SectionErrorBoundary>
+          <SectionErrorBoundary><Testimonials /></SectionErrorBoundary>
         </>
       )}
     </main>

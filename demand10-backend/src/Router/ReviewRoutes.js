@@ -17,7 +17,7 @@ import { adminAuthMiddleware } from "../middleware/adminAuthMiddleware.js";
 const router = express.Router();
 
 // Public routes
-router.get("/search-companies", searchCompanies);
+router.get("/review-search-companies", searchCompanies);
 router.get("/company/:companyId/reviews", getCompanyReviews);
 router.get("/company/:companyId", getCompanyWithRating);
 

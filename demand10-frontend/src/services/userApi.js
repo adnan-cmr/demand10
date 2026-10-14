@@ -333,7 +333,7 @@ export const submitCompanyListing = async (listingData) => {
 
 export const searchCompanies = async (query) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/search-companies?query=${query}`, {
+    const response = await fetch(`${API_BASE_URL}/review-search-companies?query=${encodeURIComponent(query)}`, {
       method: "GET",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
