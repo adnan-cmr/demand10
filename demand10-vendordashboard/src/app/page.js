@@ -17,14 +17,8 @@ export default function Page() {
         const authData = await checkUserAuth();
         if (authData.ok) {
           setUser(authData.user);
-          if (['admin', 'superadmin'].includes(authData.user?.role)) {
-            window.location.assign(
-              process.env.NEXT_PUBLIC_ADMIN_DASHBOARD_URL ||
-                'http://localhost:3008/intent-admin/dashboard'
-            );
-          } else {
-            router.push('/user-dashboard');
-          }
+          // Redirect to dashboard if already authenticated
+          router.push('/user-dashboard');
         }
       } catch (error) {
         console.error('Authentication check failed:', error);
@@ -39,14 +33,8 @@ export default function Page() {
   const handleAuthSuccess = (userData) => {
     console.log('Authentication successful for user:', userData);
     setUser(userData);
-    if (['admin', 'superadmin'].includes(userData?.role)) {
-      window.location.assign(
-        process.env.NEXT_PUBLIC_ADMIN_DASHBOARD_URL ||
-          'http://localhost:3008/intent-admin/dashboard'
-      );
-    } else {
-      router.push('/user-dashboard');
-    }
+    // Redirect to dashboard
+    router.push('/user-dashboard');
   };
 
   // Show login form immediately without any loading text
