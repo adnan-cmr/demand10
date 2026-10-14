@@ -33,21 +33,6 @@ export default function AuthForm({ onClose, onAuthSuccess }) {
   const [successMessage, setSuccessMessage] = useState('');
   const router = useRouter();
 
-  const redirectAfterLogin = (user) => {
-    if (['admin', 'superadmin'].includes(user?.role)) {
-      window.location.assign(
-        process.env.NEXT_PUBLIC_ADMIN_DASHBOARD_URL ||
-          'http://localhost:3008/intent-admin/dashboard'
-      );
-      return;
-    }
-
-    window.location.assign(
-      process.env.NEXT_PUBLIC_VENDOR_DASHBOARD_URL ||
-        'http://localhost:3006/user-dashboard'
-    );
-  };
-
   // Clear error when switching between login/signup
   useEffect(() => {
     setError('');
@@ -93,7 +78,7 @@ export default function AuthForm({ onClose, onAuthSuccess }) {
           console.log('Calling onAuthSuccess with user:', result.user);
           onAuthSuccess(result.user);
           onClose();
-          redirectAfterLogin(result.user);
+          // Don't redirect to dashboard, let the parent component handle navigation
         } else {
           // Show specific error messages for different login failure cases
           const errorMessage = result.message || 'Login failed';
