@@ -8,7 +8,7 @@ const SoftwareCategories = ({ categories = [] }) => {
   const categoriesData =
     safeCategories.length > 0
       ? safeCategories.map((category) => ({
-          id: category?._id || category?.slug || Math.random().toString(36).slice(2),
+          id: category?._id || category?.slug || `category-${index}`,
           category: category?.name || 'Untitled',
           subcategory: Array.isArray(category?.subcategories) ? category.subcategories : [],
         }))

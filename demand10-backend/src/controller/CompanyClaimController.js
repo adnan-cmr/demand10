@@ -3,9 +3,10 @@ import CompanyTeamData from "../model/TeamCompany.js";
 import { readAndPopulateTemplate } from "../utils/templateHelper.js";
 import { generateBusinessEmailVerificationTemplate } from "../utils/emailTemplates/businessEmailVerificationTemplate.js";
 import crypto from "crypto";
+import { client as redisClient } from "../config/redisClient.js";
+import logger from "../utils/logger.js";
 
-// In-memory storage for verification tokens (in production, use a database)
-const verificationTokens = new Map();
+const verificationTokenKey = (email) => `company-claim:verification:${email.toLowerCase()}`;
 
 // Helper function to send email notifications
 const sendClaimNotificationEmail = async (emailData) => {
@@ -13,7 +14,7 @@ const sendClaimNotificationEmail = async (emailData) => {
     const sendEmail = (await import('../helpers/send-email.js')).default;
     await sendEmail(emailData);
   } catch (emailError) {
-    console.error("Failed to send email notification:", emailError);
+    logger.error({ err: emailError }, "Failed to send claim email notification");
   }
 };
 
@@ -61,46 +62,37 @@ const submitClaim = async (req, res) => {
       // If token is provided, verify it
       if (businessEmailToken) {
         // Verify the token
-        const storedTokenData = verificationTokens.get(businessEmail);
+        if (!redisClient.isReady) {
+          return res.status(503).json({ ok: false, message: "Verification service is temporarily unavailable" });
+        }
+        const storedToken = await redisClient.get(verificationTokenKey(businessEmail));
         
-        if (!storedTokenData) {
+        if (!storedToken) {
           return res.status(400).json({
             ok: false,
             message: "Verification token has expired or is invalid. Please request a new one."
           });
         }
         
-        if (storedTokenData.token !== businessEmailToken) {
+        if (storedToken !== businessEmailToken) {
           return res.status(400).json({
             ok: false,
             message: "Invalid verification token. Please check the token and try again."
           });
         }
         
-        // Check if token has expired (5 minutes)
-        if (Date.now() > storedTokenData.expiresAt) {
-          verificationTokens.delete(businessEmail);
-          return res.status(400).json({
-            ok: false,
-            message: "Verification token has expired. Please request a new one."
-          });
-        }
-        
         // Token is valid, remove it from storage
-        verificationTokens.delete(businessEmail);
+        await redisClient.del(verificationTokenKey(businessEmail));
         
         // Proceed with claim submission using the verified business email
-        console.log(`Business email ${businessEmail} verified successfully`);
+        logger.info({ businessEmail }, "Business email verified");
       } else {
         // Generate and store verification token
         const verificationToken = crypto.randomBytes(3).toString('hex').toUpperCase();
-        const expiresAt = Date.now() + 5 * 60 * 1000; // 5 minutes
-        
-        // Store token data
-        verificationTokens.set(businessEmail, {
-          token: verificationToken,
-          expiresAt: expiresAt
-        });
+        if (!redisClient.isReady) {
+          return res.status(503).json({ ok: false, message: "Verification service is temporarily unavailable" });
+        }
+        await redisClient.set(verificationTokenKey(businessEmail), verificationToken, { EX: 300 });
         
         // Send verification email
         const emailTemplate = generateBusinessEmailVerificationTemplate(verificationToken, userName, companyName);
@@ -219,10 +211,10 @@ demand10 System`;
       claim: newClaim
     });
   } catch (err) {
+    logger.error({ err, requestId: req.id }, "Company claim submission failed");
     return res.status(500).json({
       ok: false,
       message: "Server error",
-      error: err.message
     });
   }
 };

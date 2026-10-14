@@ -22,13 +22,13 @@ export const metadata = {
   ],
   metadataBase: new URL("https://demand10.com"),
   alternates: {
-    canonical: "/terms-policies",
+    canonical: "/term-policies",
   },
   openGraph: {
     title: "Terms & Policies - User Agreements | Demand10",
     description:
       "Understand Demand10 user agreements, data usage policies, and platform guidelines. Essential information for businesses using our managed IT services and cybersecurity solutions.",
-    url: "https://demand10.com/terms-policies",
+    url: "https://demand10.com/term-policies",
     siteName: "Demand10",
    
     type: "website",

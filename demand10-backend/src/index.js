@@ -5,11 +5,15 @@ import cookieParser from 'cookie-parser';
 import path from 'path';
 import compression from 'compression';
 import helmet from 'helmet';
+import crypto from 'crypto';
+import pinoHttp from 'pino-http';
 
 import { env } from './config/env.js';
 import connectDB, { isDbConnected } from './config/db.js';
 import { connectRedis } from './config/redisClient.js';
 import { authLimiter, generalLimiter } from './middleware/rateLimit.js';
+import errorHandler from './middleware/errorHandler.js';
+import logger from './utils/logger.js';
 
 // ── Auth (new) ─────────────────────────────────────────
 import authRoutes from './features/auth/authRoutes.js';
@@ -30,6 +34,14 @@ import heroSearchRoutes     from './Router/HeroSearchRoutes.js';
 
 const app = express();
 app.set('trust proxy', 1);
+app.use(pinoHttp({
+  logger,
+  genReqId: (req) => req.headers['x-request-id'] || crypto.randomUUID(),
+}));
+app.use((req, res, next) => {
+  res.setHeader('x-request-id', req.id);
+  next();
+});
 
 // ── CORS ────────────────────────────────────────────────
 const allowedOrigins = [
@@ -64,7 +76,19 @@ app.options(/.*/, cors());
 app.use(helmet({
   crossOriginResourcePolicy: false,
   crossOriginEmbedderPolicy: false,
-  contentSecurityPolicy: false,
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      baseUri: ["'self'"],
+      objectSrc: ["'none'"],
+      scriptSrc: ["'self'", "'unsafe-inline'", 'https://cdn.jsdelivr.net'],
+      styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
+      fontSrc: ["'self'", 'https://fonts.gstatic.com', 'data:'],
+      imgSrc: ["'self'", 'data:', 'blob:', 'https://res.cloudinary.com', 'https://api.demand10.com'],
+      connectSrc: ["'self'", 'https://api.demand10.com', 'https://demand10.com', 'https://www.demand10.com'],
+      frameAncestors: ["'none'"],
+    },
+  },
 }));
 app.use(compression());
 app.use(express.json({ limit: '5mb' }));
@@ -108,29 +132,25 @@ app.use((req, res) => {
 
 // ── Errors ──────────────────────────────────────────────
 app.use((err, req, res, next) => {
-  console.error('Global Error:', err.message);
   const origin = req.headers.origin;
   if (origin && (allowedOrigins.includes(origin) || !env.isProd)) {
     res.setHeader('Access-Control-Allow-Origin', origin);
     res.setHeader('Access-Control-Allow-Credentials', 'true');
   }
   if (res.headersSent) return next(err);
-  const status = err.statusCode || 500;
-  res.status(status).json({
-    ok: false,
-    message: 'Server error',
-    error: env.isProd ? 'Internal server error' : err.message,
-  });
+  return errorHandler(err, req, res, next);
 });
 
 // ── Boot ────────────────────────────────────────────────
-(async () => {
-  await connectDB();
-  const PORT = env.PORT;
-  app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
-  connectRedis().catch((e) =>
-    console.error('⚠️ Redis connection failed, running without cache:', e.message)
-  );
-})();
+if (process.env.NODE_ENV !== 'test') {
+  (async () => {
+    await connectDB();
+    const PORT = env.PORT;
+    app.listen(PORT, () => logger.info({ port: PORT }, 'Server running'));
+    connectRedis().catch((e) =>
+      logger.error({ err: e }, 'Redis connection failed')
+    );
+  })();
+}
 
 export default app;

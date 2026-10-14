@@ -262,7 +262,6 @@ export const uploadCompaniesToSubcategory = async (req, res) => {
       try {
         bulkWriteResult = await CompanyTeamData.bulkWrite(bulkCompanyOps, {
           ordered: false,
-          bypassDocumentValidation: false,
         });
 
         insertedCount =
