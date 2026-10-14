@@ -19,6 +19,13 @@ export default function UserDashboardClient({ children }) {
       try {
         const authData = await checkUserAuth();
         if (authData.ok) {
+          if (['admin', 'superadmin'].includes(authData.user?.role)) {
+            window.location.assign(
+              process.env.NEXT_PUBLIC_ADMIN_DASHBOARD_URL ||
+                'http://localhost:3008/intent-admin/dashboard'
+            );
+            return;
+          }
           setUser(authData.user);
         } else {
           // Check if it's a token expiration issue

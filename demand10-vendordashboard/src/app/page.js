@@ -5,6 +5,18 @@ import { useRouter } from 'next/navigation';
 import { checkUserAuth } from '@/services/userApi';
 import LoginPage from "@/Componenets/ui/LoginPage";
 
+const redirectAfterLogin = (userData, router) => {
+  if (['admin', 'superadmin'].includes(userData?.role)) {
+    window.location.assign(
+      process.env.NEXT_PUBLIC_ADMIN_DASHBOARD_URL ||
+        'http://localhost:3008/intent-admin/dashboard'
+    );
+    return;
+  }
+
+  router.push('/user-dashboard');
+};
+
 export default function Page() {
   const [user, setUser] = useState(null);
   const [authChecked, setAuthChecked] = useState(false);
@@ -17,8 +29,7 @@ export default function Page() {
         const authData = await checkUserAuth();
         if (authData.ok) {
           setUser(authData.user);
-          // Redirect to dashboard if already authenticated
-          router.push('/user-dashboard');
+          redirectAfterLogin(authData.user, router);
         }
       } catch (error) {
         console.error('Authentication check failed:', error);
@@ -33,8 +44,7 @@ export default function Page() {
   const handleAuthSuccess = (userData) => {
     console.log('Authentication successful for user:', userData);
     setUser(userData);
-    // Redirect to dashboard
-    router.push('/user-dashboard');
+    redirectAfterLogin(userData, router);
   };
 
   // Show login form immediately without any loading text
