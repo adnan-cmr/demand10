@@ -67,7 +67,7 @@ const MspForm = ({ city = 'Miami', employeeOptions = [
 
   return (
     <div id="contact-form" className="bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg border border-gray-200 p-6 mb-8 transition-all duration-300 hover:shadow-xl">
-      <h3 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-[#265ba3] pl-2">Get Free MSP Recommendations</h3>
+      <h3 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-[#E11D2E] pl-2">Get Free MSP Recommendations</h3>
       <p className="text-gray-700 mb-6">
         Tell us about your business and we&apos;ll match you with top-rated managed service providers in {city}.
       </p>
@@ -75,7 +75,7 @@ const MspForm = ({ city = 'Miami', employeeOptions = [
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1 flex items-center">
-            <span className="w-2 h-2 bg-[#265ba3] rounded-full mr-2"></span>
+            <span className="w-2 h-2 bg-[#E11D2E] rounded-full mr-2"></span>
             Full Name
           </label>
           <input
@@ -84,7 +84,7 @@ const MspForm = ({ city = 'Miami', employeeOptions = [
             name="name"
             value={formData.name}
             onChange={handleInputChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#265ba3] focus:border-transparent transition-all"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E11D2E] focus:border-transparent transition-all"
             placeholder="Enter your name"
             required
           />
@@ -92,7 +92,7 @@ const MspForm = ({ city = 'Miami', employeeOptions = [
         
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1 flex items-center">
-            <span className="w-2 h-2 bg-[#265ba3] rounded-full mr-2"></span>
+            <span className="w-2 h-2 bg-[#E11D2E] rounded-full mr-2"></span>
             Business Email
           </label>
           <input
@@ -101,7 +101,7 @@ const MspForm = ({ city = 'Miami', employeeOptions = [
             name="email"
             value={formData.email}
             onChange={handleInputChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#265ba3] focus:border-transparent transition-all"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E11D2E] focus:border-transparent transition-all"
             placeholder="Enter your business email"
             required
           />
@@ -109,7 +109,7 @@ const MspForm = ({ city = 'Miami', employeeOptions = [
         
         <div>
           <label htmlFor="companySize" className="block text-sm font-medium text-gray-700 mb-1 flex items-center">
-            <span className="w-2 h-2 bg-[#265ba3] rounded-full mr-2"></span>
+            <span className="w-2 h-2 bg-[#E11D2E] rounded-full mr-2"></span>
             Company Size
           </label>
           <select
@@ -117,7 +117,7 @@ const MspForm = ({ city = 'Miami', employeeOptions = [
             name="companySize"
             value={formData.companySize}
             onChange={handleInputChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#265ba3] focus:border-transparent transition-all"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E11D2E] focus:border-transparent transition-all"
             required
           >
             <option value="">Select company size</option>
@@ -129,7 +129,7 @@ const MspForm = ({ city = 'Miami', employeeOptions = [
         
         <div>
           <label htmlFor="city" className="block text-sm font-medium text-gray-700 mb-1 flex items-center">
-            <span className="w-2 h-2 bg-[#265ba3] rounded-full mr-2"></span>
+            <span className="w-2 h-2 bg-[#E11D2E] rounded-full mr-2"></span>
             City
           </label>
           <input
@@ -138,14 +138,14 @@ const MspForm = ({ city = 'Miami', employeeOptions = [
             name="city"
             value={formData.city}
             onChange={handleInputChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#265ba3] focus:border-transparent transition-all"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E11D2E] focus:border-transparent transition-all"
             required
           />
         </div>
         
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1 flex items-center">
-            <span className="w-2 h-2 bg-[#265ba3] rounded-full mr-2"></span>
+            <span className="w-2 h-2 bg-[#E11D2E] rounded-full mr-2"></span>
             Message
           </label>
           <textarea
@@ -154,7 +154,7 @@ const MspForm = ({ city = 'Miami', employeeOptions = [
             value={formData.message}
             onChange={handleInputChange}
             rows={4}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#265ba3] focus:border-transparent transition-all"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E11D2E] focus:border-transparent transition-all"
             placeholder="Tell us about your specific IT needs or questions..."
           ></textarea>
         </div>
@@ -162,7 +162,7 @@ const MspForm = ({ city = 'Miami', employeeOptions = [
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] text-white font-bold py-3 rounded-lg shadow-md hover:from-[#1e4a86] hover:to-[#265ba3] transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center"
+          className="w-full bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] text-white font-bold py-3 rounded-lg shadow-md hover:from-[#B91C1C] hover:to-[#E11D2E] transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center"
         >
           {isSubmitting ? (
             <>

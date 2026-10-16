@@ -236,7 +236,7 @@ export default async function Page({ params }) {
             <div className="space-y-3">
               <Link
                 href={`/${subcategorySlug}`}
-                className="inline-block bg-[#1a365d] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#3bb3a9] transition-colors"
+                className="inline-block bg-[#0F1B3D] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#3bb3a9] transition-colors"
               >
                 Back to {subcategorySlug.replace(/-/g, ' ')}
               </Link>

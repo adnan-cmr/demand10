@@ -77,10 +77,10 @@ export default function Testimonials() {
   return (
     <div className="max-w-4xl mx-auto p-5">
       <div className="text-center mb-7">
-        <h2 className="text-2xl font-bold text-[#1a365d] mb-1">
+        <h2 className="text-2xl font-bold text-[#0F1B3D] mb-1">
           Hear From Our Customers
         </h2>
-        <p className="text-[#0249aa] mb-4">Discover how we&apos;ve helped businesses grow</p>
+        <p className="text-[#DC2626] mb-4">Discover how we&apos;ve helped businesses grow</p>
       </div>
 
       {/* Testimonial Carousel */}
@@ -88,14 +88,14 @@ export default function Testimonials() {
         {/* Navigation Arrows */}
         <button 
           onClick={prevTestimonial}
-          className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#1a365d] shadow-lg flex items-center justify-center text-white hover:bg-[#0249aa] transition-all duration-300 z-10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1a365d]"
+          className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#0F1B3D] shadow-lg flex items-center justify-center text-white hover:bg-[#DC2626] transition-all duration-300 z-10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0F1B3D]"
           aria-label="Previous testimonial"
         >
           <FaChevronLeft />
         </button>
         <button 
           onClick={nextTestimonial}
-          className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#1a365d] shadow-lg flex items-center justify-center text-white hover:bg-[#0249aa] transition-all duration-300 z-10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1a365d]"
+          className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#0F1B3D] shadow-lg flex items-center justify-center text-white hover:bg-[#DC2626] transition-all duration-300 z-10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0F1B3D]"
           aria-label="Next testimonial"
         >
           <FaChevronRight />
@@ -105,7 +105,7 @@ export default function Testimonials() {
         <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
           {/* Profile Image */}
           <div className="flex-shrink-0">
-            <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-[#1a365d] shadow-lg">
+            <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-[#0F1B3D] shadow-lg">
               <Image
               height={100}
               width={100}
@@ -123,17 +123,17 @@ export default function Testimonials() {
                 <FaStar key={i} className="text-yellow-400 text-lg" />
               ))}
             </div>
-            <h3 className="text-xl font-bold text-[#1a365d] mb-1">
+            <h3 className="text-xl font-bold text-[#0F1B3D] mb-1">
               {testimonials[currentTestimonial].name}
             </h3>
-            <p className="text-[#0249aa] font-medium mb-3">
+            <p className="text-[#DC2626] font-medium mb-3">
               {testimonials[currentTestimonial].role}
             </p>
-            <p className="text-[#1a365d] italic text-lg">
+            <p className="text-[#0F1B3D] italic text-lg">
               &quot;{testimonials[currentTestimonial].content}&quot;
             </p>
             <div className="mt-4 pt-4 border-t border-gray-200">
-              <h4 className="text-lg font-bold text-[#0249aa]">
+              <h4 className="text-lg font-bold text-[#DC2626]">
                 {testimonials[currentTestimonial].company || "Demand10"}
               </h4>
             </div>
@@ -146,9 +146,9 @@ export default function Testimonials() {
             <button
               key={index}
               onClick={() => goToTestimonial(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1a365d] ${
+              className={`w-3 h-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0F1B3D] ${
                 index === currentTestimonial
-                  ? 'bg-[#1a365d] w-8'
+                  ? 'bg-[#0F1B3D] w-8'
                   : 'bg-gray-300 hover:bg-gray-400'
               }`}
               aria-label={`Go to testimonial ${index + 1}`}

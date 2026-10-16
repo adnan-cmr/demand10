@@ -48,7 +48,7 @@ const SubCategoryDetailPage = ({ subcategory }) => {
   const MetricCard = ({ icon: Icon, title, value, subtitle, color = "teal" }) => {
     const colorClasses = {
       teal: "bg-teal-50 text-teal-700",
-      blue: "bg-blue-50 text-blue-700",
+      blue: "bg-red-50 text-red-700",
       orange: "bg-orange-50 text-orange-700",
       purple: "bg-purple-50 text-purple-700"
     };
@@ -192,7 +192,7 @@ const SubCategoryDetailPage = ({ subcategory }) => {
                         </Link>
                         <Link 
                           href="/category/microsoft-partners" 
-                          className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-blue-50 text-blue-700 hover:bg-blue-100 transition-colors border border-blue-200"
+                          className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-red-50 text-red-700 hover:bg-red-100 transition-colors border border-red-200"
                         >
                           Microsoft Partners
                         </Link>
@@ -343,7 +343,7 @@ const SubCategoryDetailPage = ({ subcategory }) => {
                         </span>
                       ))}
                       {details.technologyAdoption?.securityTools?.map((tool, index) => (
-                        <span key={`sec-${index}`} className="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-lg text-xs sm:text-sm border border-blue-100">
+                        <span key={`sec-${index}`} className="px-3 py-1.5 bg-red-50 text-red-700 rounded-lg text-xs sm:text-sm border border-red-100">
                           {tool}
                         </span>
                       ))}
@@ -382,9 +382,9 @@ const SubCategoryDetailPage = ({ subcategory }) => {
                     )}
                     
                     {details.benchmarkInsights.hiringTrends !== undefined && (
-                      <div className="bg-blue-50 rounded-lg p-4 text-center border border-blue-100">
+                      <div className="bg-red-50 rounded-lg p-4 text-center border border-red-100">
                         <h3 className="font-semibold text-gray-700 mb-1 text-sm">Hiring Growth</h3>
-                        <p className="text-xl font-bold text-blue-600">{details.benchmarkInsights.hiringTrends}%</p>
+                        <p className="text-xl font-bold text-red-600">{details.benchmarkInsights.hiringTrends}%</p>
                         <p className="text-xs text-gray-500 mt-1">Year-over-year</p>
                       </div>
                     )}

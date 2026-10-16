@@ -96,7 +96,7 @@ export default function ClaimForm({ company, user, onClose }) {
         setShowVerificationForm(true);
         toast.info('Verification code sent to your business email', {
           style: {
-            backgroundColor: '#4897de',
+            backgroundColor: '#EF4444',
             color: 'white'
           }
         });
@@ -104,18 +104,18 @@ export default function ClaimForm({ company, user, onClose }) {
         // No verification required, claim submitted successfully
         toast.success('Claim submitted successfully!', {
           style: {
-            backgroundColor: '#4897de',
+            backgroundColor: '#EF4444',
             color: 'white'
           }
         });
         setSuccess(true);
         setTimeout(() => {
-          router.push('/user-dashboard');
+          router.push('/vendor/dashboard');
         }, 2000);
       } else {
         toast.error(result.message || 'Failed to submit claim', {
           style: {
-            backgroundColor: '#4897de',
+            backgroundColor: '#EF4444',
             color: 'white'
           }
         });
@@ -124,7 +124,7 @@ export default function ClaimForm({ company, user, onClose }) {
     } catch (err) {
       toast.error('Network error. Please try again.', {
         style: {
-          backgroundColor: '#4897de',
+          backgroundColor: '#EF4444',
           color: 'white'
         }
       });
@@ -156,18 +156,18 @@ export default function ClaimForm({ company, user, onClose }) {
       if (result.ok) {
         toast.success('Business email verified and claim submitted successfully!', {
           style: {
-            backgroundColor: '#4897de',
+            backgroundColor: '#EF4444',
             color: 'white'
           }
         });
         setSuccess(true);
         setTimeout(() => {
-          router.push('/user-dashboard');
+          router.push('/vendor/dashboard');
         }, 2000);
       } else {
         toast.error(result.message || 'Failed to verify business email', {
           style: {
-            backgroundColor: '#4897de',
+            backgroundColor: '#EF4444',
             color: 'white'
           }
         });
@@ -176,7 +176,7 @@ export default function ClaimForm({ company, user, onClose }) {
     } catch (err) {
       toast.error('Network error. Please try again.', {
         style: {
-          backgroundColor: '#4897de',
+          backgroundColor: '#EF4444',
           color: 'white'
         }
       });
@@ -195,7 +195,7 @@ export default function ClaimForm({ company, user, onClose }) {
       if (!authData.ok) {
         toast.error('You must be logged in to submit a claim. Redirecting to login...', {
           style: {
-            backgroundColor: '#4897de',
+            backgroundColor: '#EF4444',
             color: 'white'
           }
         });
@@ -207,7 +207,7 @@ export default function ClaimForm({ company, user, onClose }) {
     } catch (err) {
       toast.error('Authentication error. Please try again.', {
         style: {
-          backgroundColor: '#4897de',
+          backgroundColor: '#EF4444',
           color: 'white'
         }
       });
@@ -232,7 +232,7 @@ export default function ClaimForm({ company, user, onClose }) {
       <div className="fixed inset-0 bg-black/10 backdrop-blur-sm flex items-center justify-center z-50 p-4">
         <div className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6 animate-scaleIn">
           <div className="text-center py-8">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#0249aa] mx-auto mb-4"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#DC2626] mx-auto mb-4"></div>
             <h3 className="text-xl font-semibold text-gray-800 mb-2">Checking Authentication</h3>
             <p className="text-gray-600">Please wait while we verify your account...</p>
           </div>
@@ -247,8 +247,8 @@ export default function ClaimForm({ company, user, onClose }) {
       <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
         <div className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6 animate-scaleIn">
           <div className="text-center py-6">
-            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#0249aa]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#DC2626]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
             </div>
@@ -263,7 +263,7 @@ export default function ClaimForm({ company, user, onClose }) {
               </button>
               <button
                 onClick={() => router.push('/')}
-                className="flex-1 px-4 py-3 bg-[#0249aa] text-white rounded-lg hover:bg-[#1a365d] transition-colors font-medium"
+                className="flex-1 px-4 py-3 bg-[#DC2626] text-white rounded-lg hover:bg-[#0F1B3D] transition-colors font-medium"
               >
                 Go to Login
               </button>
@@ -305,7 +305,7 @@ export default function ClaimForm({ company, user, onClose }) {
               <p className="text-gray-600 mb-6">Your claim has been submitted successfully. Our team will review it and contact you.</p>
               <button
                 onClick={refreshParentPage}
-                className="px-4 py-2 bg-[#0249aa] text-white rounded-lg hover:bg-[#1a365d] transition-colors font-medium"
+                className="px-4 py-2 bg-[#DC2626] text-white rounded-lg hover:bg-[#0F1B3D] transition-colors font-medium"
               >
                 Close
               </button>
@@ -314,14 +314,14 @@ export default function ClaimForm({ company, user, onClose }) {
 
           {showVerificationForm ? (
             <form onSubmit={verifyBusinessEmail} className="space-y-5">
-              <div className="bg-blue-100 p-4 rounded-lg border border-blue-200">
+              <div className="bg-red-100 p-4 rounded-lg border border-red-200">
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#0249aa] mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#DC2626] mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
-                  <p className="ml-3 text-sm text-[#0249aa]">
+                  <p className="ml-3 text-sm text-[#DC2626]">
                     We&apos;ve sent a verification code to <strong>{businessEmail}</strong>. Please enter the code below to verify your business email.
                   </p>
                 </div>
@@ -336,7 +336,7 @@ export default function ClaimForm({ company, user, onClose }) {
                   id="verificationToken"
                   value={verificationToken}
                   onChange={handleTokenChange}
-                  className="block w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-[#0249aa] focus:border-[#0249aa]"
+                  className="block w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-[#DC2626] focus:border-[#DC2626]"
                   placeholder="Enter verification code"
                   required
                 />
@@ -356,7 +356,7 @@ export default function ClaimForm({ company, user, onClose }) {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="flex-1 px-4 py-3 bg-[#0249aa] text-white rounded-lg hover:bg-[#1a365d] transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                  className="flex-1 px-4 py-3 bg-[#DC2626] text-white rounded-lg hover:bg-[#0F1B3D] transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                 >
                   {loading ? (
                     <>
@@ -380,14 +380,14 @@ export default function ClaimForm({ company, user, onClose }) {
             </form>
           ) : showBusinessEmailForm ? (
             <form onSubmit={submitBusinessEmail} className="space-y-5">
-              <div className="bg-blue-100 p-4 rounded-lg border border-blue-200">
+              <div className="bg-red-100 p-4 rounded-lg border border-red-200">
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#0249aa] mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#DC2626] mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
-                  <p className="ml-3 text-sm text-[#0249aa]">
+                  <p className="ml-3 text-sm text-[#DC2626]">
                     Please provide your business email address for verification. We&apod;ll send a verification code to this email.
                   </p>
                 </div>
@@ -409,7 +409,7 @@ export default function ClaimForm({ company, user, onClose }) {
                     id="businessEmail"
                     value={businessEmail}
                     onChange={handleBusinessEmailChange}
-                    className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-[#0249aa] focus:border-[#0249aa]"
+                    className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-[#DC2626] focus:border-[#DC2626]"
                     placeholder="you@yourcompany.com"
                     required
                   />
@@ -430,7 +430,7 @@ export default function ClaimForm({ company, user, onClose }) {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="flex-1 px-4 py-3 bg-[#0249aa] text-white rounded-lg hover:bg-[#1a365d] transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                  className="flex-1 px-4 py-3 bg-[#DC2626] text-white rounded-lg hover:bg-[#0F1B3D] transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                 >
                   {loading ? (
                     <>
@@ -454,14 +454,14 @@ export default function ClaimForm({ company, user, onClose }) {
             </form>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
-              <div className="bg-blue-50 p-4 rounded-lg border border-[#0249aa]">
+              <div className="bg-red-50 p-4 rounded-lg border border-[#DC2626]">
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#0249aa] mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#DC2626] mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <p className="ml-3 text-sm text-[#0249aa]">
+                  <p className="ml-3 text-sm text-[#DC2626]">
                     Please provide accurate information to verify your association with this company. Our team will review your claim and contact you.
                   </p>
                 </div>
@@ -483,7 +483,7 @@ export default function ClaimForm({ company, user, onClose }) {
                     name="userName"
                     value={formData.userName}
                     onChange={handleChange}
-                    className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-[#0249aa] focus:border-[#0249aa]"
+                    className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-[#DC2626] focus:border-[#DC2626]"
                     placeholder="John Doe"
                     required
                   />
@@ -507,7 +507,7 @@ export default function ClaimForm({ company, user, onClose }) {
                     name="userEmail"
                     value={formData.userEmail}
                     onChange={handleChange}
-                    className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-[#0249aa] focus:border-[#0249aa]"
+                    className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-[#DC2626] focus:border-[#DC2626]"
                     placeholder="you@example.com"
                     required
                   />
@@ -530,7 +530,7 @@ export default function ClaimForm({ company, user, onClose }) {
                     name="userPhone"
                     value={formData.userPhone}
                     onChange={handleChange}
-                    className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-[#0249aa] focus:border-[#0249aa]"
+                    className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-[#DC2626] focus:border-[#DC2626]"
                     placeholder="+1 (555) 123-4567"
                   />
                 </div>
@@ -546,7 +546,7 @@ export default function ClaimForm({ company, user, onClose }) {
                   name="companyName"
                   value={formData.companyName}
                   onChange={handleChange}
-                  className="block w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-[#0249aa] focus:border-[#0249aa]"
+                  className="block w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-[#DC2626] focus:border-[#DC2626]"
                   placeholder="Company Name"
                   required
                   readOnly
@@ -563,7 +563,7 @@ export default function ClaimForm({ company, user, onClose }) {
                   value={formData.issue}
                   onChange={handleChange}
                   rows={4}
-                  className="block w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-[#0249aa] focus:border-[#0249aa]"
+                  className="block w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-[#DC2626] focus:border-[#DC2626]"
                   placeholder="Please describe your relationship with this company (e.g., owner, employee, representative, etc.)"
                   required
                 />
@@ -580,7 +580,7 @@ export default function ClaimForm({ company, user, onClose }) {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="flex-1 px-4 py-3 bg-[#0249aa] text-white rounded-lg hover:bg-[#1a365d] transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                  className="flex-1 px-4 py-3 bg-[#DC2626] text-white rounded-lg hover:bg-[#0F1B3D] transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                 >
                   {loading ? (
                     <>

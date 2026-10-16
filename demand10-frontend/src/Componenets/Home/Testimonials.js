@@ -56,7 +56,7 @@ const TestimonialSlider = () => {
     <section className="bg-white px-4 py-16">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#265ba3] mb-4">What Our Users Say</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#E11D2E] mb-4">What Our Users Say</h2>
           <p className="text-lg text-black max-w-3xl mx-auto">
             Don&apos;t just take our word for it. Hear from businesses that have transformed their decision-making process.
           </p>
@@ -65,20 +65,20 @@ const TestimonialSlider = () => {
         {/* Testimonial Card */}
         <div className="relative bg-white rounded-3xl shadow-xl p-8 md:p-12 overflow-hidden">
           {/* Decorative Elements */}
-          <div className="absolute top-0 left-0 w-full h-2 bg-[#265ba3]"></div>
-          <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-[#265ba3]/5"></div>
-          <div className="absolute -bottom-20 -left-20 w-48 h-48 rounded-full bg-[#265ba3]/5"></div>
+          <div className="absolute top-0 left-0 w-full h-2 bg-[#E11D2E]"></div>
+          <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-[#E11D2E]/5"></div>
+          <div className="absolute -bottom-20 -left-20 w-48 h-48 rounded-full bg-[#E11D2E]/5"></div>
           
           <div className="relative z-10 flex flex-col lg:flex-row items-center gap-12">
             {/* Author Image */}
             <div className="flex-shrink-0">
               <div className="relative">
                 <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-white shadow-xl">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] flex items-center justify-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] flex items-center justify-center">
                     <span className="text-white text-5xl font-bold">{testimonials[currentSlide].author.charAt(0)}</span>
                   </div>
                 </div>
-                <div className="absolute -bottom-3 -right-3 bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d]  text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg border-4 border-white">
+                <div className="absolute -bottom-3 -right-3 bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D]  text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg border-4 border-white">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                   </svg>
@@ -89,7 +89,7 @@ const TestimonialSlider = () => {
             {/* Text Content */}
             <div className="flex-1 text-center lg:text-left">
               <div className="relative mb-8">
-                <svg className="absolute -top-8 -left-4 w-20 h-20 text-[#265ba3]/10 transform -rotate-12" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="absolute -top-8 -left-4 w-20 h-20 text-[#E11D2E]/10 transform -rotate-12" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
                 <p className="text-black text-xl leading-relaxed italic relative z-10">
@@ -101,13 +101,13 @@ const TestimonialSlider = () => {
                 <h3 className="font-bold text-black text-2xl mb-1">
                   {testimonials[currentSlide].author}
                 </h3>
-                <p className="text-[#265ba3] font-semibold text-lg">
+                <p className="text-[#E11D2E] font-semibold text-lg">
                   {testimonials[currentSlide].role}
                 </p>
                 
                 <div className="flex justify-center lg:justify-start mt-6">
                   {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-6 h-6 text-[#265ba3]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <svg key={i} className="w-6 h-6 text-[#E11D2E]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
                   ))}
@@ -127,7 +127,7 @@ const TestimonialSlider = () => {
                 onClick={() => goToSlide(index)}
                 className={`w-4 h-4 rounded-full transition-all duration-300 ${
                   index === currentSlide 
-                    ? 'bg-[#265ba3] w-10' 
+                    ? 'bg-[#E11D2E] w-10' 
                     : 'bg-gray-300 hover:bg-[#f59e0b]'
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
@@ -167,12 +167,12 @@ const TestimonialSlider = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link href="/">
-              <button className="bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d]  text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
+              <button className="bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D]  text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
                 Get Started Free
               </button>
             </Link>
             <Link href="/contact">
-              <button className="bg-white border-2 border-[#265ba3] text-[#265ba3] hover:bg-[#265ba3] hover:text-white hover:border-[#265ba3] font-semibold py-3 px-8 rounded-lg transition-all duration-300">
+              <button className="bg-white border-2 border-[#E11D2E] text-[#E11D2E] hover:bg-[#E11D2E] hover:text-white hover:border-[#E11D2E] font-semibold py-3 px-8 rounded-lg transition-all duration-300">
                 Contact Sales
               </button>
             </Link>

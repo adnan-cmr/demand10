@@ -7,7 +7,7 @@ const MspHeroButtons = ({ onOpenForm }) => {
     <div className="mt-8 flex flex-wrap justify-center gap-4">
       <Link
         href="/managed-service-providers"
-        className="bg-white text-[#265ba3] font-bold py-3.5 px-7 rounded-md transition duration-300 hover:bg-gray-100 shadow-md"
+        className="bg-white text-[#E11D2E] font-bold py-3.5 px-7 rounded-md transition duration-300 hover:bg-gray-100 shadow-md"
       >
         Explore Directory
       </Link>

@@ -40,12 +40,12 @@ export default function VerifyEmailPage() {
   }, [token]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#4897de] to-[#0249aa] py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#EF4444] to-[#DC2626] py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div className="bg-white rounded-2xl shadow-xl p-8">
           <div className="text-center">
             <div className="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-teal-100">
-              <svg className="h-10 w-10 text-[#4897de]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="h-10 w-10 text-[#EF4444]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
             </div>
@@ -57,7 +57,7 @@ export default function VerifyEmailPage() {
           <div className="mt-8">
             {status === 'verifying' && (
               <div className="text-center py-8">
-                <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#4897de] mx-auto"></div>
+                <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#EF4444] mx-auto"></div>
                 <p className="mt-6 text-gray-700 font-medium">Verifying your email...</p>
                 <p className="mt-2 text-gray-500 text-sm">Please wait while we confirm your email address</p>
               </div>
@@ -75,7 +75,7 @@ export default function VerifyEmailPage() {
                 <div className="mt-8">
                   <Link 
                     href="/login" 
-                    className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-[#4897de] hover:bg-[#0249aa] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4897de] transition-all duration-200"
+                    className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-[#EF4444] hover:bg-[#DC2626] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EF4444] transition-all duration-200"
                   >
                     Go to Login
                   </Link>
@@ -95,7 +95,7 @@ export default function VerifyEmailPage() {
                 <div className="mt-8">
                   <Link 
                     href="/" 
-                    className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-[#4897de] hover:bg-[#0249aa] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4897de] transition-all duration-200"
+                    className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-[#EF4444] hover:bg-[#DC2626] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#EF4444] transition-all duration-200"
                   >
                     Back to Home
                   </Link>

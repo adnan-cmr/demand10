@@ -92,33 +92,45 @@ export default function HeroSection({ homepageCompanies = [] }) {
   };
 
   return (
-    <section className="bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] text-white">
+    <section className="relative bg-gradient-to-b from-[#F5F8FE] to-[#E9EFFB] text-[#0B1533] overflow-hidden">
+      {/* Subtle decorative blushes */}
+      <div className="absolute -top-32 -left-32 w-[420px] h-[420px] bg-[#E11D2E]/10 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute -bottom-32 -right-32 w-[420px] h-[420px] bg-[#0B1533]/10 rounded-full blur-[120px] pointer-events-none"></div>
+
       {/* Hero Content */}
-      <div className="max-w-6xl mx-auto px-4 py-10 sm:py-10 md:py-10">
+      <div className="relative max-w-6xl mx-auto px-4 py-16 sm:py-20 md:py-24">
         <div className="text-center">
+          {/* Eyebrow badge */}
+          <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-gray-300 bg-white text-xs sm:text-sm font-medium text-[#0B1533] mb-6 shadow-sm">
+            The B2B intelligence platform for verified providers
+          </span>
+
           {/* Main Heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-            Find Your Perfect Business Software
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-light tracking-tight text-[#0B1533] mb-6 leading-tight">
+            Find Your Perfect{" "}
+            <span className="font-semibold text-[#E11D2E]">
+              Business Software
+            </span>
           </h1>
-          
+
           {/* Subheading */}
-          <p className="text-lg sm:text-xl text-white max-w-2xl mx-auto mb-10">
+          <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto mb-10">
             Discover trusted solutions from our curated selection of verified providers
           </p>
-          
+
           {/* Search Bar - Central Element */}
           <div className="max-w-2xl mx-auto mb-6">
             <div className="relative" ref={dropdownRef}>
-              <div className="flex rounded-xl bg-white shadow-xl border border-gray-200 overflow-hidden">
+              <div className="flex rounded-full bg-white shadow-2xl overflow-hidden p-1.5">
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onFocus={() => searchQuery.trim() !== '' && searchResults.length > 0 && setShowDropdown(true)}
                   placeholder="Search for software, services or providers..."
-                  className="flex-grow px-6 py-4 text-black placeholder-gray-500 focus:outline-none text-base"
+                  className="flex-grow px-6 py-3 text-gray-900 placeholder-gray-500 focus:outline-none text-base bg-transparent"
                 />
-                <button className="bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] hover:bg-[#0249aa] px-6 flex items-center justify-center transition-colors duration-200">
+                <button className="bg-[#E11D2E] hover:bg-[#C81E1E] px-8 rounded-full flex items-center justify-center transition-colors duration-200">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                   </svg>
@@ -131,7 +143,7 @@ export default function HeroSection({ homepageCompanies = [] }) {
                   {isLoading ? (
                     <div className="py-4 px-5 text-black">
                       <div className="flex items-center">
-                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-[#265ba3]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-[#E11D2E]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                         </svg>
@@ -157,7 +169,7 @@ export default function HeroSection({ homepageCompanies = [] }) {
                               />
                             ) : (
                               <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center mr-4 border border-gray-200">
-                                <span className="text-[#265ba3] font-bold">
+                                <span className="text-[#E11D2E] font-bold">
                                   {company.companyName.charAt(0)}
                                 </span>
                               </div>
@@ -188,43 +200,43 @@ export default function HeroSection({ homepageCompanies = [] }) {
             </div>
             
             {/* Supporting Text */}
-            <p className="text-blue-200 text-sm mt-4 flex items-center justify-center">
-              <svg className="w-4 h-4 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <p className="text-slate-500 text-sm mt-4 flex items-center justify-center">
+              <svg className="w-4 h-4 mr-2 text-[#E11D2E]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
               Trusted by thousands of businesses worldwide
             </p>
           </div>
-          
+
           {/* Quick Category Links */}
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-blue-200 text-sm font-semibold mb-3">POPULAR CATEGORIES</h3>
+            <h3 className="text-[#0B1533] text-sm font-semibold mb-3 tracking-widest">POPULAR CATEGORIES</h3>
             <div className="flex flex-wrap justify-center gap-3">
-               <Link 
+               <Link
                 href="/managed-service-providers"
                 target="_blank"
-                className="px-4 py-2 bg-white hover:bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] text-black hover:text-white rounded-full text-sm transition-colors duration-200 border border-gray-200"
+                className="px-4 py-2 bg-white hover:bg-[#E11D2E] text-[#0B1533] hover:text-white rounded-full text-sm transition-colors duration-200 border border-gray-200 shadow-sm"
               >
                 Managed Service Provider
               </Link>
-              <Link 
+              <Link
                 href="/managed-security-service-providers"
                 target="_blank"
-                className="px-4 py-2 bg-white hover:bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] text-black hover:text-white rounded-full text-sm transition-colors duration-200 border border-gray-200"
+                className="px-4 py-2 bg-white hover:bg-[#E11D2E] text-[#0B1533] hover:text-white rounded-full text-sm transition-colors duration-200 border border-gray-200 shadow-sm"
               >
                  Managed Security Service Provider
               </Link>
-              <Link 
+              <Link
                 href="/crm-software"
                 target="_blank"
-                className="px-4 py-2 bg-white hover:bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] text-black hover:text-white rounded-full text-sm transition-colors duration-200 border border-gray-200"
+                className="px-4 py-2 bg-white hover:bg-[#E11D2E] text-[#0B1533] hover:text-white rounded-full text-sm transition-colors duration-200 border border-gray-200 shadow-sm"
               >
                 CRM Software
               </Link>
-              <Link 
+              <Link
                 href="/accounting-software"
                 target="_blank"
-                className="px-4 py-2 bg-white hover:bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] text-black hover:text-white rounded-full text-sm transition-colors duration-200 border border-gray-200"
+                className="px-4 py-2 bg-white hover:bg-[#E11D2E] text-[#0B1533] hover:text-white rounded-full text-sm transition-colors duration-200 border border-gray-200 shadow-sm"
               >
                 Accounting Software
               </Link>
@@ -240,7 +252,7 @@ export default function HeroSection({ homepageCompanies = [] }) {
   <div className="w-full mx-auto px-4">
     {/* Section Heading */}
     <div className="flex items-center ">
-      <div className="h-8 w-1 bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] rounded-full mr-3"></div>
+      <div className="h-8 w-1 bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] rounded-full mr-3"></div>
       <h2 className="text-xl font-bold text-gray-800">Sponsored Companies</h2>
     </div>
 
@@ -273,7 +285,7 @@ export default function HeroSection({ homepageCompanies = [] }) {
             <Link href={companyUrl} key={company._id}>
               <div
                 className="bg-white rounded-xl border border-gray-200 px-5 py-4 mx-3 flex items-center gap-4 
-                hover:shadow-lg hover:border-[#4897de] hover:-translate-y-0.5 
+                hover:shadow-lg hover:border-[#EF4444] hover:-translate-y-0.5 
                 transition-all duration-300 ease-in-out"
                 style={{ minWidth: "260px", maxWidth: "260px" }}
               >
@@ -297,7 +309,7 @@ export default function HeroSection({ homepageCompanies = [] }) {
                   </h3>
 
                   {company.subcategory?.name && (
-                    <p className="text-xs text-[#4897de] font-medium truncate mt-0.5">
+                    <p className="text-xs text-[#EF4444] font-medium truncate mt-0.5">
                       {company.subcategory.name}
                     </p>
                   )}

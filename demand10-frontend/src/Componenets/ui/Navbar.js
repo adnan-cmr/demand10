@@ -22,12 +22,10 @@ const AuthForm = dynamic(() => import('@/Componenets/ui/AuthForm'), { ssr: false
 
 const getDashboardUrl = (user) => {
   if (['admin', 'superadmin'].includes(user?.role)) {
-    return process.env.NEXT_PUBLIC_ADMIN_DASHBOARD_URL ||
-      'http://localhost:3008/intent-admin/dashboard';
+    return '/admin/dashboard';
   }
 
-  return process.env.NEXT_PUBLIC_VENDOR_DASHBOARD_URL ||
-    'http://localhost:3006/user-dashboard';
+  return '/vendor/dashboard';
 };
 
 const Navbar = ({ categories = [] }) => {
@@ -172,7 +170,7 @@ const handleSignOut = async () => {
               <div className="flex items-center space-x-4">
                 <Link
                   href="/"
-                  className="text-lg font-semibold text-black hover:text-[#265ba3] transition-colors duration-300 px-3 py-2"
+                  className="text-lg font-semibold text-black hover:text-[#E11D2E] transition-colors duration-300 px-3 py-2"
                 >
                   Home
                 </Link>
@@ -186,7 +184,7 @@ const handleSignOut = async () => {
                 >
                   <button
                     onClick={toggleDropdown}
-                    className="flex items-center text-lg font-semibold text-black hover:text-[#265ba3] transition-colors duration-300 px-3 py-2"
+                    className="flex items-center text-lg font-semibold text-black hover:text-[#E11D2E] transition-colors duration-300 px-3 py-2"
                   >
                     Categories
                     <ChevronDown
@@ -199,13 +197,13 @@ const handleSignOut = async () => {
               
 <Link
                   href="/review"
-                  className="text-lg font-semibold text-black hover:text-[#265ba3] transition-colors duration-300 px-3 py-2"
+                  className="text-lg font-semibold text-black hover:text-[#E11D2E] transition-colors duration-300 px-3 py-2"
                 >
                   Write a Review
                 </Link>
 <Link
                   href="/listing"
-                  className="text-lg font-semibold text-black hover:text-[#265ba3] transition-colors duration-300 px-3 py-2"
+                  className="text-lg font-semibold text-black hover:text-[#E11D2E] transition-colors duration-300 px-3 py-2"
                 >
                   Add a Product
                 </Link>
@@ -218,7 +216,7 @@ const handleSignOut = async () => {
                <div className="relative cursor-pointer">
                     <Link
       href={getDashboardUrl(user)}
-      className="hidden lg:flex items-center cursor-pointer justify-center w-13 h-13 rounded-full bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] text-white transition-colors duration-300"
+      className="hidden lg:flex items-center cursor-pointer justify-center w-13 h-13 rounded-full bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] text-white transition-colors duration-300"
     >
       <User className="h-8 w-8" />
     </Link>
@@ -227,7 +225,7 @@ const handleSignOut = async () => {
               ) : (
                 // Auth button when user is not logged in
                 <button 
-                  className="hidden lg:flex items-center cursor-pointer bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-300"
+                  className="hidden lg:flex items-center cursor-pointer bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] text-white px-7 py-2.5 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-[#E11D2E]/30 hover:-translate-y-0.5"
                   onClick={() => setShowAuthForm(true)}
                 >
                   Sign In
@@ -237,7 +235,7 @@ const handleSignOut = async () => {
               {/* Mobile Menu Button */}
               <button
                 onClick={toggleMobileMenu}
-                className="lg:hidden p-2 text-gray-600 hover:text-[#4897de] hover:bg-[#4897de]/10 rounded-lg transition-colors duration-300 mobile-menu-button"
+                className="lg:hidden p-2 text-gray-600 hover:text-[#EF4444] hover:bg-[#EF4444]/10 rounded-lg transition-colors duration-300 mobile-menu-button"
               >
                 {isMobileMenuOpen ? (
                   <X className="h-6 w-6" />
@@ -265,7 +263,7 @@ const handleSignOut = async () => {
                     className="relative group"
                   >
                     {/* Category Header */}
-                  <div className="text-[#265ba3] px-3 py-2 ">
+                  <div className="text-[#E11D2E] px-3 py-2 ">
   <div className="flex items-center">
     <h3 className="font-bold text-sm flex items-center gap-1 truncate">
       {category.name}
@@ -300,7 +298,7 @@ const handleSignOut = async () => {
                 <Link 
                   href="/all-categories"
                   onClick={closeDropdown}
-                  className="inline-block bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] text-white px-8 py-2 rounded-lg font-semibold  transition-colors duration-200"
+                  className="inline-block bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] text-white px-8 py-2 rounded-lg font-semibold  transition-colors duration-200"
                 >
                   View All Categories
                 </Link>
@@ -336,7 +334,7 @@ const handleSignOut = async () => {
               </Link>
               <button
                 onClick={toggleMobileMenu}
-                className="p-2 text-gray-600 hover:text-[#4897de] rounded-lg"
+                className="p-2 text-gray-600 hover:text-[#EF4444] rounded-lg"
               >
                 <X className="h-6 w-6" />
               </button>
@@ -348,14 +346,14 @@ const handleSignOut = async () => {
                 <Link
       href={getDashboardUrl(user)}
       onClick={toggleMobileMenu}
-      className="w-full mb-6 bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] text-white py-3 rounded-lg font-semibold transition-colors duration-300 flex items-center justify-center"
+      className="w-full mb-6 bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] text-white py-3 rounded-full font-semibold transition-colors duration-300 flex items-center justify-center"
     >
       <User className="h-4 w-4 mr-2" />
       Profile
     </Link>
               ) : (
                 <button 
-                  className="w-full mb-6 bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] text-white py-3 rounded-lg font-semibold transition-colors duration-300"
+                  className="w-full mb-6 bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] text-white py-3 rounded-full font-semibold transition-colors duration-300"
                   onClick={() => {
                     toggleMobileMenu();
                     setShowAuthForm(true);
@@ -456,7 +454,7 @@ const handleSignOut = async () => {
                       href="https://www.facebook.com/people/Intentwire/61572572363704/"
                       target="_blank"
                       rel="noopener noreferrer"
-                       className="text-gray-900 hover:text-[#1a365d] transition-colors"
+                       className="text-gray-900 hover:text-[#0F1B3D] transition-colors"
                     >
                       <Facebook className="h-4 w-4" />
                     </a>
@@ -465,7 +463,7 @@ const handleSignOut = async () => {
                       href="https://www.linkedin.com/company/intentwire/posts/?feedView=all"
                       target="_blank"
                       rel="noopener noreferrer"
-                       className="text-gray-900 hover:text-[#1a365d] transition-colors"
+                       className="text-gray-900 hover:text-[#0F1B3D] transition-colors"
                     >
                       <Linkedin className="h-4 w-4" />
                     </a>

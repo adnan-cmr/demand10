@@ -96,7 +96,7 @@ export default function CompanyReviewPage({ params }) {
     return (
       <div className="min-h-screen bg-[#f8fafc]">
         {/* Hero Section Skeleton */}
-        <section className="relative bg-[#1a365d] text-white py-12">
+        <section className="relative bg-[#0F1B3D] text-white py-12">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <div className="h-8 bg-blue-900/30 rounded w-1/4 mx-auto mb-4 animate-pulse"></div>
             <div className="h-10 bg-blue-900/30 rounded w-2/3 mx-auto mb-6 animate-pulse"></div>
@@ -132,20 +132,20 @@ export default function CompanyReviewPage({ params }) {
   return (
     <div className="min-h-screen bg-[#f8fafc]">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-[#4897de] to-[#0249aa] text-white shadow-lg">
+      <section className="relative bg-gradient-to-r from-[#EF4444] to-[#DC2626] text-white shadow-lg">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <div className="text-center">
             <h1 className="text-3xl md:text-4xl font-bold mb-3">
               Review {company.companyName}
             </h1>
-            <p className="text-lg text-blue-100 mb-6 max-w-2xl mx-auto">
+            <p className="text-lg text-red-100 mb-6 max-w-2xl mx-auto">
               Share your experience to help others make better business decisions
             </p>
             <div className="flex justify-center text-yellow-400">
               {[...Array(5)].map((_, i) => (
                 <FaRegStar key={i} className="h-5 w-5" />
               ))}
-              <span className="ml-2 text-blue-100">Be the first to review</span>
+              <span className="ml-2 text-red-100">Be the first to review</span>
             </div>
           </div>
         </div>

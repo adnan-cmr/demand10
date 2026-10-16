@@ -220,7 +220,7 @@ const FocusLines = ({ focus, onFocusChange }) => {
   {/* Section Header */}
   <div className="space-y-4">
     <h3 className="text-lg font-bold text-gray-800">Focus Areas</h3>
-    <p className="text-blue-600 text-sm">
+    <p className="text-red-600 text-sm">
       Select your company&apos;s focus areas and allocate percentages
     </p>
   </div>
@@ -236,12 +236,12 @@ const FocusLines = ({ focus, onFocusChange }) => {
         >
           {/* Category Header */}
           <div
-            className="flex justify-between items-center p-4 bg-gradient-to-r from-blue-50 to-indigo-50 cursor-pointer hover:from-blue-100 hover:to-indigo-100 transition-colors"
+            className="flex justify-between items-center p-4 bg-gradient-to-r from-red-50 to-indigo-50 cursor-pointer hover:from-red-100 hover:to-indigo-100 transition-colors"
             onClick={() => toggleCategory(category.id)}
           >
             <h4 className="font-medium text-gray-800">{category.name}</h4>
             <svg
-              className={`w-5 h-5 text-blue-600 transition-transform ${
+              className={`w-5 h-5 text-red-600 transition-transform ${
                 expandedCategories.has(category.id) ? "rotate-180" : ""
               }`}
               fill="none"
@@ -267,7 +267,7 @@ const FocusLines = ({ focus, onFocusChange }) => {
                   const isSelected = currentPercentage > 0;
 
                   return (
-                    <div key={focusId} className="flex items-center gap-3 p-2 rounded-lg hover:bg-blue-50 transition-colors">
+                    <div key={focusId} className="flex items-center gap-3 p-2 rounded-lg hover:bg-red-50 transition-colors">
                       <input
                         type="checkbox"
                         id={focusId}
@@ -275,7 +275,7 @@ const FocusLines = ({ focus, onFocusChange }) => {
                         onChange={() =>
                           toggleFocus(focusId, category.name, option.name)
                         }
-                        className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                        className="w-4 h-4 text-red-600 border-gray-300 rounded focus:ring-red-500"
                       />
                       <label
                         htmlFor={focusId}
@@ -298,7 +298,7 @@ const FocusLines = ({ focus, onFocusChange }) => {
                                 e.target.value
                               )
                             }
-                            className="w-24 accent-blue-600"
+                            className="w-24 accent-red-600"
                           />
                           <input
                             type="number"
@@ -313,7 +313,7 @@ const FocusLines = ({ focus, onFocusChange }) => {
                                 e.target.value
                               )
                             }
-                            className="w-16 px-2 py-1 text-sm border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
+                            className="w-16 px-2 py-1 text-sm border border-gray-300 rounded focus:ring-red-500 focus:border-red-500"
                           />
                           <span className="text-sm text-gray-500">%</span>
                         </div>
@@ -329,7 +329,7 @@ const FocusLines = ({ focus, onFocusChange }) => {
     </div>
 
     {/* Focus Distribution Preview (Right) */}
-    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-5 shadow-sm">
+    <div className="bg-gradient-to-br from-red-50 to-indigo-50 border border-red-200 rounded-xl p-5 shadow-sm">
       <h4 className="font-bold text-gray-800 mb-4">Focus Distribution</h4>
 
       <div className="flex flex-col md:flex-row gap-6">
@@ -360,7 +360,7 @@ const FocusLines = ({ focus, onFocusChange }) => {
               {focus.map((focusItem, index) => (
                 <div key={index} className="flex justify-between text-sm py-1">
                   <span className="text-gray-700">{focusItem.focusName}</span>
-                  <span className="font-medium text-blue-600">
+                  <span className="font-medium text-red-600">
                     {focusItem.percentage}%
                   </span>
                 </div>

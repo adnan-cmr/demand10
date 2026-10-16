@@ -73,15 +73,15 @@ export default function CompanySearch({ onCompanySelect }) {
             onChange={handleSearchChange}
             onFocus={() => searchQuery.length > 1 && setShowSuggestions(true)}
             placeholder="Search for a Product"
-            className="w-full px-6 py-4 text-lg border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#4897de] focus:ring-2 focus:ring-[#4897de]/20 placeholder-black bg-white"
+            className="w-full px-6 py-4 text-lg border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#EF4444] focus:ring-2 focus:ring-[#EF4444]/20 placeholder-black bg-white"
           />
           
           {/* Search Icon */}
           <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
             {isLoading ? (
-              <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-[#4897de]"></div>
+              <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-[#EF4444]"></div>
             ) : (
-              <FaSearch className="h-5 w-5 text-[#4897de]" />
+              <FaSearch className="h-5 w-5 text-[#EF4444]" />
             )}
           </div>
         </div>
@@ -115,7 +115,7 @@ export default function CompanySearch({ onCompanySelect }) {
                   )}
                 </div>
                 <div className="ml-3">
-                  <p className="font-medium text-[#4897de]">{company.companyName}</p>
+                  <p className="font-medium text-[#EF4444]">{company.companyName}</p>
                 </div>
               </div>
             ))}

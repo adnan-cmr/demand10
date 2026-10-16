@@ -159,7 +159,7 @@ export default function OrderDataReviewForm({ onClose, onSubmit, subCategory }) 
               We consider you a <span className="text-emerald-600 font-semibold">trusted lead</span> for this category.
             </p>
             <button
-              className="mt-2 bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] text-white px-6 py-2 cursor-pointer rounded-xl hover:opacity-90 transition z-10"
+              className="mt-2 bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] text-white px-6 py-2 cursor-pointer rounded-xl hover:opacity-90 transition z-10"
               onClick={onClose}
               type="button"
             >
@@ -182,7 +182,7 @@ export default function OrderDataReviewForm({ onClose, onSubmit, subCategory }) 
                     onChange={handleInputChange}
                     placeholder="Enter your full name"
                     required
-                    className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#265ba3] focus:border-transparent transition-all pr-12 text-gray-900 placeholder-gray-400"
+                    className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E11D2E] focus:border-transparent transition-all pr-12 text-gray-900 placeholder-gray-400"
                   />
                   <User className="absolute right-4 top-4 text-gray-400 w-5 h-5" />
                 </div>
@@ -201,7 +201,7 @@ export default function OrderDataReviewForm({ onClose, onSubmit, subCategory }) 
                     onChange={handleInputChange}
                     placeholder="your@email.com"
                     required
-                    className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#265ba3] focus:border-transparent transition-all pr-12 text-gray-900 placeholder-gray-400"
+                    className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E11D2E] focus:border-transparent transition-all pr-12 text-gray-900 placeholder-gray-400"
                   />
                   <Mail className="absolute right-4 top-4 text-gray-400 w-5 h-5" />
                 </div>
@@ -219,7 +219,7 @@ export default function OrderDataReviewForm({ onClose, onSubmit, subCategory }) 
                     value={formData.phone}
                     onChange={handleInputChange}
                     placeholder="+1 (555) 123-4567"
-                    className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#265ba3] focus:border-transparent transition-all pr-12 text-gray-900 placeholder-gray-400"
+                    className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E11D2E] focus:border-transparent transition-all pr-12 text-gray-900 placeholder-gray-400"
                   />
                   <Phone className="absolute right-4 top-4 text-gray-400 w-5 h-5" />
                 </div>
@@ -236,7 +236,7 @@ export default function OrderDataReviewForm({ onClose, onSubmit, subCategory }) 
                   onChange={handleInputChange}
                   placeholder="Tell us about your project or inquiry..."
                   rows={4}
-                  className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#265ba3] focus:border-transparent transition-all text-gray-900 placeholder-gray-400"
+                  className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E11D2E] focus:border-transparent transition-all text-gray-900 placeholder-gray-400"
                 />
               </div>
               
@@ -245,14 +245,14 @@ export default function OrderDataReviewForm({ onClose, onSubmit, subCategory }) 
                   type="button"
                   onClick={onClose}
                   disabled={isSubmitting}
-                  className="flex-1 py-3 px-4 border border-gray-300 rounded-lg shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#265ba3] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed z-10"
+                  className="flex-1 py-3 px-4 border border-gray-300 rounded-lg shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#E11D2E] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed z-10"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex-1 flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-white bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#265ba3] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed z-10"
+                  className="flex-1 flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-white bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#E11D2E] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed z-10"
                 >
                   {isSubmitting ? (
                     <>

@@ -49,7 +49,7 @@ const EmailSubscribe = () => {
                   <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
                     Stay Updated with <br className="hidden md:block" />Our Latest Insights
                   </h2>
-                  <p className="text-blue-100 text-lg max-w-md">
+                  <p className="text-red-100 text-lg max-w-md">
                     Subscribe to our newsletter and never miss updates on industry trends, special offers, and new products.
                   </p>
                 </div>
@@ -65,7 +65,7 @@ const EmailSubscribe = () => {
                     </div>
                     <div>
                       <h3 className="text-white font-medium text-lg mb-1">Special Offer for Subscribers</h3>
-                      <p className="text-blue-100">
+                      <p className="text-red-100">
                         Get <span className="text-yellow-300 font-semibold">15% off</span> your first purchase when you subscribe today!
                       </p>
                     </div>
@@ -108,7 +108,7 @@ const EmailSubscribe = () => {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="your.email@example.com"
-                            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"
                             required
                           />
                         </div>
@@ -118,7 +118,7 @@ const EmailSubscribe = () => {
                         <label className="flex items-center">
                           <input
                             type="checkbox"
-                            className="form-checkbox h-4 w-4 text-blue-600 transition-colors duration-200 rounded focus:ring-blue-500"
+                            className="form-checkbox h-4 w-4 text-red-600 transition-colors duration-200 rounded focus:ring-red-500"
                             required
                           />
                           <span className="ml-2 text-gray-700 text-sm">
@@ -132,7 +132,7 @@ const EmailSubscribe = () => {
                         disabled={isLoading}
                         className={`w-full py-3 px-6 rounded-lg text-white font-medium transition-all ${
                           isLoading 
-                            ? "bg-blue-400 cursor-not-allowed" 
+                            ? "bg-red-400 cursor-not-allowed" 
                             : "bg-gradient-to-r from-[#058f8c] to-[#4fd1c7] hover:from-[#003f8f] hover:to-[#0c8577] shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                         }`}
                       >

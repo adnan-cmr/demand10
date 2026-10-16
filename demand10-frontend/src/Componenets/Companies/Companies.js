@@ -301,7 +301,7 @@ export default function CompanyListingPage({
               disabled={isLoading}
               className={`px-3 py-2 border rounded-lg transition-colors font-medium text-sm disabled:opacity-50 ${
                 currentPage === number
-                  ? "bg-[#1a365d] text-white border-[#1a365d] shadow-sm"
+                  ? "bg-[#0F1B3D] text-white border-[#0F1B3D] shadow-sm"
                   : "border-gray-300 hover:bg-gray-50"
               }`}
               aria-label={`Go to page ${number}`}
@@ -394,7 +394,7 @@ export default function CompanyListingPage({
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 {/* Left: Total Companies Count */}
                 <div className="flex items-center gap-2">
-                  <BuildingIcon className="w-5 h-5 text-[#0249aa]" />
+                  <BuildingIcon className="w-5 h-5 text-[#DC2626]" />
                   <h2 className="text-xl font-bold text-gray-900">
                     {totalCompanies.toLocaleString()}{" "}
                     {(pagination.total || filteredCompanies.length) === 1
@@ -527,7 +527,7 @@ export default function CompanyListingPage({
                           onClick={() => toggleFAQ(index)}
                         >
                           <div className="flex-1 flex items-center">
-                            <span className="text-blue-700 font-medium mr-2">Q{index + 1}:</span>
+                            <span className="text-red-700 font-medium mr-2">Q{index + 1}:</span>
                             <span className="font-medium text-gray-800">
                               {faq.question}
                             </span>
@@ -571,7 +571,7 @@ export default function CompanyListingPage({
         
         {loadingRelated ? (
           <div className="flex justify-center items-center h-20">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#0249aa]"></div>
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#DC2626]"></div>
           </div>
         ) : relatedSubcats.length > 0 ? (
           <div className="flex flex-wrap gap-3">
@@ -579,7 +579,7 @@ export default function CompanyListingPage({
               <Link 
                 key={subcategory.slug}
                 href={`/${subcategory.slug}`}
-                className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-[#0249aa] text-white hover:bg-[#1a365d] transition-all duration-200 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
+                className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-[#DC2626] text-white hover:bg-[#0F1B3D] transition-all duration-200 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
               >
                 {subcategory.name}
               </Link>

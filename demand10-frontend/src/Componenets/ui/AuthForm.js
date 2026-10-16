@@ -18,9 +18,10 @@ import {
   FaArrowLeft
 } from 'react-icons/fa';
 
-export default function AuthForm({ onClose, onAuthSuccess }) {
-  const [isLogin, setIsLogin] = useState(true);
+export default function AuthForm({ onClose, onAuthSuccess, initialView = 'login' }) {
+  const [isLogin, setIsLogin] = useState(initialView !== 'signup');
   const [isForgotPassword, setIsForgotPassword] = useState(false);
+  const [accountType, setAccountType] = useState('user');
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -35,17 +36,16 @@ export default function AuthForm({ onClose, onAuthSuccess }) {
 
   const redirectAfterLogin = (user) => {
     if (['admin', 'superadmin'].includes(user?.role)) {
-      window.location.assign(
-        process.env.NEXT_PUBLIC_ADMIN_DASHBOARD_URL ||
-          'http://localhost:3008/intent-admin/dashboard'
-      );
+      router.push('/admin/dashboard');
       return;
     }
 
-    window.location.assign(
-      process.env.NEXT_PUBLIC_VENDOR_DASHBOARD_URL ||
-        'http://localhost:3006/user-dashboard'
-    );
+    if (user?.role === 'vendor') {
+      router.push('/vendor/dashboard');
+      return;
+    }
+
+    router.push('/');
   };
 
   // Clear error when switching between login/signup
@@ -78,7 +78,7 @@ export default function AuthForm({ onClose, onAuthSuccess }) {
           // Add toast notification for successful password reset request
           toast.success('Password reset link sent! Please check your email.', {
             style: {
-              backgroundColor: '#4897de',
+              backgroundColor: '#EF4444',
               color: 'white'
             }
           });
@@ -86,7 +86,7 @@ export default function AuthForm({ onClose, onAuthSuccess }) {
           setError(result.message || 'Failed to send password reset link.');
           toast.error(result.message || 'Failed to send password reset link.', {
             style: {
-              backgroundColor: '#4897de',
+              backgroundColor: '#EF4444',
               color: 'white'
             }
           });
@@ -101,7 +101,7 @@ export default function AuthForm({ onClose, onAuthSuccess }) {
         if (result.ok) {
           toast.success('Login successful!', {
             style: {
-              backgroundColor: '#4897de',
+              backgroundColor: '#EF4444',
               color: 'white'
             }
           });
@@ -121,7 +121,7 @@ export default function AuthForm({ onClose, onAuthSuccess }) {
             );
             //   {
             //     style: {
-            //       backgroundColor: '#4897de',
+            //       backgroundColor: '#EF4444',
             //       color: 'white'
             //     }
             //   }
@@ -129,7 +129,7 @@ export default function AuthForm({ onClose, onAuthSuccess }) {
           } else {
             toast.error(errorMessage, {
               style: {
-                backgroundColor: '#4897de',
+                backgroundColor: '#EF4444',
                 color: 'white'
               }
             });
@@ -143,7 +143,7 @@ export default function AuthForm({ onClose, onAuthSuccess }) {
           setError(errorMessage);
           toast.error(errorMessage, {
             style: {
-              backgroundColor: '#4897de',
+              backgroundColor: '#EF4444',
               color: 'white'
             }
           });
@@ -155,7 +155,7 @@ export default function AuthForm({ onClose, onAuthSuccess }) {
           setError(errorMessage);
           toast.error(errorMessage, {
             style: {
-              backgroundColor: '#4897de',
+              backgroundColor: '#EF4444',
               color: 'white'
             }
           });
@@ -165,13 +165,14 @@ export default function AuthForm({ onClose, onAuthSuccess }) {
         
         result = await userSignup({
           email: formData.email,
-          password: formData.password
+          password: formData.password,
+          role: accountType
         });
         
         if (result.ok) {
           toast.success('Account created successfully! Please check your email for verification.', {
             style: {
-              backgroundColor: '#4897de',
+              backgroundColor: '#EF4444',
               color: 'white'
             }
           });
@@ -186,7 +187,7 @@ export default function AuthForm({ onClose, onAuthSuccess }) {
           setError(errorMessage);
           toast.error(errorMessage, {
             style: {
-              backgroundColor: '#4897de',
+              backgroundColor: '#EF4444',
               color: 'white'
             }
           });
@@ -198,7 +199,7 @@ export default function AuthForm({ onClose, onAuthSuccess }) {
       setError(errorMessage);
       toast.error(errorMessage, {
         style: {
-          backgroundColor: '#4897de',
+          backgroundColor: '#EF4444',
           color: 'white'
         }
       });
@@ -211,6 +212,7 @@ export default function AuthForm({ onClose, onAuthSuccess }) {
   const resetForm = () => {
     setIsLogin(true);
     setIsForgotPassword(false);
+    setAccountType('user');
     setFormData({
       email: '',
       password: '',
@@ -224,12 +226,12 @@ export default function AuthForm({ onClose, onAuthSuccess }) {
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn">
       <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 animate-scaleIn">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold text-[#265ba3]">
+          <h2 className="text-2xl font-bold text-[#E11D2E]">
             {isForgotPassword ? 'Reset Password' : isLogin ? 'Welcome Back' : 'Create Account'}
           </h2>
           <button 
             onClick={onClose}
-            className="text-gray-500 hover:text-[#265ba3] transition-colors p-2 rounded-full hover:bg-gray-100"
+            className="text-gray-500 hover:text-[#E11D2E] transition-colors p-2 rounded-full hover:bg-gray-100"
             aria-label="Close"
           >
             <X className="h-6 w-6" />
@@ -260,7 +262,7 @@ export default function AuthForm({ onClose, onAuthSuccess }) {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#265ba3] focus:border-transparent transition-all text-base"
+                className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#E11D2E] focus:border-transparent transition-all text-base"
                 placeholder="your@email.com"
                 disabled={loading}
               />
@@ -283,7 +285,7 @@ export default function AuthForm({ onClose, onAuthSuccess }) {
                   value={formData.password}
                   onChange={handleChange}
                   required
-                  className="block w-full pl-10 pr-10 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#265ba3] focus:border-transparent transition-all text-base"
+                  className="block w-full pl-10 pr-10 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#E11D2E] focus:border-transparent transition-all text-base"
                   placeholder="••••••••"
                   disabled={loading}
                 />
@@ -307,6 +309,41 @@ export default function AuthForm({ onClose, onAuthSuccess }) {
           {!isForgotPassword && !isLogin && (
             <>
               <div>
+                <span className="block text-sm font-medium text-gray-700 mb-2">
+                  Sign up as
+                </span>
+                <div className="grid grid-cols-2 gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setAccountType('user')}
+                    disabled={loading}
+                    className={`py-3 px-4 rounded-xl border text-base font-medium transition-all ${
+                      accountType === 'user'
+                        ? 'border-[#E11D2E] bg-red-50 text-[#E11D2E] ring-2 ring-[#E11D2E]'
+                        : 'border-gray-300 text-gray-600 hover:border-[#E11D2E] hover:text-[#E11D2E]'
+                    }`}
+                  >
+                    User
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setAccountType('vendor')}
+                    disabled={loading}
+                    className={`py-3 px-4 rounded-xl border text-base font-medium transition-all ${
+                      accountType === 'vendor'
+                        ? 'border-[#E11D2E] bg-red-50 text-[#E11D2E] ring-2 ring-[#E11D2E]'
+                        : 'border-gray-300 text-gray-600 hover:border-[#E11D2E] hover:text-[#E11D2E]'
+                    }`}
+                  >
+                    Vendor
+                  </button>
+                </div>
+                <p className="mt-2 text-xs text-gray-500">
+                  Admin accounts are assigned from the database by an administrator.
+                </p>
+              </div>
+
+              <div>
                 <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
                   Password
                 </label>
@@ -321,7 +358,7 @@ export default function AuthForm({ onClose, onAuthSuccess }) {
                     value={formData.password}
                     onChange={handleChange}
                     required
-                    className="block w-full pl-10 pr-10 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#265ba3] focus:border-transparent transition-all text-base"
+                    className="block w-full pl-10 pr-10 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#E11D2E] focus:border-transparent transition-all text-base"
                     placeholder="••••••••"
                     disabled={loading}
                   />
@@ -356,7 +393,7 @@ export default function AuthForm({ onClose, onAuthSuccess }) {
                     value={formData.confirmPassword}
                     onChange={handleChange}
                     required
-                    className="block w-full pl-10 pr-10 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#265ba3] focus:border-transparent transition-all text-base"
+                    className="block w-full pl-10 pr-10 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#E11D2E] focus:border-transparent transition-all text-base"
                     placeholder="••••••••"
                     disabled={loading}
                   />
@@ -392,8 +429,8 @@ export default function AuthForm({ onClose, onAuthSuccess }) {
           {successMessage && (
             <div className="mb-4 p-4 bg-green-50 border border-green-200 rounded-xl">
               <div className="flex items-center">
-                <FaCheckCircle className="h-5 w-5 text-[#265ba3] mr-2" />
-                <div className="text-sm text-[#265ba3]">
+                <FaCheckCircle className="h-5 w-5 text-[#E11D2E] mr-2" />
+                <div className="text-sm text-[#E11D2E]">
                   {successMessage}
                 </div>
               </div>
@@ -403,7 +440,7 @@ export default function AuthForm({ onClose, onAuthSuccess }) {
           <button
             type="submit"
             disabled={loading}
-            className="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-xl shadow-sm text-white bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d]  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#f59e0b] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-base font-medium"
+            className="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-xl shadow-sm text-white bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D]  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#f59e0b] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-base font-medium"
           >
             {loading ? (
               <>
@@ -449,7 +486,7 @@ export default function AuthForm({ onClose, onAuthSuccess }) {
                     confirmPassword: ''
                   });
                 }}
-                className="ml-2 font-medium text-[#265ba3] hover:text-[#4897de] transition-colors"
+                className="ml-2 font-medium text-[#E11D2E] hover:text-[#EF4444] transition-colors"
               >
                 {isLogin ? 'Sign up now' : 'Sign in'}
               </button>
@@ -459,7 +496,7 @@ export default function AuthForm({ onClose, onAuthSuccess }) {
               Remember your password?{' '}
               <button
                 onClick={() => resetForm()}
-                className="font-medium text-[#265ba3] hover:text-[#4897de] transition-colors"
+                className="font-medium text-[#E11D2E] hover:text-[#EF4444] transition-colors"
               >
                 Sign in
               </button>
@@ -477,7 +514,7 @@ export default function AuthForm({ onClose, onAuthSuccess }) {
                     confirmPassword: ''
                   });
                 }}
-                className="font-medium text-[#265ba3] hover:text-[#4897de] transition-colors flex items-center justify-center"
+                className="font-medium text-[#E11D2E] hover:text-[#EF4444] transition-colors flex items-center justify-center"
               >
                 <Key className="mr-1 h-4 w-4" />
                 Forgot your password?
@@ -490,7 +527,7 @@ export default function AuthForm({ onClose, onAuthSuccess }) {
             <p className="mt-4 text-sm text-gray-600">
               <button
                 onClick={resetForm}
-                className="font-medium text-[#265ba3] hover:text-[#4897de] transition-colors flex items-center justify-center"
+                className="font-medium text-[#E11D2E] hover:text-[#EF4444] transition-colors flex items-center justify-center"
               >
                 <FaArrowLeft className="mr-1 h-4 w-4" />
                 Back to Sign In

@@ -11,11 +11,11 @@ const SponsoredCompanyCard = ({ company }) => {
       }
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-3 p-3  rounded-lg hover:bg-blue-50 transition-all duration-300 group relative overflow-hidden border border-gray-100 hover:border-[#4897de]/20 hover:shadow-sm"
+      className="flex items-center gap-3 p-3  rounded-lg hover:bg-red-50 transition-all duration-300 group relative overflow-hidden border border-gray-100 hover:border-[#EF4444]/20 hover:shadow-sm"
     >
       {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-8 h-8 rounded-full border border-[#4897de] opacity-20 -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-6 h-6 rounded-full border border-[#4897de] opacity-20 translate-x-1/2 translate-y-1/2"></div>
+      <div className="absolute top-0 left-0 w-8 h-8 rounded-full border border-[#EF4444] opacity-20 -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 right-0 w-6 h-6 rounded-full border border-[#EF4444] opacity-20 translate-x-1/2 translate-y-1/2"></div>
       
       <div className="w-10 h-10 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center flex-shrink-0 shadow-sm border-2 border-[#e2e8f0]">
         {company?.image ? (
@@ -28,7 +28,7 @@ const SponsoredCompanyCard = ({ company }) => {
           />
         ) : (
           <div
-            className="w-full h-full bg-[#4897de] flex items-center justify-center text-white font-bold text-sm"
+            className="w-full h-full bg-[#EF4444] flex items-center justify-center text-white font-bold text-sm"
             aria-hidden="true"
           >
             {company?.companyName?.charAt(0) || 'C'}
@@ -38,7 +38,7 @@ const SponsoredCompanyCard = ({ company }) => {
       
       <div className="flex-1 min-w-0 relative z-10">
         <h3
-          className="font-medium text-gray-900 group-hover:text-[#4897de] transition-colors truncate text-sm"
+          className="font-medium text-gray-900 group-hover:text-[#EF4444] transition-colors truncate text-sm"
         >
           {company?.companyName}
         </h3>

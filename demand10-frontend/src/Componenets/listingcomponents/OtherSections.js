@@ -63,22 +63,22 @@ export default function OtherSections() {
     {
       title: "Trusted Platform",
       description: "Join thousands of companies who trust our platform for growth",
-      icon: <Shield className="h-6 w-6 text-blue-600" />
+      icon: <Shield className="h-6 w-6 text-red-600" />
     },
     {
       title: "Increased Visibility",
       description: "Reach millions of active buyers searching for your solutions",
-      icon: <Eye className="h-6 w-6 text-blue-600" />
+      icon: <Eye className="h-6 w-6 text-red-600" />
     },
     {
       title: "Expand Reach",
       description: "Connect with potential customers across multiple industries",
-      icon: <TrendingUp className="h-6 w-6 text-blue-600" />
+      icon: <TrendingUp className="h-6 w-6 text-red-600" />
     },
     {
       title: "Track Performance",
       description: "Monitor your listing performance with detailed analytics",
-      icon: <BarChart className="h-6 w-6 text-blue-600" />
+      icon: <BarChart className="h-6 w-6 text-red-600" />
     }
   ];
 
@@ -100,14 +100,14 @@ export default function OtherSections() {
 
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center bg-red-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
               </svg>
               No Obligation
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Request A <span className="text-[#265ba3]">Free</span> Estimate
+              Request A <span className="text-[#E11D2E]">Free</span> Estimate
             </h2>
             <p className="text-lg text-gray-600 mt-5 max-w-3xl mx-auto leading-relaxed">
               Ready to take the first step? Request a free estimate and let&apos;s explore how we can work together to achieve your vision.
@@ -119,7 +119,7 @@ export default function OtherSections() {
               <button 
                 className={`py-3 px-6 font-semibold rounded-lg transition-all duration-300 ${
                   serviceType === 'custom' 
-                    ? 'bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] text-white shadow-md' 
+                    ? 'bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] text-white shadow-md' 
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
                 onClick={() => setServiceType('custom')}
@@ -129,7 +129,7 @@ export default function OtherSections() {
               <button 
                 className={`py-3 px-6 font-semibold rounded-lg transition-all duration-300 ${
                   serviceType === 'value-added' 
-                    ? 'bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] text-white shadow-md' 
+                    ? 'bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] text-white shadow-md' 
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
                 onClick={() => setServiceType('value-added')}
@@ -144,13 +144,13 @@ export default function OtherSections() {
               <div 
                 key={index} 
                 className="bg-white rounded-2xl p-8 border border-gray-200 relative overflow-hidden group 
-                  hover:border-[#265ba3] transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-2
+                  hover:border-[#E11D2E] transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-2
                   flex flex-col h-full"
               >
                 {/* Icon */}
                 <div className="flex justify-center mb-6">
                   <div className="w-16 h-16 rounded-2xl flex items-center justify-center 
-                    bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] border border-blue-100 shadow-sm 
+                    bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] border border-red-100 shadow-sm 
                      transition-all duration-300">
                     {service.icon}
                   </div>
@@ -167,7 +167,7 @@ export default function OtherSections() {
                 <ul className="space-y-3 mb-6">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start text-sm text-gray-600">
-                      <CheckCircle className="w-5 h-5 text-[#265ba3] mr-3 flex-shrink-0 mt-0.5" />
+                      <CheckCircle className="w-5 h-5 text-[#E11D2E] mr-3 flex-shrink-0 mt-0.5" />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -175,7 +175,7 @@ export default function OtherSections() {
 
                 <button 
                   onClick={() => handleButtonClick(`get-estimate-${service.title.toLowerCase().replace(/\s+/g, '-')}`)}
-                  className="w-full bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] hover:from-[#1e4a86] hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center group mt-auto"
+                  className="w-full bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] hover:from-[#B91C1C] hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center group mt-auto"
                 >
                   Get a Free Estimate
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -186,7 +186,7 @@ export default function OtherSections() {
           
           {/* CTA Section */}
           <div className="mt-16 text-center">
-            <div className="inline-flex items-center bg-blue-50 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center bg-red-50 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
               </svg>
@@ -205,14 +205,14 @@ export default function OtherSections() {
         
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center bg-red-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
               </svg>
               Maximize Your Business Potential
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              List Your Product & Boost Your <span className="text-[#265ba3]">Market Presence</span>
+              List Your Product & Boost Your <span className="text-[#E11D2E]">Market Presence</span>
             </h2>
             <p className="text-lg text-gray-600 mt-5 max-w-3xl mx-auto leading-relaxed">
               Follow these simple steps to get started and maximize your business potential with our platform.
@@ -224,14 +224,14 @@ export default function OtherSections() {
               <div 
                 key={index} 
                 className="bg-white rounded-2xl p-6 border border-gray-200 relative overflow-hidden group 
-                  hover:border-[#265ba3] transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-2
+                  hover:border-[#E11D2E] transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-2
                   flex flex-col h-full"
               >
                 {/* Icon */}
                 <div className="flex justify-center mb-5">
                   <div className="w-16 h-16 rounded-2xl flex items-center justify-center 
-                    bg-gradient-to-br from-blue-100 to-blue-200 border border-blue-100 shadow-sm 
-                    group-hover:from-[#265ba3]/10 group-hover:to-blue-100 transition-all duration-300">
+                    bg-gradient-to-br from-red-100 to-red-200 border border-red-100 shadow-sm 
+                    group-hover:from-[#E11D2E]/10 group-hover:to-red-100 transition-all duration-300">
                     {benefit.icon}
                   </div>
                 </div>
@@ -246,7 +246,7 @@ export default function OtherSections() {
                 
                 {/* Stats */}
                 <div className="mt-4 pt-4 border-t border-gray-100">
-                  <div className="text-2xl font-bold text-[#265ba3]">
+                  <div className="text-2xl font-bold text-[#E11D2E]">
                     {index === 0 && '2M+'}
                     {index === 1 && '92%'}
                     {index === 2 && '3x'}
@@ -273,14 +273,14 @@ export default function OtherSections() {
         
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center bg-red-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
               </svg>
               Trusted by 770,000+ Professionals
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Trusted by Thousands of Happy <span className="text-[#265ba3]">Customers</span>
+              Trusted by Thousands of Happy <span className="text-[#E11D2E]">Customers</span>
             </h2>
             <p className="text-lg text-gray-600 mt-5 max-w-3xl mx-auto leading-relaxed">
               Join the growing community of businesses that have transformed their growth with our platform and services.
@@ -292,11 +292,11 @@ export default function OtherSections() {
               <div 
                 key={index} 
                 className="bg-white rounded-2xl p-6 flex items-center justify-center h-32 border border-gray-200 
-                  hover:border-[#265ba3] transition-all duration-300 hover:-translate-y-2 shadow-sm hover:shadow-xl cursor-pointer group"
+                  hover:border-[#E11D2E] transition-all duration-300 hover:-translate-y-2 shadow-sm hover:shadow-xl cursor-pointer group"
                 onClick={() => handleButtonClick(`customer-logo-${index+1}`)}
               >
-                <div className="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-100 rounded-xl w-20 h-20 flex items-center justify-center 
-                  group-hover:from-[#265ba3]/10 group-hover:to-blue-100 transition-all duration-300">
+                <div className="bg-gradient-to-br from-red-50 to-red-100 border border-red-100 rounded-xl w-20 h-20 flex items-center justify-center 
+                  group-hover:from-[#E11D2E]/10 group-hover:to-red-100 transition-all duration-300">
                   <Image
                     width={100} 
                     height={100}
@@ -312,15 +312,15 @@ export default function OtherSections() {
           {/* Stats Section */}
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="bg-white rounded-2xl p-6 border border-gray-200 text-center shadow-sm">
-              <div className="text-3xl font-bold text-[#265ba3] mb-2">770K+</div>
+              <div className="text-3xl font-bold text-[#E11D2E] mb-2">770K+</div>
               <div className="text-gray-600">Active Users</div>
             </div>
             <div className="bg-white rounded-2xl p-6 border border-gray-200 text-center shadow-sm">
-              <div className="text-3xl font-bold text-[#265ba3] mb-2">95%</div>
+              <div className="text-3xl font-bold text-[#E11D2E] mb-2">95%</div>
               <div className="text-gray-600">Satisfaction Rate</div>
             </div>
             <div className="bg-white rounded-2xl p-6 border border-gray-200 text-center shadow-sm">
-              <div className="text-3xl font-bold text-[#265ba3] mb-2">24/7</div>
+              <div className="text-3xl font-bold text-[#E11D2E] mb-2">24/7</div>
               <div className="text-gray-600">Support Available</div>
             </div>
           </div>

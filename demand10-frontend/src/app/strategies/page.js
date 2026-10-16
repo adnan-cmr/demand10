@@ -75,21 +75,21 @@ const RobustDataStrategies = () => {
                   <div className="mb-8">
                     <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4">
                       Benefits of{" "}
-                      <span className="text-blue-200">Managed IT Services</span>
+                      <span className="text-red-200">Managed IT Services</span>
                     </h1>
                     <div className="w-24 h-1 bg-blue-300 mx-auto lg:mx-0 rounded-full mb-6"></div>
-                    <h2 className="text-xl sm:text-2xl text-blue-100 font-light">
+                    <h2 className="text-xl sm:text-2xl text-red-100 font-light">
                       Transform Your Business with Professional MSP Solutions
                     </h2>
                   </div>
                   {/* Description */}
-                  <p className="text-lg text-blue-50 mb-8 leading-relaxed">
+                  <p className="text-lg text-red-50 mb-8 leading-relaxed">
                     Discover how managed IT services can revolutionize your business operations with cost savings, enhanced security, and expert support from qualified managed service providers.
                   </p>
                   {/* CTA Button */}
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                     <NextLink href="/contact">
-                      <button className="flex items-center justify-center px-8 py-4 bg-white text-[#314158] font-semibold rounded-lg hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                      <button className="flex items-center justify-center px-8 py-4 bg-white text-[#314158] font-semibold rounded-lg hover:bg-red-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                         <MessageCircle className="w-5 h-5 mr-2" />
                         Contact Us
                       </button>
@@ -107,7 +107,7 @@ const RobustDataStrategies = () => {
                         </div>
                         <h3 className="text-white font-semibold">IT Managed Services</h3>
                       </div>
-                      <p className="text-blue-100 text-sm">Comprehensive IT support from qualified managed service providers</p>
+                      <p className="text-red-100 text-sm">Comprehensive IT support from qualified managed service providers</p>
                     </div>
                     
                     <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
@@ -117,7 +117,7 @@ const RobustDataStrategies = () => {
                         </div>
                         <h3 className="text-white font-semibold">Security Services</h3>
                       </div>
-                      <p className="text-blue-100 text-sm">Advanced cybersecurity from verified managed security service providers</p>
+                      <p className="text-red-100 text-sm">Advanced cybersecurity from verified managed security service providers</p>
                     </div>
                     
                     <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
@@ -127,7 +127,7 @@ const RobustDataStrategies = () => {
                         </div>
                         <h3 className="text-white font-semibold">Cloud Solutions</h3>
                       </div>
-                      <p className="text-blue-100 text-sm">Scalable cloud services from top managed cloud service providers</p>
+                      <p className="text-red-100 text-sm">Scalable cloud services from top managed cloud service providers</p>
                     </div>
                     
                     <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
@@ -137,7 +137,7 @@ const RobustDataStrategies = () => {
                         </div>
                         <h3 className="text-white font-semibold">Expert Support</h3>
                       </div>
-                      <p className="text-blue-100 text-sm">24/7 support from experienced IT managed services providers</p>
+                      <p className="text-red-100 text-sm">24/7 support from experienced IT managed services providers</p>
                     </div>
                   </div>
                 </div>
@@ -172,7 +172,7 @@ const RobustDataStrategies = () => {
             {/* Strategic Points */}
             <div className="space-y-10">
               {/* Point 1 */}
-              <section className="bg-blue-50 p-6 rounded-xl border border-blue-100 hover:shadow-md transition-shadow duration-300">
+              <section className="bg-red-50 p-6 rounded-xl border border-red-100 hover:shadow-md transition-shadow duration-300">
                 <div className="flex items-start">
                   <div className="bg-[#314158]/10 p-3 rounded-lg mr-4">
                     <Shield className="w-6 h-6 text-[#314158]" />
@@ -219,7 +219,7 @@ const RobustDataStrategies = () => {
               </section>
 
               {/* Point 2 */}
-              <section className="bg-blue-50 p-6 rounded-xl border border-blue-100 hover:shadow-md transition-shadow duration-300">
+              <section className="bg-red-50 p-6 rounded-xl border border-red-100 hover:shadow-md transition-shadow duration-300">
                 <div className="flex items-start">
                   <div className="bg-[#314158]/10 p-3 rounded-lg mr-4">
                     <Lock className="w-6 h-6 text-[#314158]" />
@@ -266,7 +266,7 @@ const RobustDataStrategies = () => {
               </section>
 
               {/* Point 3 */}
-              <section className="bg-blue-50 p-6 rounded-xl border border-blue-100 hover:shadow-md transition-shadow duration-300">
+              <section className="bg-red-50 p-6 rounded-xl border border-red-100 hover:shadow-md transition-shadow duration-300">
                 <div className="flex items-start">
                   <div className="bg-[#314158]/10 p-3 rounded-lg mr-4">
                     <Cloud className="w-6 h-6 text-[#314158]" />
@@ -313,7 +313,7 @@ const RobustDataStrategies = () => {
               </section>
 
               {/* Point 4 */}
-              <section className="bg-blue-50 p-6 rounded-xl border border-blue-100 hover:shadow-md transition-shadow duration-300">
+              <section className="bg-red-50 p-6 rounded-xl border border-red-100 hover:shadow-md transition-shadow duration-300">
                 <div className="flex items-start">
                   <div className="bg-[#314158]/10 p-3 rounded-lg mr-4">
                     <Building className="w-6 h-6 text-[#314158]" />
@@ -360,7 +360,7 @@ const RobustDataStrategies = () => {
               </section>
 
               {/* Point 5 */}
-              <section className="bg-blue-50 p-6 rounded-xl border border-blue-100 hover:shadow-md transition-shadow duration-300">
+              <section className="bg-red-50 p-6 rounded-xl border border-red-100 hover:shadow-md transition-shadow duration-300">
                 <div className="flex items-start">
                   <div className="bg-[#314158]/10 p-3 rounded-lg mr-4">
                     <Server className="w-6 h-6 text-[#314158]" />

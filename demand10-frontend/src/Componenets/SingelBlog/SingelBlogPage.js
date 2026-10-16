@@ -83,7 +83,7 @@ export default function ArticleDetail({ blogDetail }) {
           <p className="text-gray-600 mb-6">The requested article could not be loaded.</p>
           <button
             onClick={() => router.back()}
-            className="bg-gradient-to-r from-[#265ba3] to-blue-700 text-white px-6 py-2 rounded-lg hover:from-[#1e4a86] hover:to-blue-800 transition-all duration-300 shadow-md hover:shadow-lg"
+            className="bg-gradient-to-r from-[#E11D2E] to-red-700 text-white px-6 py-2 rounded-lg hover:from-[#B91C1C] hover:to-blue-800 transition-all duration-300 shadow-md hover:shadow-lg"
           >
             Go Back
           </button>
@@ -116,7 +116,7 @@ export default function ArticleDetail({ blogDetail }) {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section with Gradient Background */}
-        <section className="relative bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] overflow-hidden rounded-2xl mb-8">
+        <section className="relative bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] overflow-hidden rounded-2xl mb-8">
           {/* Top Left Circles */}
           <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 opacity-20">
             <svg width="600" height="600" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -141,7 +141,7 @@ export default function ArticleDetail({ blogDetail }) {
             <div className="max-w-4xl mx-auto text-center">
               <Link 
                 href="/insights" 
-                className="inline-flex items-center text-blue-100 hover:text-white mb-6 transition-colors"
+                className="inline-flex items-center text-red-100 hover:text-white mb-6 transition-colors"
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to Insights
@@ -151,7 +151,7 @@ export default function ArticleDetail({ blogDetail }) {
                 {blogDetail.title}
               </h1>
               
-              <div className="flex flex-wrap items-center justify-center gap-6 text-blue-100">
+              <div className="flex flex-wrap items-center justify-center gap-6 text-red-100">
                 <div className="flex items-center">
                   <Calendar className="w-5 h-5 mr-2" />
                   <time dateTime={articleDate} className="text-sm">
@@ -193,7 +193,7 @@ export default function ArticleDetail({ blogDetail }) {
                 onError={() => setImageError(true)}
               />
             ) : (
-              <div className="w-full h-full bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] flex items-center justify-center">
+              <div className="w-full h-full bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] flex items-center justify-center">
                 <div className="text-center text-white">
                   <div className="text-4xl mb-2">📝</div>
                   <p className="text-xl font-medium">Article Image</p>
@@ -220,12 +220,12 @@ export default function ArticleDetail({ blogDetail }) {
             {(blogDetail.tags && blogDetail.tags.length > 0) && (
               <div className="mt-8 pt-6 border-t border-gray-200">
                 <div className="flex flex-wrap items-center gap-2">
-                  <Tag className="w-5 h-5 text-[#265ba3]" />
+                  <Tag className="w-5 h-5 text-[#E11D2E]" />
                   <div className="flex flex-wrap gap-2">
                     {blogDetail.tags.map((tag, index) => (
                       <span 
                         key={index} 
-                        className="text-sm bg-blue-50 text-[#265ba3] px-3 py-1 rounded-full hover:bg-[#265ba3] hover:text-white transition-colors"
+                        className="text-sm bg-red-50 text-[#E11D2E] px-3 py-1 rounded-full hover:bg-[#E11D2E] hover:text-white transition-colors"
                       >
                         {tag}
                       </span>
@@ -244,7 +244,7 @@ export default function ArticleDetail({ blogDetail }) {
                 <div className="flex space-x-4">
                   <Link
                     href="/insights"
-                    className="px-6 py-3 bg-gradient-to-r from-[#265ba3] to-blue-700 text-white font-medium rounded-lg hover:from-[#1e4a86] hover:to-blue-800 transition-all duration-300 shadow-md hover:shadow-lg flex items-center"
+                    className="px-6 py-3 bg-gradient-to-r from-[#E11D2E] to-red-700 text-white font-medium rounded-lg hover:from-[#B91C1C] hover:to-blue-800 transition-all duration-300 shadow-md hover:shadow-lg flex items-center"
                   >
                     <ArrowLeft className="w-4 h-4 mr-2" />
                     Back to Insights
@@ -258,7 +258,7 @@ export default function ArticleDetail({ blogDetail }) {
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Keywords</h3>
                   <div className="flex flex-wrap gap-2">
                     {blogDetail.keywords.map((keyword, index) => (
-                      <span key={index} className="text-xs bg-[#265ba3] text-white px-3 py-1 rounded-full">
+                      <span key={index} className="text-xs bg-[#E11D2E] text-white px-3 py-1 rounded-full">
                         {keyword}
                       </span>
                     ))}

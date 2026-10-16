@@ -82,7 +82,7 @@ export default async function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
       
         <NextTopLoader
-         color="#1a365d"
+         color="#0F1B3D"
           height={3}
           showSpinner={false}
           crawlSpeed={200}
@@ -99,10 +99,10 @@ export default async function RootLayout({ children }) {
           pauseOnHover
           theme="colored"
           style={{
-            '--toastify-color-info': '#4897de',
-            '--toastify-color-success': '#4897de',
-            '--toastify-color-warning': '#4897de',
-            '--toastify-color-error': '#4897de',
+            '--toastify-color-info': '#EF4444',
+            '--toastify-color-success': '#EF4444',
+            '--toastify-color-warning': '#EF4444',
+            '--toastify-color-error': '#EF4444',
           }}
         />
         <LayoutWrapper categories={categories}>

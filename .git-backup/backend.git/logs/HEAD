@@ -1,0 +1,8 @@
+0000000000000000000000000000000000000000 4de5096b358ef39737c5fec7c5738518bbf422b6 adnan545 <mdadnans545@gmail.com> 1790363806 -0700	clone: from https://github.com/itx-sherazi/demand10-backend.git
+4de5096b358ef39737c5fec7c5738518bbf422b6 c3f297b7886d310db7452e6b2b8d897de5ab7697 adnan545 <mdadnans545@gmail.com> 1790883987 -0700	commit: fix: Non-blocking startup + compression + CORS whitelist + trust proxy
+c3f297b7886d310db7452e6b2b8d897de5ab7697 615949424c1f9d52c7dc290529bc3ea2b84f7ac8 adnan-cmr <mdadnans121@gmail.com> 1790891552 -0700	commit: fix: Non-blocking startup + compression + CORS whitelist + trust proxy
+615949424c1f9d52c7dc290529bc3ea2b84f7ac8 b41031227e52819bad0f1e87706965fba72032f4 adnan-cmr <mdadnans121@gmail.com> 1791316445 -0700	commit: fix: Non-blocking startup + compression + CORS whitelist + trust proxy
+b41031227e52819bad0f1e87706965fba72032f4 d577d0f6c3bb0cff441af90db5f1d9ef0948c13b adnan-cmr <mdadnans121@gmail.com> 1791316661 -0700	pull --rebase origin main (start): checkout d577d0f6c3bb0cff441af90db5f1d9ef0948c13b
+d577d0f6c3bb0cff441af90db5f1d9ef0948c13b a7b396f7dab23ec1de00ae34e9be25b5271687b2 adnan-cmr <mdadnans121@gmail.com> 1791317360 -0700	rebase (continue): fix: Non-blocking startup + compression + CORS whitelist + trust proxy
+a7b396f7dab23ec1de00ae34e9be25b5271687b2 a7b396f7dab23ec1de00ae34e9be25b5271687b2 adnan-cmr <mdadnans121@gmail.com> 1791317378 -0700	rebase (finish): returning to refs/heads/main
+a7b396f7dab23ec1de00ae34e9be25b5271687b2 db2681a8f2f42fcc3ff448c14ebf58454cd5de52 adnan-cmr <mdadnans121@gmail.com> 1791317493 -0700	commit: fix: database

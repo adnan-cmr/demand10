@@ -40,8 +40,8 @@ const FocusDisplay = ({ focus = [] }) => {
       {
         data: focus.map(focusItem => focusItem.percentage),
         backgroundColor: [
-          '#4897de', // Primary button color
-          '#0249aa', // Secondary color
+          '#EF4444', // Primary button color
+          '#DC2626', // Secondary color
           '#3b82f6', // Replaced #a6871c with blue shade
           '#60a5fa',
           '#93c5fd',
@@ -51,8 +51,8 @@ const FocusDisplay = ({ focus = [] }) => {
         ].slice(0, focus.length),
         borderColor: [
           '#0f1e35',
-          '#4897de',
-          '#0249aa',
+          '#EF4444',
+          '#DC2626',
           '#3b82f6',
           '#60a5fa',
           '#059669',

@@ -197,7 +197,7 @@ const MspDirectoryPage = () => {
   return (
     <div className="bg-white text-[#1a1a1a] font-sans">
       {/* Header */}
-      <header className="bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] text-white py-12 md:py-16 lg:py-20 px-4 md:px-5 text-center">
+      <header className="bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] text-white py-12 md:py-16 lg:py-20 px-4 md:px-5 text-center">
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 md:mb-4 leading-tight">
           Explore Verified IT Service Providers Across the Globe
         </h1>
@@ -212,19 +212,19 @@ const MspDirectoryPage = () => {
       <div className="max-w-6xl mx-auto px-4 md:px-5 -mt-8 md:-mt-10 mb-12 md:mb-16 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5">
           <div className="bg-white p-4 md:p-6 text-center rounded-xl shadow-lg">
-            <h2 className="text-[#265ba3] text-2xl md:text-3xl font-bold">120,000+</h2>
+            <h2 className="text-[#E11D2E] text-2xl md:text-3xl font-bold">120,000+</h2>
             <p className="text-gray-600 text-xs md:text-base">IT Providers Documented</p>
           </div>
           <div className="bg-white p-4 md:p-6 text-center rounded-xl shadow-lg">
-            <h2 className="text-[#265ba3] text-2xl md:text-3xl font-bold">10+</h2>
+            <h2 className="text-[#E11D2E] text-2xl md:text-3xl font-bold">10+</h2>
             <p className="text-gray-600 text-xs md:text-base">Years of Market Coverage</p>
           </div>
           <div className="bg-white p-4 md:p-6 text-center rounded-xl shadow-lg">
-            <h2 className="text-[#265ba3] text-2xl md:text-3xl font-bold">60+</h2>
+            <h2 className="text-[#E11D2E] text-2xl md:text-3xl font-bold">60+</h2>
             <p className="text-gray-600 text-xs md:text-base">Countries Indexed</p>
           </div>
           <div className="bg-white p-4 md:p-6 text-center rounded-xl shadow-lg">
-            <h2 className="text-[#265ba3] text-2xl md:text-3xl font-bold">Quarterly</h2>
+            <h2 className="text-[#E11D2E] text-2xl md:text-3xl font-bold">Quarterly</h2>
             <p className="text-gray-600 text-xs md:text-base">Analyst-Verified Refresh</p>
           </div>
         </div>
@@ -425,7 +425,7 @@ const MspDirectoryPage = () => {
           <div className="text-center mt-8 md:mt-12 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
             <button
               onClick={() => setShowOrderReviewForm(true)}
-              className="w-full sm:w-auto bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] hover:opacity-90 text-white font-semibold py-2.5 md:py-3 px-5 md:px-6 rounded-md transition duration-300 cursor-pointer text-sm md:text-base"
+              className="w-full sm:w-auto bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] hover:opacity-90 text-white font-semibold py-2.5 md:py-3 px-5 md:px-6 rounded-md transition duration-300 cursor-pointer text-sm md:text-base"
             >
               Request Sample Report
             </button>
@@ -525,7 +525,7 @@ const MspDirectoryPage = () => {
           <div className="text-center mt-8 md:mt-12 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
             <button
               onClick={() => setShowOrderReviewForm(true)}
-              className="w-full sm:w-auto bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] hover:opacity-90 text-white font-semibold py-2.5 md:py-3 px-5 md:px-6 rounded-md transition duration-300 cursor-pointer text-sm md:text-base"
+              className="w-full sm:w-auto bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] hover:opacity-90 text-white font-semibold py-2.5 md:py-3 px-5 md:px-6 rounded-md transition duration-300 cursor-pointer text-sm md:text-base"
             >
               Request Sample CSV / PDF
             </button>
@@ -712,7 +712,7 @@ const MspDirectoryPage = () => {
              </table>
            </div>
 
-           <div className="bg-[#eff6ff] border-l-4 border-[#265ba3] p-6 rounded-md mb-10">
+           <div className="bg-[#eff6ff] border-l-4 border-[#E11D2E] p-6 rounded-md mb-10">
              <h3 className="text-gray-900 text-xl font-bold mb-2">Built for Strategy, Investment & Advisory Teams</h3>
              <p className="text-gray-700">
                Demand10 is designed for organizations that require defensible, audit-ready, and presentation-ready datasets. Our reports support consulting engagements, private equity investments, corporate development initiatives, and board-level decision-making.
@@ -722,7 +722,7 @@ const MspDirectoryPage = () => {
               <div className="text-center mt-8 md:mt-12 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
             <button
               onClick={() => setShowOrderReviewForm(true)}
-              className="w-full sm:w-auto bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] hover:opacity-90 text-white font-semibold py-2.5 md:py-3 px-5 md:px-6 rounded-md transition duration-300 cursor-pointer text-sm md:text-base"
+              className="w-full sm:w-auto bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] hover:opacity-90 text-white font-semibold py-2.5 md:py-3 px-5 md:px-6 rounded-md transition duration-300 cursor-pointer text-sm md:text-base"
             >
               Request Sample CSV / PDF
             </button>

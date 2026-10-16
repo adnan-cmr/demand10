@@ -118,7 +118,7 @@ export default async function Page({ params }) {
           </p>
           <button
             onClick={() => window.history.back()}
-            className="bg-gradient-to-r from-[#265ba3] to-blue-700 text-white px-6 py-2 rounded-lg hover:from-[#1e4a86] hover:to-blue-800 transition-all duration-300 shadow-md hover:shadow-lg"
+            className="bg-gradient-to-r from-[#E11D2E] to-red-700 text-white px-6 py-2 rounded-lg hover:from-[#B91C1C] hover:to-blue-800 transition-all duration-300 shadow-md hover:shadow-lg"
           >
             Go Back
           </button>

@@ -48,7 +48,7 @@ const TermsOfUse = () => {
     <>
     <div>
        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] overflow-hidden min-h-[50vh] flex items-center">
+        <section className="relative bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] overflow-hidden min-h-[50vh] flex items-center">
 
           
         

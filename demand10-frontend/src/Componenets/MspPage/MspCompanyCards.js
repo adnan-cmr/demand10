@@ -38,7 +38,7 @@ const MspCompanyCards = ({ companies, onOpenForm }) => {
                 <div
                   onClick={() => toggleCompany(index)}
                   className={`hidden md:grid px-4 md:px-6 py-4 grid-cols-12 gap-2 md:gap-4 items-center cursor-pointer transition-all ${
-                    expandedCompany === index ? 'bg-white border-l-4 border-[#265ba3]' : 'hover:bg-gray-50'
+                    expandedCompany === index ? 'bg-white border-l-4 border-[#E11D2E]' : 'hover:bg-gray-50'
                   }`}
                 >
                   {/* Company Name & Logo */}
@@ -89,7 +89,7 @@ const MspCompanyCards = ({ companies, onOpenForm }) => {
                 <div
                   onClick={() => toggleCompany(index)}
                   className={`md:hidden px-4 py-4 cursor-pointer transition-all ${
-                    expandedCompany === index ? 'bg-white border-l-4 border-[#265ba3]' : 'hover:bg-gray-50'
+                    expandedCompany === index ? 'bg-white border-l-4 border-[#E11D2E]' : 'hover:bg-gray-50'
                   }`}
                 >
                   <div className="flex items-start justify-between gap-3">
@@ -133,7 +133,7 @@ const MspCompanyCards = ({ companies, onOpenForm }) => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                       {/* General Info */}
                       <div>
-                        <h3 className="text-base md:text-lg font-bold text-gray-900 mb-3 md:mb-4 pb-2 border-b-2 border-[#265ba3]">
+                        <h3 className="text-base md:text-lg font-bold text-gray-900 mb-3 md:mb-4 pb-2 border-b-2 border-[#E11D2E]">
                           General Info
                         </h3>
                         <div className="space-y-2 md:space-y-3">
@@ -162,15 +162,15 @@ const MspCompanyCards = ({ companies, onOpenForm }) => {
 
                       {/* Contact & Partnership Info */}
                       <div>
-                        <h3 className="text-base md:text-lg font-bold text-gray-900 mb-3 md:mb-4 pb-2 border-b-2 border-[#265ba3]">
+                        <h3 className="text-base md:text-lg font-bold text-gray-900 mb-3 md:mb-4 pb-2 border-b-2 border-[#E11D2E]">
                           Contact Info
                         </h3>
                         <div className="space-y-2 md:space-y-3">
                           <div>
                             <p className="text-xs text-gray-500 mb-1">Phone</p>
                             <div className="flex items-center gap-2">
-                              <Phone className="w-4 h-4 text-[#265ba3] flex-shrink-0" />
-                              <a href={`tel:${company.phone}`} className="text-sm text-gray-800 font-semibold hover:text-[#265ba3] transition">
+                              <Phone className="w-4 h-4 text-[#E11D2E] flex-shrink-0" />
+                              <a href={`tel:${company.phone}`} className="text-sm text-gray-800 font-semibold hover:text-[#E11D2E] transition">
                                 {company.phone}
                               </a>
                             </div>
@@ -178,7 +178,7 @@ const MspCompanyCards = ({ companies, onOpenForm }) => {
                           <div>
                             <p className="text-xs text-gray-500 mb-1">Address</p>
                             <div className="flex items-start gap-2">
-                              <MapPin className="w-4 h-4 text-[#265ba3] flex-shrink-0 mt-0.5" />
+                              <MapPin className="w-4 h-4 text-[#E11D2E] flex-shrink-0 mt-0.5" />
                               <p className="text-sm text-gray-800 font-semibold break-words">{company.address}</p>
                             </div>
                           </div>
@@ -187,7 +187,7 @@ const MspCompanyCards = ({ companies, onOpenForm }) => {
                             <Link
                               href={company.website}
                               target="_blank"
-                              className="text-sm text-[#265ba3] hover:underline font-semibold break-all"
+                              className="text-sm text-[#E11D2E] hover:underline font-semibold break-all"
                             >
                               {company.website}
                             </Link>
@@ -219,7 +219,7 @@ const MspCompanyCards = ({ companies, onOpenForm }) => {
                           <Link
                             href={company.website}
                             target="_blank"
-                            className="block text-center bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] hover:opacity-90 text-white py-2.5 md:py-3 px-4 md:px-6 rounded-lg transition duration-300 font-semibold text-sm"
+                            className="block text-center bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] hover:opacity-90 text-white py-2.5 md:py-3 px-4 md:px-6 rounded-lg transition duration-300 font-semibold text-sm"
                           >
                             Visit {company.name}
                           </Link>
@@ -236,7 +236,7 @@ const MspCompanyCards = ({ companies, onOpenForm }) => {
 
       {/* Right Side - Descriptive Text */}
       <div className="lg:col-span-1">
-        <div className="bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] rounded-xl shadow-lg p-6 md:p-8 text-white lg:sticky lg:top-4">
+        <div className="bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] rounded-xl shadow-lg p-6 md:p-8 text-white lg:sticky lg:top-4">
           <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">
             Explore Top MSP Companies
           </h3>
@@ -270,7 +270,7 @@ const MspCompanyCards = ({ companies, onOpenForm }) => {
             </p>
             <button 
               onClick={onOpenForm}
-              className="w-full bg-white text-[#265ba3] py-2 px-4 rounded-lg font-semibold text-sm hover:bg-gray-100 transition cursor-pointer"
+              className="w-full bg-white text-[#E11D2E] py-2 px-4 rounded-lg font-semibold text-sm hover:bg-gray-100 transition cursor-pointer"
             >
               Request Access
             </button>

@@ -10,9 +10,10 @@ export default function LayoutWrapper({ children, categories }) {
   const pathname = usePathname();
 
   const hideLayout =
-    pathname === "/admin/login" ||
-    pathname.startsWith("/intent-admin/dashboard") 
-
+    pathname.startsWith("/admin/dashboard") ||
+    pathname.startsWith("/vendor/dashboard") ||
+    pathname === "/login" ||
+    pathname === "/register";
   return (
     <>
       {!hideLayout && <Navbar categories={categories} />}

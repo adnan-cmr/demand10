@@ -60,7 +60,7 @@ const ContactFormCategory = ({ subCategory }) => {
   return (
     <div>
       <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/20 p-8 sticky top-8">
-        <h2 className="text-md font-bold text-gray-900 mb-8 flex justify-center items-center gap-3 bg-gradient-to-r from-[#1a365d] to-[#1a365d] text-white px-2 py-2 rounded-lg">
+        <h2 className="text-md font-bold text-gray-900 mb-8 flex justify-center items-center gap-3 bg-gradient-to-r from-[#0F1B3D] to-[#0F1B3D] text-white px-2 py-2 rounded-lg">
           Get {subCategory} List
         </h2>
 
@@ -78,7 +78,7 @@ const ContactFormCategory = ({ subCategory }) => {
                 onChange={handleInputChange}
                 placeholder="Enter your full name"
                 required
-                className="w-full border-2 border-gray-200 rounded-xl focus:ring-2 px-4 py-4 pr-12 text-sm transition-all duration-300 hover:border-gray-300 focus:outline-none focus:ring-[#1a365d]/20"
+                className="w-full border-2 border-gray-200 rounded-xl focus:ring-2 px-4 py-4 pr-12 text-sm transition-all duration-300 hover:border-gray-300 focus:outline-none focus:ring-[#0F1B3D]/20"
               />
               <User className="absolute right-4 top-4 text-gray-400 w-5 h-5" />
             </div>
@@ -97,7 +97,7 @@ const ContactFormCategory = ({ subCategory }) => {
                 onChange={handleInputChange}
                 placeholder="your@email.com"
                 required
-                className="w-full border-2 border-gray-200 rounded-xl px-4 py-4 pr-12 text-sm transition-all duration-300 hover:border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1a365d]/20"
+                className="w-full border-2 border-gray-200 rounded-xl px-4 py-4 pr-12 text-sm transition-all duration-300 hover:border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0F1B3D]/20"
               />
               <Mail className="absolute right-4 top-4 text-gray-400 w-5 h-5" />
             </div>
@@ -115,7 +115,7 @@ const ContactFormCategory = ({ subCategory }) => {
                 value={formData.phone}
                 onChange={handleInputChange}
                 placeholder="+1 (555) 123-4567"
-                className="w-full border-2 border-gray-200 rounded-xl px-4 py-4 pr-12 text-sm transition-all duration-300 hover:border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1a365d]/20"
+                className="w-full border-2 border-gray-200 rounded-xl px-4 py-4 pr-12 text-sm transition-all duration-300 hover:border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0F1B3D]/20"
               />
               <Phone className="absolute right-4 top-4 text-gray-400 w-5 h-5" />
             </div>
@@ -132,14 +132,14 @@ const ContactFormCategory = ({ subCategory }) => {
               onChange={handleInputChange}
               placeholder="Tell us about your project or inquiry..."
               rows={4}
-              className="w-full rounded-xl border-2 border-gray-200 resize-none px-4 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-[#1a365d]/20"
+              className="w-full rounded-xl border-2 border-gray-200 resize-none px-4 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-[#0F1B3D]/20"
             />
           </div>
 
           <button
             type="submit"
             disabled={isSubmitting}
-            className="group w-full bg-gradient-to-r from-[#1a365d] to-[#1a365d] text-white py-4 rounded-xl font-semibold hover:from-[#1a365d] hover:to-[#1a365d] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105"
+            className="group w-full bg-gradient-to-r from-[#0F1B3D] to-[#0F1B3D] text-white py-4 rounded-xl font-semibold hover:from-[#0F1B3D] hover:to-[#0F1B3D] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105"
           >
             {isSubmitting ? (
               <>
@@ -175,10 +175,10 @@ const ContactFormCategory = ({ subCategory }) => {
             </p>
             <p className="text-sm text-gray-600 mb-4">
               You&apos;ve shown interest in: <strong>{subCategory}</strong><br />
-              We consider you a <span className="text-[#1a365d] font-semibold">trusted lead</span> for this category.
+              We consider you a <span className="text-[#0F1B3D] font-semibold">trusted lead</span> for this category.
             </p>
             <button
-              className="mt-2 bg-[#1a365d] text-white px-6 py-2 cursor-pointer rounded-xl hover:bg-[#3dbcb3] transition"
+              className="mt-2 bg-[#0F1B3D] text-white px-6 py-2 cursor-pointer rounded-xl hover:bg-[#3dbcb3] transition"
               onClick={() => setShowPopup(false)}
             >
               Got it!

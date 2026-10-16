@@ -40,8 +40,8 @@ const ClientsDisplay = ({ clients = [] }) => {
       {
         data: clients.map(client => client.percentage),
         backgroundColor: [
-          '#4897de', // Primary button color
-          '#0249aa', // Secondary color
+          '#EF4444', // Primary button color
+          '#DC2626', // Secondary color
           '#3b82f6', // Replaced #a6871c with blue shade
           '#60a5fa',
           '#93c5fd',
@@ -51,8 +51,8 @@ const ClientsDisplay = ({ clients = [] }) => {
         ].slice(0, clients.length),
         borderColor: [
           '#0f1e35',
-          '#4897de',
-          '#0249aa',
+          '#EF4444',
+          '#DC2626',
           '#3b82f6',
           '#60a5fa',
           '#059669',
@@ -107,7 +107,7 @@ const ClientsDisplay = ({ clients = [] }) => {
             {clients.map((client, index) => (
               <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg border border-gray-200">
                 <span className="font-medium text-black">{client.clientSegment}</span>
-                <span className="font-bold text-[#4897de]">{client.percentage}%</span>
+                <span className="font-bold text-[#EF4444]">{client.percentage}%</span>
               </div>
             ))}
           </div>

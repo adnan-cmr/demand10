@@ -85,7 +85,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
   if (!user) {
     return (
       <div className="bg-white mx-auto text-center transition-all">
-        <div className="bg-gradient-to-br from-[#4897de] to-[#0249aa] text-white rounded-2xl w-20 h-20 flex items-center justify-center mx-auto mb-6">
+        <div className="bg-gradient-to-br from-[#EF4444] to-[#DC2626] text-white rounded-2xl w-20 h-20 flex items-center justify-center mx-auto mb-6">
           <FaUserEdit className="h-10 w-10" />
         </div>
         <h2 className="text-3xl font-bold text-black mb-4">Sign In to Write Review</h2>
@@ -101,7 +101,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
             const event = new CustomEvent('showAuthForm');
             window.dispatchEvent(event);
           }}
-          className="px-6 py-3 bg-gradient-to-br from-[#4897de] to-[#0249aa] text-white rounded-xl font-semibold hover:from-[#0249aa] hover:to-[#4897de] transition-all shadow-md hover:shadow-lg duration-300 flex items-center mx-auto"
+          className="px-6 py-3 bg-gradient-to-br from-[#EF4444] to-[#DC2626] text-white rounded-xl font-semibold hover:from-[#DC2626] hover:to-[#EF4444] transition-all shadow-md hover:shadow-lg duration-300 flex items-center mx-auto"
         >
           <FaUserEdit className="mr-2" />
           Sign In to Write Review
@@ -110,7 +110,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
         <div className="mt-6 text-gray-600">
           <p>Already have an account? 
             <span 
-              className="text-[#4897de] font-semibold cursor-pointer hover:underline ml-1"
+              className="text-[#EF4444] font-semibold cursor-pointer hover:underline ml-1"
               onClick={() => {
                 const event = new CustomEvent('showAuthForm');
                 window.dispatchEvent(event);
@@ -121,7 +121,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
           </p>
           <p className="mt-2">New user? 
             <span 
-              className="text-[#4897de] font-semibold cursor-pointer hover:underline ml-1"
+              className="text-[#EF4444] font-semibold cursor-pointer hover:underline ml-1"
               onClick={() => {
                 const event = new CustomEvent('showAuthForm');
                 window.dispatchEvent(event);
@@ -149,7 +149,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
         
         <button
           onClick={() => window.location.reload()}
-          className="px-6 py-3 bg-gradient-to-br from-[#4897de] to-[#0249aa] text-white rounded-xl font-semibold hover:from-[#0249aa] hover:to-[#4897de] transition-all shadow-md hover:shadow-lg duration-300 flex items-center mx-auto"
+          className="px-6 py-3 bg-gradient-to-br from-[#EF4444] to-[#DC2626] text-white rounded-xl font-semibold hover:from-[#DC2626] hover:to-[#EF4444] transition-all shadow-md hover:shadow-lg duration-300 flex items-center mx-auto"
         >
           <FaArrowLeft className="mr-2" />
           Try Again
@@ -407,7 +407,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
     } else {
         toast.error('Please fix the errors before proceeding', {
         style: {
-          backgroundColor: '#4897de',
+          backgroundColor: '#EF4444',
           color: 'white'
         }
       });
@@ -429,7 +429,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
     if (!validateStep(currentStep)) {
       toast.error('Please fix the errors before submitting',{
          style: {
-          backgroundColor: '#4897de',
+          backgroundColor: '#EF4444',
           color: 'white'
         }
       });
@@ -450,7 +450,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
       if (response.ok) {
         toast.success('Review submitted successfully!',{
            style: {
-          backgroundColor: '#4897de',
+          backgroundColor: '#EF4444',
           color: 'white'
         }
         });
@@ -486,7 +486,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
       } else {
         toast.error(response.message || 'Failed to submit review',{
            style: {
-          backgroundColor: '#4897de',
+          backgroundColor: '#EF4444',
           color: 'white'
         }
         });
@@ -496,7 +496,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
       console.error('Error submitting review:', error);
       toast.error('Failed to submit review',{
          style: {
-          backgroundColor: '#4897de',
+          backgroundColor: '#EF4444',
           color: 'white'
         }
       });
@@ -517,7 +517,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
         return (
           <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200 transition-all hover:shadow-xl">
             <div className="flex items-center mb-6">
-              <div className="bg-gradient-to-br from-[#4897de] to-[#0249aa] rounded-xl p-3 mr-4 shadow-md">
+              <div className="bg-gradient-to-br from-[#EF4444] to-[#DC2626] rounded-xl p-3 mr-4 shadow-md">
                 <FaProjectDiagram className="h-6 w-6 text-white" />
               </div>
               <div>
@@ -537,7 +537,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
                   name="title"
                   value={formData.project.title}
                   onChange={handleProjectChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#4897de] focus:border-[#4897de] transition-all ${
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] transition-all ${
                     errors['project.title'] ? 'border-red-500 bg-red-50' : 'border-gray-300 hover:border-gray-400'
                   }`}
                   placeholder="e.g., Web Development for Management Consulting Firm"
@@ -560,7 +560,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
                   name="type"
                   value={formData.project.type}
                   onChange={handleProjectChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#4897de] focus:border-[#4897de] transition-all ${
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] transition-all ${
                     errors['project.type'] ? 'border-red-500 bg-red-50' : 'border-gray-300 hover:border-gray-400'
                   }`}
                   disabled={isSubmitting}
@@ -590,7 +590,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
                   name="budget"
                   value={formData.project.budget}
                   onChange={handleProjectChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4897de] focus:border-[#4897de] hover:border-gray-400 transition-all"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] hover:border-gray-400 transition-all"
                   disabled={isSubmitting}
                 >
                   <option value="">Select budget range</option>
@@ -612,7 +612,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
                   name="duration"
                   value={formData.project.duration}
                   onChange={handleProjectChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4897de] focus:border-[#4897de] hover:border-gray-400 transition-all"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] hover:border-gray-400 transition-all"
                   disabled={isSubmitting}
                 >
                   <option value="">Select duration</option>
@@ -636,7 +636,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
                 value={formData.project.summary}
                 onChange={handleProjectChange}
                 rows={3}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4897de] focus:border-[#4897de] hover:border-gray-400 transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] hover:border-gray-400 transition-all"
                 placeholder="Briefly describe the project and its objectives..."
                 disabled={isSubmitting}
               ></textarea>
@@ -653,7 +653,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
         return (
           <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200 transition-all hover:shadow-xl">
             <div className="flex items-center mb-6">
-              <div className="bg-gradient-to-br from-[#4897de] to-[#0249aa] rounded-xl p-3 mr-4 shadow-md">
+              <div className="bg-gradient-to-br from-[#EF4444] to-[#DC2626] rounded-xl p-3 mr-4 shadow-md">
                 <FaChartLine className="h-6 w-6 text-white" />
               </div>
               <div>
@@ -687,7 +687,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
                 <label className="block text-sm font-semibold text-black mb-3 flex items-center">
-                  <FaMedal className="mr-2 text-[#4897de]" />
+                  <FaMedal className="mr-2 text-[#EF4444]" />
                   Quality * 
                   {errors['ratings.quality'] && (
                     <span className="text-red-600 text-sm font-normal ml-2 flex items-center">
@@ -703,7 +703,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
               
               <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
                 <label className="block text-sm font-semibold text-black mb-3 flex items-center">
-                  <FaClock className="mr-2 text-[#4897de]" />
+                  <FaClock className="mr-2 text-[#EF4444]" />
                   Schedule * 
                   {errors['ratings.schedule'] && (
                     <span className="text-red-600 text-sm font-normal ml-2 flex items-center">
@@ -719,7 +719,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
               
               <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
                 <label className="block text-sm font-semibold text-black mb-3 flex items-center">
-                  <FaMoneyBillWave className="mr-2 text-[#4897de]" />
+                  <FaMoneyBillWave className="mr-2 text-[#EF4444]" />
                   Cost * 
                   {errors['ratings.cost'] && (
                     <span className="text-red-600 text-sm font-normal ml-2 flex items-center">
@@ -735,7 +735,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
               
               <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
                 <label className="block text-sm font-semibold text-black mb-3 flex items-center">
-                  <FaThumbsUp className="mr-2 text-[#4897de]" />
+                  <FaThumbsUp className="mr-2 text-[#EF4444]" />
                   Willing to Refer * 
                   {errors['ratings.willingToRefer'] && (
                     <span className="text-red-600 text-sm font-normal ml-2 flex items-center">
@@ -758,7 +758,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
             {/* Review Text Section */}
             <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200 transition-all hover:shadow-xl">
               <div className="flex items-center mb-6">
-                <div className="bg-gradient-to-br from-[#4897de] to-[#0249aa] rounded-xl p-3 mr-4 shadow-md">
+                <div className="bg-gradient-to-br from-[#EF4444] to-[#DC2626] rounded-xl p-3 mr-4 shadow-md">
                   <FaEdit className="h-6 w-6 text-white" />
                 </div>
                 <div>
@@ -783,7 +783,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
                   value={formData.reviewText}
                   onChange={handleReviewTextChange}
                   rows={6}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#4897de] focus:border-[#4897de] transition-all ${
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] transition-all ${
                     errors.reviewText ? 'border-red-500 bg-red-50' : 'border-gray-300 hover:border-gray-400'
                   }`}
                   placeholder="Share your detailed experience with this company. What went well? What could have been improved?"
@@ -806,7 +806,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
                   value={formData.feedbackSummary}
                   onChange={handleReviewTextChange}
                   rows={3}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4897de] focus:border-[#4897de] hover:border-gray-400 transition-all"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] hover:border-gray-400 transition-all"
                   placeholder="Provide a brief summary of your feedback..."
                   disabled={isSubmitting}
                 ></textarea>
@@ -821,7 +821,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
             {/* Reviewer Information Section */}
             <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200 transition-all hover:shadow-xl">
               <div className="flex items-center mb-6">
-                <div className="bg-gradient-to-br from-[#4897de] to-[#0249aa] rounded-xl p-3 mr-4 shadow-md">
+                <div className="bg-gradient-to-br from-[#EF4444] to-[#DC2626] rounded-xl p-3 mr-4 shadow-md">
                   <FaUserEdit className="h-6 w-6 text-white" />
                 </div>
                 <div>
@@ -844,7 +844,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
                     name="name"
                     value={formData.reviewer.name}
                     onChange={handleReviewerChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#4897de] focus:border-[#4897de] transition-all ${
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] transition-all ${
                       errors['reviewer.name'] ? 'border-red-500 bg-red-50' : 'border-gray-300 hover:border-gray-400'
                     }`}
                     placeholder="Enter your full name"
@@ -868,7 +868,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
                     name="designation"
                     value={formData.reviewer.designation}
                     onChange={handleReviewerChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4897de] focus:border-[#4897de] hover:border-gray-400 transition-all"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] hover:border-gray-400 transition-all"
                     placeholder="e.g., Project Manager, CTO, etc."
                     disabled={isSubmitting}
                   />
@@ -887,7 +887,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
                     name="companyName"
                     value={formData.reviewer.companyName}
                     onChange={handleReviewerChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4897de] focus:border-[#4897de] hover:border-gray-400 transition-all"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] hover:border-gray-400 transition-all"
                     placeholder="Enter your company name"
                     disabled={isSubmitting}
                   />
@@ -905,7 +905,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
                     name="industry"
                     value={formData.reviewer.industry}
                     onChange={handleReviewerChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4897de] focus:border-[#4897de] hover:border-gray-400 transition-all"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] hover:border-gray-400 transition-all"
                     disabled={isSubmitting}
                   >
                     <option value="">Select industry</option>
@@ -928,7 +928,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
                     name="location"
                     value={formData.reviewer.location}
                     onChange={handleReviewerChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4897de] focus:border-[#4897de] hover:border-gray-400 transition-all"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] hover:border-gray-400 transition-all"
                     placeholder="e.g., New York, NY or London, UK"
                     disabled={isSubmitting}
                   />
@@ -946,7 +946,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
                     name="employees"
                     value={formData.reviewer.employees}
                     onChange={handleReviewerChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4897de] focus:border-[#4897de] hover:border-gray-400 transition-all"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] hover:border-gray-400 transition-all"
                     disabled={isSubmitting}
                   >
                     <option value="">Select company size</option>
@@ -968,7 +968,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
                     name="interviewMethod"
                     value={formData.reviewer.interviewMethod}
                     onChange={handleReviewerChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4897de] focus:border-[#4897de] hover:border-gray-400 transition-all"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#EF4444] focus:border-[#EF4444] hover:border-gray-400 transition-all"
                     disabled={isSubmitting}
                   >
                     <option value="">Select interview method</option>
@@ -984,7 +984,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
             <div className="bg-[#f8fafc] border border-black/20 rounded-2xl p-6">
               <div className="flex items-start">
                 <div className="flex-shrink-0 mt-1">
-                  <FaInfoCircle className="h-5 w-5 text-[#4897de]" />
+                  <FaInfoCircle className="h-5 w-5 text-[#EF4444]" />
                 </div>
                 <div className="ml-3">
                   <h3 className="font-semibold text-black mb-2">Review Submission</h3>
@@ -1022,7 +1022,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
         </div>
         <div className="w-full bg-gray-200 rounded-full h-2.5">
           <div 
-            className="bg-gradient-to-r from-[#4897de] to-[#0249aa] h-2.5 rounded-full transition-all duration-500 ease-in-out" 
+            className="bg-gradient-to-r from-[#EF4444] to-[#DC2626] h-2.5 rounded-full transition-all duration-500 ease-in-out" 
             style={{ width: `${(currentStep / 3) * 100}%` }}
           ></div>
         </div>
@@ -1051,7 +1051,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
               <button
                 type="button"
                 onClick={handleNext}
-                className="px-5 py-2.5 bg-gradient-to-br from-[#4897de] to-[#0249aa] text-white rounded-lg font-semibold hover:from-[#0249aa] hover:to-[#4897de] transition-all flex items-center shadow-md hover:shadow-lg"
+                className="px-5 py-2.5 bg-gradient-to-br from-[#EF4444] to-[#DC2626] text-white rounded-lg font-semibold hover:from-[#DC2626] hover:to-[#EF4444] transition-all flex items-center shadow-md hover:shadow-lg"
               >
                 Next
                 <FaArrowRight className="ml-2" />
@@ -1060,7 +1060,7 @@ export default function ReviewForm({ selectedCompany, user, onReviewSubmitted, o
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="px-5 py-2.5 bg-gradient-to-br from-[#4897de] to-[#0249aa] text-white rounded-lg font-semibold hover:from-[#0249aa] hover:to-[#4897de] transition-all flex items-center shadow-md hover:shadow-lg"
+                className="px-5 py-2.5 bg-gradient-to-br from-[#EF4444] to-[#DC2626] text-white rounded-lg font-semibold hover:from-[#DC2626] hover:to-[#EF4444] transition-all flex items-center shadow-md hover:shadow-lg"
               >
                 {isSubmitting ? (
                   <>

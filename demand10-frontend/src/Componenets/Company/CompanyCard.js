@@ -62,7 +62,7 @@ const CompanyCard = ({ company, subcategoryContext }) => {
 
   return (
     <article
-      className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden group relative hover:border-[#1a365d]/30"
+      className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden group relative hover:border-[#0F1B3D]/30"
       itemScope
       itemType="https://schema.org/Organization"
     >
@@ -107,8 +107,8 @@ const CompanyCard = ({ company, subcategoryContext }) => {
             
             <div className="flex flex-col items-center md:items-start">
               <div className="flex items-center gap-2 mb-1">
-                <Building2 className="w-4 h-4 text-[#0249aa]" />
-                <span className="text-xs font-medium text-[#0249aa] uppercase tracking-wide">
+                <Building2 className="w-4 h-4 text-[#DC2626]" />
+                <span className="text-xs font-medium text-[#DC2626] uppercase tracking-wide">
                   {effectiveSubcategory?.name || 'Company'}
                 </span>
               </div>
@@ -116,7 +116,7 @@ const CompanyCard = ({ company, subcategoryContext }) => {
               {company?.industryTags &&
                 company.industryTags.length > 0 && (
                   <span
-                    className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-blue-50 text-[#0249aa] mt-1"
+                    className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-red-50 text-[#DC2626] mt-1"
                     itemProp="industry"
                   >
                     {typeof company.industryTags[0] === 'object' && company.industryTags[0] !== null 
@@ -140,7 +140,7 @@ const CompanyCard = ({ company, subcategoryContext }) => {
             >
               <div className="flex flex-col h-full">
                 <h3
-                  className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-[#0249aa] transition-colors"
+                  className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-[#DC2626] transition-colors"
                   itemProp="name"
                 >
                   {company?.companyName}
@@ -225,7 +225,7 @@ const CompanyCard = ({ company, subcategoryContext }) => {
             className="flex-1"
           >
             <button
-              className="w-full cursor-pointer bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d]  text-white px-4 py-3 rounded-lg transition-colors font-semibold text-sm whitespace-nowrap flex items-center justify-center gap-2"
+              className="w-full cursor-pointer bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D]  text-white px-4 py-3 rounded-lg transition-colors font-semibold text-sm whitespace-nowrap flex items-center justify-center gap-2"
               aria-label={`View details of ${company?.companyName}`}
             >
               <span>View Profile</span>

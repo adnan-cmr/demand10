@@ -62,8 +62,8 @@ export default function ResetPasswordForm({ token }) {
             </h2>
           </div>
           <div className="bg-white shadow-xl rounded-xl p-6 text-center border border-gray-200">
-            <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-[#1a365d] bg-opacity-20">
-              <svg className="h-6 w-6 text-[#1a365d]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-[#0F1B3D] bg-opacity-20">
+              <svg className="h-6 w-6 text-[#0F1B3D]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
               </svg>
             </div>
@@ -71,7 +71,7 @@ export default function ResetPasswordForm({ token }) {
             <div className="mt-6">
               <button 
                 onClick={handleBackToHome} 
-                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-[#1a365d] hover:bg-[#1a365d] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1a365d] transition-all duration-200"
+                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-[#0F1B3D] hover:bg-[#0F1B3D] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0F1B3D] transition-all duration-200"
               >
                 Back to Home
               </button>
@@ -108,7 +108,7 @@ export default function ResetPasswordForm({ token }) {
                   required
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
-                  className="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#1a365d] focus:border-transparent transition-all duration-200"
+                  className="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0F1B3D] focus:border-transparent transition-all duration-200"
                   placeholder="Enter new password"
                 />
               </div>
@@ -124,7 +124,7 @@ export default function ResetPasswordForm({ token }) {
                   required
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                  className="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#1a365d] focus:border-transparent transition-all duration-200"
+                  className="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0F1B3D] focus:border-transparent transition-all duration-200"
                   placeholder="Confirm new password"
                 />
               </div>
@@ -134,7 +134,7 @@ export default function ResetPasswordForm({ token }) {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-[#1a365d] hover:bg-[#1a365d] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1a365d] disabled:opacity-50 transition-all duration-200 shadow-md hover:shadow-lg"
+                className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-[#0F1B3D] hover:bg-[#0F1B3D] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0F1B3D] disabled:opacity-50 transition-all duration-200 shadow-md hover:shadow-lg"
               >
                 {isLoading ? (
                   <>

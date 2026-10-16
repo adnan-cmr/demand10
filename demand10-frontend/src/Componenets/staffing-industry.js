@@ -41,7 +41,7 @@ const StaffingIndustryPage = () => {
       
 
       {/* Header */}
-      <header className="bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] text-white py-12 md:py-16 lg:py-20 px-4 md:px-5 text-center">
+      <header className="bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] text-white py-12 md:py-16 lg:py-20 px-4 md:px-5 text-center">
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 md:mb-4 leading-tight">
         Staffing Industry Data Reports
         </h1>
@@ -50,7 +50,7 @@ const StaffingIndustryPage = () => {
         </p>
         
         <div className="mt-6 md:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
-          <Link href="/recruitment-staffing" className="w-full sm:w-auto bg-white hover:bg-gray-50 text-[#265ba3] font-semibold py-2.5 md:py-3 px-5 md:px-6 rounded-md transition duration-300 text-sm md:text-base">
+          <Link href="/recruitment-staffing" className="w-full sm:w-auto bg-white hover:bg-gray-50 text-[#E11D2E] font-semibold py-2.5 md:py-3 px-5 md:px-6 rounded-md transition duration-300 text-sm md:text-base">
             Explore Workforce Data
           </Link>
           <button 
@@ -72,19 +72,19 @@ const StaffingIndustryPage = () => {
       <div className="max-w-6xl mx-auto px-4 md:px-5 -mt-8 md:-mt-10 mb-12 md:mb-16 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5">
           <div className="bg-white p-4 md:p-6 text-center rounded-xl shadow-lg">
-            <h2 className="text-[#265ba3] text-2xl md:text-3xl font-bold">18,000+</h2>
+            <h2 className="text-[#E11D2E] text-2xl md:text-3xl font-bold">18,000+</h2>
             <p className="text-gray-600 text-xs md:text-base">Workforce Firms Tracked</p>
           </div>
           <div className="bg-white p-4 md:p-6 text-center rounded-xl shadow-lg">
-            <h2 className="text-[#265ba3] text-2xl md:text-3xl font-bold">$700B+</h2>
+            <h2 className="text-[#E11D2E] text-2xl md:text-3xl font-bold">$700B+</h2>
             <p className="text-gray-600 text-xs md:text-base">Total Sector Coverage</p>
           </div>
           <div className="bg-white p-4 md:p-6 text-center rounded-xl shadow-lg">
-            <h2 className="text-[#265ba3] text-2xl md:text-3xl font-bold">300+</h2>
+            <h2 className="text-[#E11D2E] text-2xl md:text-3xl font-bold">300+</h2>
             <p className="text-gray-600 text-xs md:text-base">Research Engagements</p>
           </div>
           <div className="bg-white p-4 md:p-6 text-center rounded-xl shadow-lg">
-            <h2 className="text-[#265ba3] text-2xl md:text-3xl font-bold">96%</h2>
+            <h2 className="text-[#E11D2E] text-2xl md:text-3xl font-bold">96%</h2>
             <p className="text-gray-600 text-xs md:text-base">Repeat Client Rate</p>
           </div>
         </div>
@@ -124,8 +124,8 @@ const StaffingIndustryPage = () => {
             </div>
           </div>
 
-          <div className="border-2 border-[#265ba3] bg-[#eff6ff] p-4 md:p-5 rounded-[10px] my-5 md:my-[25px]">
-            <h4 className="text-[#1e4a86] mb-2 md:mb-2.5 text-base md:text-lg font-semibold">Sector Spotlight: Clinical Workforce Services Lead Growth</h4>
+          <div className="border-2 border-[#E11D2E] bg-[#eff6ff] p-4 md:p-5 rounded-[10px] my-5 md:my-[25px]">
+            <h4 className="text-[#B91C1C] mb-2 md:mb-2.5 text-base md:text-lg font-semibold">Sector Spotlight: Clinical Workforce Services Lead Growth</h4>
             <p className="text-left m-0 text-sm md:text-base text-[#444]">Clinical and allied health workforce services account for the largest share of sector revenue, underpinned by persistent talent shortages and structural demand from an aging global population. This segment continues to attract premium valuations and consolidation activity.</p>
           </div>
 
@@ -157,7 +157,7 @@ const StaffingIndustryPage = () => {
               {/* Healthcare Column */}
               <div className="bg-gray-50 rounded-xl p-5 border border-gray-100">
                 <div className="flex items-center gap-2 mb-4">
-                  <div className="w-3 h-3 rounded-full bg-[#265ba3]"></div>
+                  <div className="w-3 h-3 rounded-full bg-[#E11D2E]"></div>
                   <h3 className="font-bold text-gray-800">Healthcare Staffing</h3>
                 </div>
                 <div className="space-y-3">
@@ -175,7 +175,7 @@ const StaffingIndustryPage = () => {
                       </div>
                       <div className="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
                         <div 
-                          className="h-full bg-gradient-to-r from-[#265ba3] to-[#1e4a86] rounded-full" 
+                          className="h-full bg-gradient-to-r from-[#E11D2E] to-[#B91C1C] rounded-full" 
                           style={{ width: `${(item.val / 30) * 100}%` }}
                         ></div>
                       </div>
@@ -265,9 +265,9 @@ const StaffingIndustryPage = () => {
                    { name: "ManpowerGroup", share: 9, rank: 3 }
                  ].map(firm => (
                    <div key={firm.name} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-md transition-shadow">
-                     <div className="w-12 h-12 rounded-full bg-[#dbeafe] text-[#265ba3] flex items-center justify-center font-bold text-lg mb-3">#{firm.rank}</div>
+                     <div className="w-12 h-12 rounded-full bg-[#dbeafe] text-[#E11D2E] flex items-center justify-center font-bold text-lg mb-3">#{firm.rank}</div>
                      <h3 className="text-gray-900 font-bold text-lg mb-1">{firm.name}</h3>
-                     <div className="text-3xl font-extrabold text-[#265ba3]">{firm.share}%</div>
+                     <div className="text-3xl font-extrabold text-[#E11D2E]">{firm.share}%</div>
                      <p className="text-xs text-gray-500 mt-1">Global Market Share</p>
                    </div>
                  ))}
@@ -353,7 +353,7 @@ const StaffingIndustryPage = () => {
         <div className="max-w-[1200px] mx-auto px-4 md:px-5">
           <h2 className="text-center text-2xl md:text-[34px] mb-6 md:mb-[25px] text-[text-gray-900] font-bold">How Investors & Advisors Use Demand10 Data</h2>
 
-          <div className="bg-white border-l-4 border-[#265ba3] p-4 md:p-5 my-4 md:my-5 rounded-lg">
+          <div className="bg-white border-l-4 border-[#E11D2E] p-4 md:p-5 my-4 md:my-5 rounded-lg">
             <h4 className="text-gray-900 mb-2 md:mb-2.5 text-lg md:text-xl font-semibold">Engagement Snapshot: Workforce Vendor Optimization for a Large Industrial Client</h4>
             <p className="text-left my-2 md:my-2.5 text-sm md:text-base text-[#444]"><strong>Business Challenge:</strong> A global logistics operator sought to rationalize its contingent labor program, which spanned multiple workforce providers and lacked unified performance benchmarks.</p>
             <p className="text-left my-2 md:my-2.5 text-sm md:text-base text-[#444]"><strong>Demand10 Data Delivered:</strong></p>
@@ -378,7 +378,7 @@ const StaffingIndustryPage = () => {
             <p className="text-left my-2 md:my-2.5 text-sm md:text-base text-[#444]"><strong>Outcome:</strong> Workforce program restructuring delivered measurable cost improvements and improved time-to-productivity across critical operational roles.</p>
           </div>
 
-          <div className="bg-white border-l-4 border-[#265ba3] p-4 md:p-5 my-4 md:my-5 rounded-lg">
+          <div className="bg-white border-l-4 border-[#E11D2E] p-4 md:p-5 my-4 md:my-5 rounded-lg">
             <h4 className="text-gray-900 mb-2 md:mb-2.5 text-lg md:text-xl font-semibold">Investment Evaluation: Specialty Healthcare Staffing Platform Acquisition</h4>
             <p className="text-left my-2 md:my-2.5 text-sm md:text-base text-[#444]"><strong>Target Profile:</strong> A clinician placement platform operating across multiple regional markets with a focus on travel nursing and allied health.</p>
             <p className="text-left my-2 md:my-2.5 text-sm md:text-base text-[#444]"><strong>Research Findings:</strong></p>
@@ -391,7 +391,7 @@ const StaffingIndustryPage = () => {
                    { label: "Revenue Growth", target: "18.4%", market: "12-15%", status: "success" },
                    { label: "Client Retention", target: "92%", market: "85-90%", status: "success" }
                  ].map((metric, idx) => (
-                   <div key={idx} className={`p-4 rounded-lg border ${metric.status === 'success' ? 'border-[#265ba3]/30 bg-[#eff6ff]' : 'border-gray-200 bg-gray-50'}`}>
+                   <div key={idx} className={`p-4 rounded-lg border ${metric.status === 'success' ? 'border-[#E11D2E]/30 bg-[#eff6ff]' : 'border-gray-200 bg-gray-50'}`}>
                      <div className="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-2">{metric.label}</div>
                      <div className="flex justify-between items-end">
                        <div>
@@ -424,7 +424,7 @@ const StaffingIndustryPage = () => {
           <h2 className="text-center text-2xl md:text-[34px] mb-6 md:mb-[25px] text-[text-gray-900] font-bold">Segment-Level Research: Workforce Verticals Explored in Depth</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-[25px]">
             <div className="bg-white p-5 md:p-[25px] rounded-[14px] shadow-[0_5px_18px_rgba(0,0,0,0.08)] transition-transform duration-300 hover:-translate-y-1">
-              <h3 className="text-[#265ba3] mb-2 md:mb-2.5 text-xl md:text-[22px] font-semibold">Clinical & Healthcare Workforce</h3>
+              <h3 className="text-[#E11D2E] mb-2 md:mb-2.5 text-xl md:text-[22px] font-semibold">Clinical & Healthcare Workforce</h3>
               <div className="mermaid my-4 flex justify-center items-center min-h-[200px] overflow-x-auto">
 {`graph BT
     A[Travel Clinicians] --> B[High CAGR 2020-24]
@@ -438,11 +438,11 @@ const StaffingIndustryPage = () => {
                 <li className="mb-2 text-[#555] text-xs md:text-sm"><strong>Regulatory Factor:</strong> Staffing ratio mandates in multiple jurisdictions</li>
                 <li className="mb-2 text-[#555] text-xs md:text-sm"><strong>Tech Adoption:</strong> AI-assisted matching increasingly standard</li>
               </ul>
-              <button onClick={() => setShowOrderReviewForm(true)} className="w-full block text-center mt-4 bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] text-white py-3 md:py-3.5 px-6 md:px-7 rounded-md font-semibold transition-opacity duration-300 hover:opacity-90 text-sm md:text-base cursor-pointer">Access Clinical Workforce Report</button>
+              <button onClick={() => setShowOrderReviewForm(true)} className="w-full block text-center mt-4 bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] text-white py-3 md:py-3.5 px-6 md:px-7 rounded-md font-semibold transition-opacity duration-300 hover:opacity-90 text-sm md:text-base cursor-pointer">Access Clinical Workforce Report</button>
             </div>
             
             <div className="bg-white p-5 md:p-[25px] rounded-[14px] shadow-[0_5px_18px_rgba(0,0,0,0.08)] transition-transform duration-300 hover:-translate-y-1">
-              <h3 className="text-[#265ba3] mb-2 md:mb-2.5 text-xl md:text-[22px] font-semibold">Technology & Digital Talent Workforce</h3>
+              <h3 className="text-[#E11D2E] mb-2 md:mb-2.5 text-xl md:text-[22px] font-semibold">Technology & Digital Talent Workforce</h3>
               <div className="mermaid my-4 flex justify-center items-center min-h-[200px] overflow-x-auto">
 {`graph LR
     A[Distributed Work] --> B[Majority of Placements]
@@ -456,11 +456,11 @@ const StaffingIndustryPage = () => {
                 <li className="mb-2 text-[#555] text-xs md:text-sm"><strong>Work Flexibility:</strong> Majority of engagements are hybrid or remote</li>
                 <li className="mb-2 text-[#555] text-xs md:text-sm"><strong>Specialist Premiums:</strong> Advanced AI and cloud roles carry outsized bill rates</li>
               </ul>
-              <button onClick={() => setShowOrderReviewForm(true)} className="w-full block text-center mt-4 bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] text-white py-3 md:py-3.5 px-6 md:px-7 rounded-md font-semibold transition-opacity duration-300 hover:opacity-90 text-sm md:text-base cursor-pointer">Access Technology Workforce Report</button>
+              <button onClick={() => setShowOrderReviewForm(true)} className="w-full block text-center mt-4 bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] text-white py-3 md:py-3.5 px-6 md:px-7 rounded-md font-semibold transition-opacity duration-300 hover:opacity-90 text-sm md:text-base cursor-pointer">Access Technology Workforce Report</button>
             </div>
             
             <div className="bg-white p-5 md:p-[25px] rounded-[14px] shadow-[0_5px_18px_rgba(0,0,0,0.08)] transition-transform duration-300 hover:-translate-y-1">
-              <h3 className="text-[#265ba3] mb-2 md:mb-2.5 text-xl md:text-[22px] font-semibold">Light Industrial & Operations Staffing</h3>
+              <h3 className="text-[#E11D2E] mb-2 md:mb-2.5 text-xl md:text-[22px] font-semibold">Light Industrial & Operations Staffing</h3>
               <div className="mermaid my-4 flex justify-center items-center min-h-[200px] overflow-x-auto">
 {`graph TD
     A[Process Automation] --> B[Reshaping Role Mix]
@@ -474,7 +474,7 @@ const StaffingIndustryPage = () => {
                 <li className="mb-2 text-[#555] text-xs md:text-sm"><strong>Wage Pressure:</strong> Sustained increases across light industrial roles</li>
                 <li className="mb-2 text-[#555] text-xs md:text-sm"><strong>On-Demand Models:</strong> Growing platform-based fulfillment</li>
               </ul>
-              <button onClick={() => setShowOrderReviewForm(true)} className="w-full block text-center mt-4 bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] text-white py-3 md:py-3.5 px-6 md:px-7 rounded-md font-semibold transition-opacity duration-300 hover:opacity-90 text-sm md:text-base cursor-pointer">Access Industrial Workforce Report</button>
+              <button onClick={() => setShowOrderReviewForm(true)} className="w-full block text-center mt-4 bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] text-white py-3 md:py-3.5 px-6 md:px-7 rounded-md font-semibold transition-opacity duration-300 hover:opacity-90 text-sm md:text-base cursor-pointer">Access Industrial Workforce Report</button>
             </div>
           </div>
         </div>
@@ -554,7 +554,7 @@ const StaffingIndustryPage = () => {
           <h2 className="text-center text-2xl md:text-[34px] mb-6 md:mb-[25px] text-[text-gray-900] font-bold">Research Standards & Data Integrity Framework</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-[25px]">
             <div className="bg-white p-5 md:p-[25px] rounded-[14px] shadow-[0_5px_18px_rgba(0,0,0,0.08)] transition-transform duration-300 hover:-translate-y-1">
-              <h3 className="text-[#265ba3] mb-2 md:mb-2.5 text-xl md:text-[22px] font-semibold">How We Gather Market Intelligence</h3>
+              <h3 className="text-[#E11D2E] mb-2 md:mb-2.5 text-xl md:text-[22px] font-semibold">How We Gather Market Intelligence</h3>
               <div className="overflow-x-auto block my-4 md:my-5">
                 <table className="w-full border-collapse table">
                   <thead>
@@ -574,7 +574,7 @@ const StaffingIndustryPage = () => {
               </div>
             </div>
             <div className="bg-white p-5 md:p-[25px] rounded-[14px] shadow-[0_5px_18px_rgba(0,0,0,0.08)] transition-transform duration-300 hover:-translate-y-1">
-              <h3 className="text-[#265ba3] mb-2 md:mb-2.5 text-xl md:text-[22px] font-semibold">Our Data Quality Standards</h3>
+              <h3 className="text-[#E11D2E] mb-2 md:mb-2.5 text-xl md:text-[22px] font-semibold">Our Data Quality Standards</h3>
               <div className="overflow-x-auto block my-4 md:my-5">
                 <table className="w-full border-collapse table">
                   <thead>

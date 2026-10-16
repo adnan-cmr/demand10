@@ -264,7 +264,7 @@ export default function ManagedServiceProviders() {
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
                 {companiesToDisplay.map((company, index) => (
-                  <tr key={index} className="hover:bg-blue-50 transition-colors duration-200">
+                  <tr key={index} className="hover:bg-red-50 transition-colors duration-200">
                     <td className="px-6 py-5 whitespace-nowrap">
                       <div className="flex items-center">
                         <div className="flex-shrink-0 h-12 w-12 bg-white rounded-md border border-gray-200 p-1 shadow-sm">
@@ -288,7 +288,7 @@ export default function ManagedServiceProviders() {
                       <div className="text-sm text-gray-700 max-w-md">{company.description}</div>
                       <div className="mt-2 flex flex-wrap gap-2">
                         {company.description.toLowerCase().includes('cloud') && (
-                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-blue-800">
                             Cloud Solutions
                           </span>
                         )}

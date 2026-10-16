@@ -181,8 +181,8 @@ const TabPanel = ({ activeTab, services, focus, industries, industryTags, client
 
     // Colors matching reference image with new color scheme
      const colors = [
-      '#4897de', // Primary button color
-      '#0249aa', // Secondary color
+      '#EF4444', // Primary button color
+      '#DC2626', // Secondary color
       '#3b82f6', // Replaced #a6871c with blue shade
       '#60a5fa', // Light blue
       '#93c5fd', // Lighter blue
@@ -245,7 +245,7 @@ const TabPanel = ({ activeTab, services, focus, industries, industryTags, client
 
 
  // Colors for legend items
-  const colors = ['#4897de', '#0249aa', '#3b82f6', '#60a5fa', '#93c5fd', '#059669', '#10b981', '#34d399'];
+  const colors = ['#EF4444', '#DC2626', '#3b82f6', '#60a5fa', '#93c5fd', '#059669', '#10b981', '#34d399'];
 
   return (
     <div className="bg-white">
@@ -343,7 +343,7 @@ const CompanyDetail = ({ sampleCompanyData = {}, reviewsData = null }) => {
   const scrollbarStyle = `
     .custom-scrollbar {
       scrollbar-width: thin;
-      scrollbar-color: #4897de #ffffff;
+      scrollbar-color: #EF4444 #ffffff;
     }
     
     .custom-scrollbar::-webkit-scrollbar {
@@ -356,12 +356,12 @@ const CompanyDetail = ({ sampleCompanyData = {}, reviewsData = null }) => {
     }
     
     .custom-scrollbar::-webkit-scrollbar-thumb {
-      background-color: #4897de;
+      background-color: #EF4444;
       border-radius: 3px;
     }
     
     .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-      background-color: #0249aa;
+      background-color: #DC2626;
     }
     
     /* Hide scrollbar buttons (arrows) */
@@ -582,12 +582,12 @@ const CompanyDetail = ({ sampleCompanyData = {}, reviewsData = null }) => {
             {/* Company Name and Details */}
             <div className="flex-1">
               <div className="flex flex-wrap items-center gap-3 mb-2">
-                <h1 className="text-2xl font-bold text-[#1a365d]">
+                <h1 className="text-2xl font-bold text-[#0F1B3D]">
                   {companyName}
                 </h1>
                 {/* Verified Badge - Only show if company is verified */}
                 {isVerified && (
-                  <div className="flex items-center gap-1 bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] text-white px-2 py-1 rounded-full text-xs font-medium">
+                  <div className="flex items-center gap-1 bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] text-white px-2 py-1 rounded-full text-xs font-medium">
                     <Award size={12} />
                     <span>Verified</span>
                   </div>
@@ -609,7 +609,7 @@ const CompanyDetail = ({ sampleCompanyData = {}, reviewsData = null }) => {
                         key={i}
                         className={`w-4 h-4 ${
                           i < Math.floor(rating)
-                            ? "text-[#265ba3] fill-[#265ba3]"
+                            ? "text-[#E11D2E] fill-[#E11D2E]"
                             : "text-gray-300"
                         }`}
                       />
@@ -629,7 +629,7 @@ const CompanyDetail = ({ sampleCompanyData = {}, reviewsData = null }) => {
                   rel="noopener noreferrer"
                   prefetch={false}
                 >
-                  <button className="bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] text-white px-6 py-2 rounded-md font-medium text-sm transition-colors shadow-sm hover:shadow hover:bg-[#3eb0a3]">
+                  <button className="bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] text-white px-6 py-2 rounded-md font-medium text-sm transition-colors shadow-sm hover:shadow hover:bg-[#3eb0a3]">
                     Visit Website
                   </button>
                 </Link>
@@ -638,7 +638,7 @@ const CompanyDetail = ({ sampleCompanyData = {}, reviewsData = null }) => {
                 {!isVerified && (
                   <button 
                     onClick={() => setShowClaimForm(true)}
-                    className="border border-[#1e4a86] text-[#1e4a86] hover:bg-[#1e4a86] hover:text-white cursor-pointer px-5 py-2.5 rounded-lg font-medium text-sm transition-colors"
+                    className="border border-[#B91C1C] text-[#B91C1C] hover:bg-[#B91C1C] hover:text-white cursor-pointer px-5 py-2.5 rounded-lg font-medium text-sm transition-colors"
                   >
                     Claim Profile
                   </button>
@@ -667,50 +667,50 @@ const CompanyDetail = ({ sampleCompanyData = {}, reviewsData = null }) => {
 
                 {/* Company Stats Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mt-8">
-                <div className="bg-blue-50 rounded-lg p-4 border border-gray-200">
+                <div className="bg-red-50 rounded-lg p-4 border border-gray-200">
                   <div className="flex items-center gap-2 text-gray-700 mb-1">
                     <DollarSign size={16} />
                     <span className="text-sm font-medium">Min project size</span>
                   </div>
-                  <p className="font-semibold text-[#4897de]">
+                  <p className="font-semibold text-[#EF4444]">
                     {minimumProjectSize?.toLocaleString() || '50,000+'}
                   </p>
                 </div>
 
-                <div className="bg-blue-50 rounded-lg p-4 border border-gray-200">
+                <div className="bg-red-50 rounded-lg p-4 border border-gray-200">
                   <div className="flex items-center gap-2 text-gray-700 mb-1">
                     <Clock size={16} />
                     <span className="text-sm font-medium">Hourly rate</span>
                   </div>
-                  <p className="font-semibold text-[#4897de]">
+                  <p className="font-semibold text-[#EF4444]">
                     {hourlyRate || '50'} / hr
                   </p>
                 </div>
 
-                <div className="bg-blue-50 rounded-lg p-4 border border-gray-200">
+                <div className="bg-red-50 rounded-lg p-4 border border-gray-200">
                   <div className="flex items-center gap-2 text-gray-700 mb-1">
                     <Users size={16} />
                     <span className="text-sm font-medium">Employees</span>
                   </div>
-                  <p className="font-semibold text-[#4897de]">
+                  <p className="font-semibold text-[#EF4444]">
                     {employees || '10'}   
                   </p>
                 </div>
 
-                <div className="bg-blue-50 rounded-lg p-4 border border-gray-200">
+                <div className="bg-red-50 rounded-lg p-4 border border-gray-200">
                   <div className="flex items-center gap-2 text-gray-700 mb-1">
                     <MapPin size={16} />
                     <span className="text-sm font-medium">Locations</span>
                   </div>
-                  <p className="font-semibold text-[#4897de]">{companyCountry}</p>
+                  <p className="font-semibold text-[#EF4444]">{companyCountry}</p>
                 </div>
 
-                <div className="bg-blue-50 rounded-lg p-4 border border-gray-200">
+                <div className="bg-red-50 rounded-lg p-4 border border-gray-200">
                   <div className="flex items-center gap-2 text-gray-700 mb-1">
                     <Calendar size={16} />
                     <span className="text-sm font-medium">Year founded</span>
                   </div>
-                  <p className="font-semibold text-[#4897de]">
+                  <p className="font-semibold text-[#EF4444]">
                     Founded {foundedYear || '2003'}
                   </p>
                 </div>
@@ -733,7 +733,7 @@ const CompanyDetail = ({ sampleCompanyData = {}, reviewsData = null }) => {
                       id="tab-select"
                       value={activeTab}
                       onChange={(e) => setActiveTab(e.target.value)}
-                      className="block w-full rounded-md border-gray-300 shadow-sm focus:border-[#4897de] focus:ring-[#4897de] sm:text-sm p-2 border box-border appearance-none bg-white"
+                      className="block w-full rounded-md border-gray-300 shadow-sm focus:border-[#EF4444] focus:ring-[#EF4444] sm:text-sm p-2 border box-border appearance-none bg-white"
                     >
                       {tabs.map((tab) => {
                         return (
@@ -763,7 +763,7 @@ const CompanyDetail = ({ sampleCompanyData = {}, reviewsData = null }) => {
                           onClick={() => setActiveTab(tab)}
                           className={`flex-1 py-3 px-4 text-sm font-medium text-center whitespace-nowrap min-w-[80px] ${
                             activeTab === tab
-                              ? 'border-b-2 border-[#4897de] text-black bg-blue-50'
+                              ? 'border-b-2 border-[#EF4444] text-black bg-red-50'
                               : 'border-transparent text-gray-500 hover:text-black hover:border-gray-300'
                           } transition-colors`}
                         >

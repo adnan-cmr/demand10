@@ -82,7 +82,7 @@ const CityMspPage = async ({ params }) => {
           </p>
           <Link
             href="/" 
-            className="px-6 py-3 bg-[#265ba3] text-white font-medium rounded-lg hover:bg-[#1e4a86] transition-colors"
+            className="px-6 py-3 bg-[#E11D2E] text-white font-medium rounded-lg hover:bg-[#B91C1C] transition-colors"
           >
             Back to Home
           </Link>

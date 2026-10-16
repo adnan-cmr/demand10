@@ -40,7 +40,7 @@ const ContactFormCompany = ({ subCategory }) => {
       if (response.ok) {
         toast.success("Successfully submitted!", {
           style: {
-            backgroundColor: '#4897de',
+            backgroundColor: '#EF4444',
             color: 'white'
           }
         });
@@ -54,7 +54,7 @@ const ContactFormCompany = ({ subCategory }) => {
       } else {
         toast.error("Failed to submit form.", {
           style: {
-            backgroundColor: '#4897de',
+            backgroundColor: '#EF4444',
             color: 'white'
           }
         });
@@ -63,7 +63,7 @@ const ContactFormCompany = ({ subCategory }) => {
       console.error("Error:", error);
       toast.error("An error occurred. Please try again.", {
         style: {
-          backgroundColor: '#4897de',
+          backgroundColor: '#EF4444',
           color: 'white'
         }
       });
@@ -183,10 +183,10 @@ const ContactFormCompany = ({ subCategory }) => {
       </p>
       <p className="text-sm text-gray-600 mb-4">
         You’ve shown interest in: <strong>{subCategory}</strong><br />
-        We consider you a <span className="text-[#1a365d] font-semibold">trusted lead</span> for this category.
+        We consider you a <span className="text-[#0F1B3D] font-semibold">trusted lead</span> for this category.
       </p>
       <button
-        className="mt-2 bg-[#1a365d] text-white px-6 py-2 cursor-pointer rounded-xl hover:bg-[#3dbcb3] transition"
+        className="mt-2 bg-[#0F1B3D] text-white px-6 py-2 cursor-pointer rounded-xl hover:bg-[#3dbcb3] transition"
         onClick={() => setShowPopup(false)}
       >
         Got it!

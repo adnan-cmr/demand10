@@ -43,7 +43,7 @@ const PrivacyPolicy = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] overflow-hidden">
        
         <div className="absolute inset-0 bg-grid-white/[0.05]"></div>
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-18">
@@ -59,7 +59,7 @@ const PrivacyPolicy = () => {
               Your trust is our priority. Discover how we protect your data and respect your privacy as a valued B2B partner.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="#privacy" className="px-8 py-4 bg-white text-[#265ba3] font-bold rounded-lg hover:bg-white/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg">
+              <Link href="#privacy" className="px-8 py-4 bg-white text-[#E11D2E] font-bold rounded-lg hover:bg-white/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg">
                 Read Privacy Policy
               </Link>
               <Link href="#security" className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-all duration-300 text-lg">
@@ -274,7 +274,7 @@ const PrivacyPolicy = () => {
                   </div>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] rounded-xl p-6 text-white">
+                    <div className="bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] rounded-xl p-6 text-white">
                       <h3 className="text-xl font-semibold mb-3 flex items-center">
                         <ShieldCheck className="w-5 h-5 mr-2" />
                         How We Protect Your Data
@@ -299,7 +299,7 @@ const PrivacyPolicy = () => {
                       </ul>
                     </div>
                     
-                    <div className="bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] rounded-xl p-6 text-white">
+                    <div className="bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] rounded-xl p-6 text-white">
                       <h3 className="text-xl font-semibold mb-3 flex items-center">
                         <RefreshCw className="w-5 h-5 mr-2" />
                         Your Privacy Rights

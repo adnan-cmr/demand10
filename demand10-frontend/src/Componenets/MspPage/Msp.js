@@ -210,7 +210,7 @@ const benefits = [
               Top Managed Service Providers 2025: Find Your Perfect IT Partner
             </h1>
             <div className="w-24 h-1 bg-blue-300 mx-auto rounded-full mb-6"></div>
-            <p className="text-md md:text-xl text-blue-100 max-w-5xl mx-auto leading-relaxed mb-8">
+            <p className="text-md md:text-xl text-red-100 max-w-5xl mx-auto leading-relaxed mb-8">
               Discover the best managed service providers and managed security service providers for your business needs. Compare top-rated MSPs offering comprehensive IT support, cybersecurity solutions, cloud services, 24/7 network monitoring, and data backup & recovery. Find managed service providers near me with our verified directory of top MSPs and MSSPs.
             </p>
             
@@ -312,7 +312,7 @@ const benefits = [
                 </div>
               </div>
               
-              <div className="mt-8 p-6 bg-blue-50 rounded-lg border-l-4 border-[#314158]">
+              <div className="mt-8 p-6 bg-red-50 rounded-lg border-l-4 border-[#314158]">
                 <h4 className="font-bold text-gray-900 mb-2">Modern MSP Evolution:</h4>
                 <p className="text-gray-700">
                   Today&apos;s managed service providers have evolved beyond basic IT support to offer comprehensive technology ecosystems including AI-powered monitoring, advanced threat protection, and strategic consulting services. For specialized cybersecurity outsourcing and managed security services, explore our <Link href="/managed-security-service-providers" className="text-[#314158] hover:underline">managed security service providers</Link> directory.
@@ -336,7 +336,7 @@ const benefits = [
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            <div className="bg-blue-50 rounded-xl p-8 border border-blue-100">
+            <div className="bg-red-50 rounded-xl p-8 border border-red-100">
               <h3 className="text-2xl font-bold text-[#314158] mb-6">MSP (Managed Service Provider)</h3>
               <div className="space-y-4">
                 <div>

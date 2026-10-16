@@ -137,7 +137,7 @@ const Clients = ({ clients = [], onClientsChange }) => {
     <div className="space-y-8">
       <div className="text-center">
         <h2 className="text-2xl font-bold text-gray-800 mb-2">Client Segments</h2>
-        <p className="text-blue-600">
+        <p className="text-red-600">
           Select your primary client segments and allocate percentages to each
         </p>
       </div>
@@ -152,8 +152,8 @@ const Clients = ({ clients = [], onClientsChange }) => {
               <Pie data={chartData} options={chartOptions} />
             </div>
           ) : (
-            <div className="flex flex-col items-center justify-center h-64 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg border-2 border-dashed border-gray-300">
-              <div className="text-center text-blue-600">
+            <div className="flex flex-col items-center justify-center h-64 bg-gradient-to-br from-red-50 to-indigo-50 rounded-lg border-2 border-dashed border-gray-300">
+              <div className="text-center text-red-600">
                 <div className="text-sm mb-2">No client segments selected</div>
                 <div className="text-xs">Select segments to see distribution</div>
               </div>
@@ -163,7 +163,7 @@ const Clients = ({ clients = [], onClientsChange }) => {
           <div className="mt-4 pt-4 border-t border-gray-200">
             <div className="flex justify-between items-center">
               <span className="text-sm font-medium text-gray-700">Total Allocation</span>
-              <span className={`text-sm font-bold ${totalPercentage > 100 ? 'text-red-600' : 'text-blue-600'}`}>
+              <span className={`text-sm font-bold ${totalPercentage > 100 ? 'text-red-600' : 'text-red-600'}`}>
                 {totalPercentage}%
               </span>
             </div>
@@ -174,7 +174,7 @@ const Clients = ({ clients = [], onClientsChange }) => {
         <div className="space-y-6">
           <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
             <h3 className="text-lg font-semibold text-gray-800 mb-4">Client Segments</h3>
-            <p className="text-sm text-blue-600 mb-6">
+            <p className="text-sm text-red-600 mb-6">
               Select one or more client segments and allocate percentages (minimum 10% each)
             </p>
             
@@ -188,7 +188,7 @@ const Clients = ({ clients = [], onClientsChange }) => {
                     key={client.id} 
                     className={`border rounded-lg p-4 transition-all duration-200 ${
                       isSelected 
-                        ? 'border-blue-500 bg-blue-50 shadow-sm' 
+                        ? 'border-red-500 bg-red-50 shadow-sm' 
                         : 'border-gray-200 hover:border-gray-300'
                     }`}
                   >
@@ -200,14 +200,14 @@ const Clients = ({ clients = [], onClientsChange }) => {
                           type="checkbox"
                           checked={isSelected}
                           onChange={() => toggleClient(client.id, client.name)}
-                          className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                          className="h-4 w-4 text-red-600 border-gray-300 rounded focus:ring-red-500"
                         />
                       </div>
                       <div className="ml-3 flex-1">
                         <label 
                           htmlFor={`client-${client.id}`} 
                           className={`block text-sm font-medium ${
-                            isSelected ? 'text-blue-700' : 'text-gray-700'
+                            isSelected ? 'text-red-700' : 'text-gray-700'
                           }`}
                         >
                           {client.name}
@@ -220,11 +220,11 @@ const Clients = ({ clients = [], onClientsChange }) => {
                         <div className="flex items-center justify-between">
                           <label 
                             htmlFor={`percentage-${client.id}`}
-                            className="block text-sm text-blue-600"
+                            className="block text-sm text-red-600"
                           >
                             Percentage
                           </label>
-                          <span className="text-sm font-medium text-blue-600">
+                          <span className="text-sm font-medium text-red-600">
                             {currentPercentage}%
                           </span>
                         </div>
@@ -236,7 +236,7 @@ const Clients = ({ clients = [], onClientsChange }) => {
                             max="100"
                             value={currentPercentage}
                             onChange={(e) => handleClientPercentageChange(client.id, client.name, e.target.value)}
-                            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+                            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-red-600"
                           />
                           <input
                             type="number"
@@ -244,7 +244,7 @@ const Clients = ({ clients = [], onClientsChange }) => {
                             max="100"
                             value={currentPercentage}
                             onChange={(e) => handleClientPercentageChange(client.id, client.name, e.target.value)}
-                            className="w-20 px-2 py-1 text-sm border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                            className="w-20 px-2 py-1 text-sm border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500"
                           />
                           <span className="text-sm text-gray-500">%</span>
                         </div>

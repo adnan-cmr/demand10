@@ -35,14 +35,14 @@ export default function ReviewTips() {
       <div className="relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center bg-red-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
             </svg>
             Writing Guidelines
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
-            Tips for Writing a <span className="text-[#265ba3]">Helpful</span> Review
+            Tips for Writing a <span className="text-[#E11D2E]">Helpful</span> Review
           </h2>
           <p className="text-lg text-gray-600 mt-5 max-w-3xl mx-auto leading-relaxed">
             Follow these guidelines to create meaningful reviews that benefit the entire community and help businesses improve their services.
@@ -54,13 +54,13 @@ export default function ReviewTips() {
           {tips.map((tip, index) => (
             <div 
               key={tip.id} 
-              className="bg-white rounded-2xl p-6 border border-gray-200 hover:border-[#265ba3] transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-2 group"
+              className="bg-white rounded-2xl p-6 border border-gray-200 hover:border-[#E11D2E] transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-2 group"
             >
               <div className="flex items-start">
                 {/* Icon Container */}
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center mr-5 shadow-sm 
-                  group-hover:from-[#265ba3]/10 group-hover:to-blue-100 transition-all duration-300 flex-shrink-0">
-                  <div className="text-[#265ba3]">
+                <div className="w-14 h-14 bg-gradient-to-br from-red-100 to-red-200 rounded-xl flex items-center justify-center mr-5 shadow-sm 
+                  group-hover:from-[#E11D2E]/10 group-hover:to-red-100 transition-all duration-300 flex-shrink-0">
+                  <div className="text-[#E11D2E]">
                     {tip.icon}
                   </div>
                 </div>
@@ -78,7 +78,7 @@ export default function ReviewTips() {
               
               {/* Number Badge */}
               <div className="mt-4 pt-4 border-t border-gray-100">
-                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-[#265ba3] font-bold text-sm">
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-red-100 text-[#E11D2E] font-bold text-sm">
                   {index + 1}
                 </span>
               </div>
@@ -88,7 +88,7 @@ export default function ReviewTips() {
         
         {/* CTA Section */}
         <div className="mt-12 text-center">
-          <button className="px-6 py-3 bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] hover:from-[#1e4a86] hover:to-[#1a365d] text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-[1.02] shadow-md hover:shadow-lg">
+          <button className="px-6 py-3 bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] hover:from-[#B91C1C] hover:to-[#0F1B3D] text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-[1.02] shadow-md hover:shadow-lg">
             Write Your Review Now
           </button>
           <p className="mt-4 text-gray-600">

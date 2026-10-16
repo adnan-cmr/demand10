@@ -132,7 +132,7 @@ const FaqCom = () => {
     <>
       <div>
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] overflow-hidden min-h-[50vh] flex items-center">
+        <section className="relative bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] overflow-hidden min-h-[50vh] flex items-center">
         
       
           {/* Main Content */}
@@ -268,9 +268,9 @@ const FaqCom = () => {
             <section className="mt-16 pt-10 border-t border-gray-200">
               <h3 className="text-3xl font-bold text-center text-gray-800 mb-12">Why Choose Demand10 for Your IT Needs?</h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div className="bg-white p-8 rounded-xl border border-[#265ba3]/30 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <div className="bg-white p-8 rounded-xl border border-[#E11D2E]/30 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-5">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#265ba3] to-[#1a365d] rounded-lg flex items-center justify-center mr-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#E11D2E] to-[#0F1B3D] rounded-lg flex items-center justify-center mr-4">
                       <Server className="w-6 h-6 text-white" />
                     </div>
                     <h4 className="font-bold text-xl text-gray-800">Proactive IT Management</h4>
@@ -280,9 +280,9 @@ const FaqCom = () => {
                   </p>
                 </div>
                 
-                <div className="bg-white p-8 rounded-xl border border-[#265ba3]/30 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <div className="bg-white p-8 rounded-xl border border-[#E11D2E]/30 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-5">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#265ba3] to-[#1a365d] rounded-lg flex items-center justify-center mr-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#E11D2E] to-[#0F1B3D] rounded-lg flex items-center justify-center mr-4">
                       <Shield className="w-6 h-6 text-white" />
                     </div>
                     <h4 className="font-bold text-xl text-gray-800">Enhanced Security</h4>
@@ -292,9 +292,9 @@ const FaqCom = () => {
                   </p>
                 </div>
                 
-                <div className="bg-white p-8 rounded-xl border border-[#265ba3]/30 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <div className="bg-white p-8 rounded-xl border border-[#E11D2E]/30 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-5">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#265ba3] to-[#1a365d] rounded-lg flex items-center justify-center mr-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#E11D2E] to-[#0F1B3D] rounded-lg flex items-center justify-center mr-4">
                       <Users className="w-6 h-6 text-white" />
                     </div>
                     <h4 className="font-bold text-xl text-gray-800">Expert Support</h4>
@@ -304,9 +304,9 @@ const FaqCom = () => {
                   </p>
                 </div>
                 
-                <div className="bg-white p-8 rounded-xl border border-[#265ba3]/30 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <div className="bg-white p-8 rounded-xl border border-[#E11D2E]/30 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-5">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#265ba3] to-[#1a365d] rounded-lg flex items-center justify-center mr-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#E11D2E] to-[#0F1B3D] rounded-lg flex items-center justify-center mr-4">
                       <Building className="w-6 h-6 text-white" />
                     </div>
                     <h4 className="font-bold text-xl text-gray-800">Industry Specialization</h4>
@@ -316,9 +316,9 @@ const FaqCom = () => {
                   </p>
                 </div>
                 
-                <div className="bg-white p-8 rounded-xl border border-[#265ba3]/30 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <div className="bg-white p-8 rounded-xl border border-[#E11D2E]/30 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-5">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#265ba3] to-[#1a365d] rounded-lg flex items-center justify-center mr-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#E11D2E] to-[#0F1B3D] rounded-lg flex items-center justify-center mr-4">
                       <MapPin className="w-6 h-6 text-white" />
                     </div>
                     <h4 className="font-bold text-xl text-gray-800">Local Providers</h4>
@@ -328,9 +328,9 @@ const FaqCom = () => {
                   </p>
                 </div>
                 
-                <div className="bg-white p-8 rounded-xl border border-[#265ba3]/30 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <div className="bg-white p-8 rounded-xl border border-[#E11D2E]/30 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                   <div className="flex items-center mb-5">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#265ba3] to-[#1a365d] rounded-lg flex items-center justify-center mr-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#E11D2E] to-[#0F1B3D] rounded-lg flex items-center justify-center mr-4">
                       <Cloud className="w-6 h-6 text-white" />
                     </div>
                     <h4 className="font-bold text-xl text-gray-800">Cloud Solutions</h4>

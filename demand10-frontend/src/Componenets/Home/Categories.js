@@ -35,7 +35,7 @@ const SoftwareCategories = ({ categories = [] }) => {
     <div id="categories" className="min-h-screen py-16 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="w-full mx-auto max-w-7xl">
         <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#265ba3] mb-6 leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#E11D2E] mb-6 leading-tight">
             Explore Software Categories
           </h1>
           <p className="text-lg text-black max-w-3xl mx-auto">
@@ -49,7 +49,7 @@ const SoftwareCategories = ({ categories = [] }) => {
             <div key={category.id} className="border border-gray-200 rounded-xl overflow-hidden">
               <button
                 onClick={() => toggleCategory(index)}
-                className="w-full p-4 bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] text-white text-left font-bold flex justify-between items-center hover:bg-[#0249aa] transition-all duration-300"
+                className="w-full p-4 bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] text-white text-left font-bold flex justify-between items-center hover:bg-[#DC2626] transition-all duration-300"
               >
                 <span>{category.category}</span>
                 <svg
@@ -69,11 +69,11 @@ const SoftwareCategories = ({ categories = [] }) => {
                       <li key={item._id || itemIndex}>
                         <Link
                           href={`/${item.slug || item}`}
-                          className="block py-2 px-3 rounded-lg text-black hover:bg-blue-100 transition-all duration-200"
+                          className="block py-2 px-3 rounded-lg text-black hover:bg-red-100 transition-all duration-200"
                         >
                           <div className="flex items-center justify-between">
                             <span className="text-sm font-medium">{item.name || item}</span>
-                            <svg className="w-4 h-4 text-[#4897de]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <svg className="w-4 h-4 text-[#EF4444]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                             </svg>
                           </div>
@@ -94,7 +94,7 @@ const SoftwareCategories = ({ categories = [] }) => {
               key={category.id}
               className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
             >
-              <div className="bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] p-4">
+              <div className="bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] p-4">
                 <h2 className="text-md font-bold text-white text-center">{category.category}</h2>
               </div>
               <div className="p-4">
@@ -119,7 +119,7 @@ const SoftwareCategories = ({ categories = [] }) => {
 
         <div className="text-right mt-12">
           <Link href="/categories">
-            <button className="text-[#1a365d] font-semibold hover:underline cursor-pointer">
+            <button className="text-[#0F1B3D] font-semibold hover:underline cursor-pointer">
               View All Categories
             </button>
           </Link>

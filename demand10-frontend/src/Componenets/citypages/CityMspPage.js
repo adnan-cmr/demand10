@@ -174,7 +174,7 @@ const CityMspPage = ({ city, cityData }) => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] py-8 md:py-14 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] py-8 md:py-14 relative overflow-hidden">
        
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -182,11 +182,11 @@ const CityMspPage = ({ city, cityData }) => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in-up">
               {cityData.heroTitle}
             </h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-10 animate-fade-in-up animation-delay-200">
+            <p className="text-xl text-red-100 max-w-3xl mx-auto mb-10 animate-fade-in-up animation-delay-200">
               {cityData.heroDescription}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
-              <Link href="#msp-table" className="px-8 py-4 bg-white text-[#1a365d] font-bold rounded-lg hover:bg-gray-100 transition-all shadow-lg transform hover:-translate-y-1 duration-300">
+              <Link href="#msp-table" className="px-8 py-4 bg-white text-[#0F1B3D] font-bold rounded-lg hover:bg-gray-100 transition-all shadow-lg transform hover:-translate-y-1 duration-300">
                 View Top MSPs
               </Link>
               <Link href="#contact-form" className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-all transform hover:-translate-y-1 duration-300">
@@ -207,25 +207,25 @@ const CityMspPage = ({ city, cityData }) => {
                 {cityData.introduction}
               </p>
 
-              <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6 border-l-4 border-[#265ba3] pl-4">Why {formattedCity} Businesses Need Managed IT Services</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6 border-l-4 border-[#E11D2E] pl-4">Why {formattedCity} Businesses Need Managed IT Services</h2>
               
               <p className="mb-6 text-gray-700">
                 {formattedCity} businesses face unique technology challenges that require specialized managed IT services. From cybersecurity threats to infrastructure management, having a reliable IT partner is essential for business continuity and growth.
               </p>
               
-              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl my-8 border-l-4 border-[#265ba3] shadow-sm">
+              <div className="bg-gradient-to-r from-red-50 to-indigo-50 p-6 rounded-xl my-8 border-l-4 border-[#E11D2E] shadow-sm">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Key Statistics for {formattedCity} Businesses:</h3>
                 <ul className="space-y-2">
                   {cityData.statistics?.map((stat, index) => (
                     <li key={index} className="flex items-start">
-                      <Check className="text-[#265ba3] mt-1 mr-2 flex-shrink-0" />
+                      <Check className="text-[#E11D2E] mt-1 mr-2 flex-shrink-0" />
                       <span className="text-gray-700">{stat}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6 border-l-4 border-[#265ba3] pl-4">Challenges with Local IT Infrastructure & Cybersecurity</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6 border-l-4 border-[#E11D2E] pl-4">Challenges with Local IT Infrastructure & Cybersecurity</h2>
               
               <p className="mb-6 text-gray-700">
                 {formattedCity} businesses face unique IT infrastructure and cybersecurity challenges that require specialized solutions:
@@ -234,7 +234,7 @@ const CityMspPage = ({ city, cityData }) => {
               {cityData.challenges?.map((challenge, index) => (
                 <React.Fragment key={index}>
                   <h3 className="text-xl font-bold text-gray-900 mt-8 mb-4 flex items-center">
-                    <div className="w-8 h-8 rounded-full bg-[#265ba3] flex items-center justify-center text-white mr-3 text-sm">
+                    <div className="w-8 h-8 rounded-full bg-[#E11D2E] flex items-center justify-center text-white mr-3 text-sm">
                       {index + 1}
                     </div>
                     {challenge.title}
@@ -245,13 +245,13 @@ const CityMspPage = ({ city, cityData }) => {
                 </React.Fragment>
               ))}
 
-              <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6 border-l-4 border-[#265ba3] pl-4">Benefits of Hiring an MSP in {formattedCity}</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6 border-l-4 border-[#E11D2E] pl-4">Benefits of Hiring an MSP in {formattedCity}</h2>
               
               <div className="grid md:grid-cols-2 gap-6 my-8">
                 {cityData.benefits?.map((benefit, index) => (
-                  <div key={index} className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 hover:border-[#265ba3]">
+                  <div key={index} className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 hover:border-[#E11D2E]">
                     <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                      <div className="w-8 h-8 rounded-full bg-[#265ba3] flex items-center justify-center text-white mr-3 text-sm">
+                      <div className="w-8 h-8 rounded-full bg-[#E11D2E] flex items-center justify-center text-white mr-3 text-sm">
                         <Check className="w-4 h-4 text-white  " />
                       </div>
                       {benefit.title}
@@ -263,22 +263,22 @@ const CityMspPage = ({ city, cityData }) => {
                 ))}
               </div>
 
-              <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6 border-l-4 border-[#265ba3] pl-4">Top 10 Features to Look for in a {formattedCity} MSP</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6 border-l-4 border-[#E11D2E] pl-4">Top 10 Features to Look for in a {formattedCity} MSP</h2>
               
               <ol className="space-y-4 my-8 bg-white p-6 rounded-xl shadow-sm border border-gray-200">
                 {cityData.features?.map((feature, index) => (
                   <li key={index} className="font-medium text-gray-800 pl-2">
-                    <span className="font-bold text-[#265ba3] mr-2">{index + 1}.</span> {feature}
+                    <span className="font-bold text-[#E11D2E] mr-2">{index + 1}.</span> {feature}
                   </li>
                 ))}
               </ol>
 
-              <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6 border-l-4 border-[#265ba3] pl-4">Industry-Specific MSP Needs in {formattedCity}</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6 border-l-4 border-[#E11D2E] pl-4">Industry-Specific MSP Needs in {formattedCity}</h2>
               
               {cityData.industries?.map((industry, index) => (
                 <React.Fragment key={index}>
                   <h3 className="text-xl font-bold text-gray-900 mt-8 mb-4 flex items-center">
-                    <div className="w-8 h-8 rounded-full bg-[#265ba3] flex items-center justify-center text-white mr-3 text-sm">
+                    <div className="w-8 h-8 rounded-full bg-[#E11D2E] flex items-center justify-center text-white mr-3 text-sm">
                       {String.fromCharCode(65 + index)}
                     </div>
                     {industry.title}
@@ -289,7 +289,7 @@ const CityMspPage = ({ city, cityData }) => {
                 </React.Fragment>
               ))}
 
-              <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6 border-l-4 border-[#265ba3] pl-4">Top Managed Service Providers in {formattedCity} (2025)</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6 border-l-4 border-[#E11D2E] pl-4">Top Managed Service Providers in {formattedCity} (2025)</h2>
               
               <p className="mb-6 text-gray-700">
                 After extensive research and analysis of client reviews, service offerings, and industry expertise, we&apos;ve identified the top managed service providers in {formattedCity} for 2025. These providers have demonstrated excellence in delivering comprehensive IT services tailored to {formattedCity}&apos;s unique business environment.
@@ -300,7 +300,7 @@ const CityMspPage = ({ city, cityData }) => {
                 <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                   <div className="overflow-x-auto">
                     <table className="min-w-full divide-y divide-gray-200">
-                      <thead className="bg-gradient-to-r from-[#265ba3] to-[#1e4a86]">
+                      <thead className="bg-gradient-to-r from-[#E11D2E] to-[#B91C1C]">
                         <tr>
                           <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Company Name</th>
                           <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Industry</th>
@@ -310,12 +310,12 @@ const CityMspPage = ({ city, cityData }) => {
                       </thead>
                       <tbody className="bg-white divide-y divide-gray-200">
                         {mspData.map((msp, index) => (
-                          <tr key={index} className={`hover:bg-blue-50 transition-colors duration-200 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
+                          <tr key={index} className={`hover:bg-red-50 transition-colors duration-200 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{msp.name}</td>
                             <td className="px-6 py-4 text-sm text-gray-700">{msp.industry || 'Technology Services'}</td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">{msp.founded || '2010'}</td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm">
-                              <a href={`${msp.website}`} target="_blank" rel="noopener noreferrer" className="text-[#265ba3] hover:text-[#1a365d] font-medium flex items-center">
+                              <a href={`${msp.website}`} target="_blank" rel="noopener noreferrer" className="text-[#E11D2E] hover:text-[#0F1B3D] font-medium flex items-center">
                                 Visit Site
                                 <ArrowRight className="ml-1 w-4 h-4" />
                               </a>
@@ -328,14 +328,14 @@ const CityMspPage = ({ city, cityData }) => {
                 </div>
               </div>
 
-              <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6 border-l-4 border-[#265ba3] pl-4">How to Choose the Right MSP for Your {formattedCity} Business</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6 border-l-4 border-[#E11D2E] pl-4">How to Choose the Right MSP for Your {formattedCity} Business</h2>
               
               <p className="mb-6 text-gray-700">
                 Selecting the right managed service provider in {formattedCity} requires careful evaluation of several key factors:
               </p>
               
               <h3 className="text-xl font-bold text-gray-900 mt-8 mb-4 flex items-center">
-                <div className="w-8 h-8 rounded-full bg-[#265ba3] flex items-center justify-center text-white mr-3 text-sm">
+                <div className="w-8 h-8 rounded-full bg-[#E11D2E] flex items-center justify-center text-white mr-3 text-sm">
                   1
                 </div>
                 Industry Expertise
@@ -345,7 +345,7 @@ const CityMspPage = ({ city, cityData }) => {
               </p>
               
               <h3 className="text-xl font-bold text-gray-900 mt-8 mb-4 flex items-center">
-                <div className="w-8 h-8 rounded-full bg-[#265ba3] flex items-center justify-center text-white mr-3 text-sm">
+                <div className="w-8 h-8 rounded-full bg-[#E11D2E] flex items-center justify-center text-white mr-3 text-sm">
                   2
                 </div>
                 Local Presence
@@ -355,7 +355,7 @@ const CityMspPage = ({ city, cityData }) => {
               </p>
               
               <h3 className="text-xl font-bold text-gray-900 mt-8 mb-4 flex items-center">
-                <div className="w-8 h-8 rounded-full bg-[#265ba3] flex items-center justify-center text-white mr-3 text-sm">
+                <div className="w-8 h-8 rounded-full bg-[#E11D2E] flex items-center justify-center text-white mr-3 text-sm">
                   3
                 </div>
                 Security Capabilities
@@ -365,7 +365,7 @@ const CityMspPage = ({ city, cityData }) => {
               </p>
               
               <h3 className="text-xl font-bold text-gray-900 mt-8 mb-4 flex items-center">
-                <div className="w-8 h-8 rounded-full bg-[#265ba3] flex items-center justify-center text-white mr-3 text-sm">
+                <div className="w-8 h-8 rounded-full bg-[#E11D2E] flex items-center justify-center text-white mr-3 text-sm">
                   4
                 </div>
                 Scalability
@@ -375,7 +375,7 @@ const CityMspPage = ({ city, cityData }) => {
               </p>
               
               <h3 className="text-xl font-bold text-gray-900 mt-8 mb-4 flex items-center">
-                <div className="w-8 h-8 rounded-full bg-[#265ba3] flex items-center justify-center text-white mr-3 text-sm">
+                <div className="w-8 h-8 rounded-full bg-[#E11D2E] flex items-center justify-center text-white mr-3 text-sm">
                   5
                 </div>
                 References and Reviews
@@ -384,14 +384,14 @@ const CityMspPage = ({ city, cityData }) => {
                 Request references from similar businesses in your industry. Check online reviews and case studies to validate their claims and service quality.
               </p>
 
-              <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6 border-l-4 border-[#265ba3] pl-4">{formattedCity} MSP Market Trends (2025)</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6 border-l-4 border-[#E11D2E] pl-4">{formattedCity} MSP Market Trends (2025)</h2>
               
               <p className="mb-6 text-gray-700">
                 The managed service provider landscape in {formattedCity} continues to evolve rapidly, driven by new technologies and changing business needs:
               </p>
               
               <h3 className="text-xl font-bold text-gray-900 mt-8 mb-4 flex items-center">
-                <div className="w-8 h-8 rounded-full bg-[#265ba3] flex items-center justify-center text-white mr-3 text-sm">
+                <div className="w-8 h-8 rounded-full bg-[#E11D2E] flex items-center justify-center text-white mr-3 text-sm">
                   <Star className="w-4 h-4" />
                 </div>
                 Cloud-First Approach
@@ -401,7 +401,7 @@ const CityMspPage = ({ city, cityData }) => {
               </p>
               
               <h3 className="text-xl font-bold text-gray-900 mt-8 mb-4 flex items-center">
-                <div className="w-8 h-8 rounded-full bg-[#265ba3] flex items-center justify-center text-white mr-3 text-sm">
+                <div className="w-8 h-8 rounded-full bg-[#E11D2E] flex items-center justify-center text-white mr-3 text-sm">
                   <Star className="w-4 h-4" />
                 </div>
                 AI-Powered Security
@@ -411,7 +411,7 @@ const CityMspPage = ({ city, cityData }) => {
               </p>
               
               <h3 className="text-xl font-bold text-gray-900 mt-8 mb-4 flex items-center">
-                <div className="w-8 h-8 rounded-full bg-[#265ba3] flex items-center justify-center text-white mr-3 text-sm">
+                <div className="w-8 h-8 rounded-full bg-[#E11D2E] flex items-center justify-center text-white mr-3 text-sm">
                   <Star className="w-4 h-4" />
                 </div>
                 Remote Work Support
@@ -421,81 +421,81 @@ const CityMspPage = ({ city, cityData }) => {
               </p>
 
               {/* Internal Links Section */}
-              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl my-12 border border-gray-200">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-4 border-[#265ba3] pl-4">Related Managed IT Services Resources</h2>
+              <div className="bg-gradient-to-r from-red-50 to-indigo-50 p-6 rounded-xl my-12 border border-gray-200">
+                <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-4 border-[#E11D2E] pl-4">Related Managed IT Services Resources</h2>
                 <p className="mb-6 text-gray-700">
                   Explore our comprehensive resources on managed IT services, cybersecurity, and technology solutions:
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <Link 
                     href="/managed-service-providers" 
-                    className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all hover:border-[#265ba3] flex items-start"
+                    className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all hover:border-[#E11D2E] flex items-start"
                   >
-                    <div className="bg-[#265ba3] p-2 rounded-lg mr-3">
+                    <div className="bg-[#E11D2E] p-2 rounded-lg mr-3">
                       <Download className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-[#265ba3]">Managed Service Providers</h3>
+                      <h3 className="font-bold text-[#E11D2E]">Managed Service Providers</h3>
                       <p className="text-sm text-gray-600">Comprehensive guide to MSPs and their services</p>
                     </div>
                   </Link>
                   <Link 
                     href="/managed-security-service-providers" 
-                    className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all hover:border-[#265ba3] flex items-start"
+                    className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all hover:border-[#E11D2E] flex items-start"
                   >
-                    <div className="bg-[#265ba3] p-2 rounded-lg mr-3">
+                    <div className="bg-[#E11D2E] p-2 rounded-lg mr-3">
                       <Star className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-[#265ba3]">Managed Security Service Providers</h3>
+                      <h3 className="font-bold text-[#E11D2E]">Managed Security Service Providers</h3>
                       <p className="text-sm text-gray-600">Specialized cybersecurity services and solutions</p>
                     </div>
                   </Link>
                   <Link 
                     href="/network-security" 
-                    className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all hover:border-[#265ba3] flex items-start"
+                    className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all hover:border-[#E11D2E] flex items-start"
                   >
-                    <div className="bg-[#265ba3] p-2 rounded-lg mr-3">
+                    <div className="bg-[#E11D2E] p-2 rounded-lg mr-3">
                       <Check className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-[#265ba3]">Network Security</h3>
+                      <h3 className="font-bold text-[#E11D2E]">Network Security</h3>
                       <p className="text-sm text-gray-600">Protecting your business from cyber threats</p>
                     </div>
                   </Link>
                   <Link 
                     href="/data-backup-recovery" 
-                    className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all hover:border-[#265ba3] flex items-start"
+                    className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all hover:border-[#E11D2E] flex items-start"
                   >
-                    <div className="bg-[#265ba3] p-2 rounded-lg mr-3">
+                    <div className="bg-[#E11D2E] p-2 rounded-lg mr-3">
                       <ArrowRight className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-[#265ba3]">Data Backup & Recovery</h3>
+                      <h3 className="font-bold text-[#E11D2E]">Data Backup & Recovery</h3>
                       <p className="text-sm text-gray-600">Ensuring business continuity with reliable backups</p>
                     </div>
                   </Link>
                   <Link 
                     href="/global-msp" 
-                    className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all hover:border-[#265ba3] flex items-start"
+                    className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all hover:border-[#E11D2E] flex items-start"
                   >
-                    <div className="bg-[#265ba3] p-2 rounded-lg mr-3">
+                    <div className="bg-[#E11D2E] p-2 rounded-lg mr-3">
                       <MapPin className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-[#265ba3]">Global MSP Services</h3>
+                      <h3 className="font-bold text-[#E11D2E]">Global MSP Services</h3>
                       <p className="text-sm text-gray-600">International managed service solutions</p>
                     </div>
                   </Link>
                   <Link 
                     href="/services" 
-                    className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all hover:border-[#265ba3] flex items-start"
+                    className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all hover:border-[#E11D2E] flex items-start"
                   >
-                    <div className="bg-[#265ba3] p-2 rounded-lg mr-3">
+                    <div className="bg-[#E11D2E] p-2 rounded-lg mr-3">
                       <Mail className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-[#265ba3]">All Services</h3>
+                      <h3 className="font-bold text-[#E11D2E]">All Services</h3>
                       <p className="text-sm text-gray-600">Complete overview of our service offerings</p>
                     </div>
                   </Link>
@@ -503,13 +503,13 @@ const CityMspPage = ({ city, cityData }) => {
                 </div>
               </div>
 
-              <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6 border-l-4 border-[#265ba3] pl-4">FAQs About Managed Service Providers in {formattedCity}</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6 border-l-4 border-[#E11D2E] pl-4">FAQs About Managed Service Providers in {formattedCity}</h2>
               
               <div className="space-y-6 my-8">
                 {cityData.faq?.map((faq, index) => (
                   <div key={index} className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300">
                     <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-start">
-                      <div className="bg-[#265ba3] text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-1 flex-shrink-0">
+                      <div className="bg-[#E11D2E] text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-3 mt-1 flex-shrink-0">
                         ?
                       </div>
                       {faq.question}
@@ -522,8 +522,8 @@ const CityMspPage = ({ city, cityData }) => {
               </div>
 
               {/* Internal Linking Section - Added for SEO */}
-              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl my-12 border border-gray-200">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-4 border-[#265ba3] pl-4">Managed IT Services in Other Major Cities</h2>
+              <div className="bg-gradient-to-r from-red-50 to-indigo-50 p-6 rounded-xl my-12 border border-gray-200">
+                <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-4 border-[#E11D2E] pl-4">Managed IT Services in Other Major Cities</h2>
                 <p className="mb-6 text-gray-700">
                   Explore our comprehensive guides to managed IT services in other major metropolitan areas across the United States:
                 </p>
@@ -532,11 +532,11 @@ const CityMspPage = ({ city, cityData }) => {
                     <Link 
                       key={index} 
                       href={`/msp/${relatedCity.slug}`} 
-                      className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all hover:border-[#265ba3] flex"
+                      className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all hover:border-[#E11D2E] flex"
                     >
                     
                       <div>
-                        <h3 className="font-bold text-[#265ba3]">{relatedCity.name}</h3>
+                        <h3 className="font-bold text-[#E11D2E]">{relatedCity.name}</h3>
                         <p className="text-sm text-gray-600">{relatedCity.description}</p>
                       </div>
                     </Link>
@@ -544,18 +544,18 @@ const CityMspPage = ({ city, cityData }) => {
                 </div>
               </div>
 
-              <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6 border-l-4 border-[#265ba3] pl-4">Conclusion: Choosing the Right {formattedCity} MSP</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6 border-l-4 border-[#E11D2E] pl-4">Conclusion: Choosing the Right {formattedCity} MSP</h2>
               
               <p className="mb-6 text-gray-700">
                 {cityData.conclusion}
               </p>
               
-              <div className="bg-gradient-to-br from-[#265ba3] via-[#1e4a86] to-[#1a365d] p-8 rounded-xl text-white my-12 shadow-lg">
+              <div className="bg-gradient-to-br from-[#E11D2E] via-[#B91C1C] to-[#0F1B3D] p-8 rounded-xl text-white my-12 shadow-lg">
                 <h3 className="text-2xl font-bold mb-4">Ready to Find Your Perfect {formattedCity} MSP?</h3>
                 <p className="mb-6">
                   Let Demand10 match you with pre-vetted managed service providers in {formattedCity} who specialize in your industry and business size.
                 </p>
-                <Link href="#contact-form" className="inline-flex items-center px-6 py-3 bg-white text-[#1a365d] font-bold rounded-lg hover:bg-gray-100 transition-all transform hover:-translate-y-1 duration-300">
+                <Link href="#contact-form" className="inline-flex items-center px-6 py-3 bg-white text-[#0F1B3D] font-bold rounded-lg hover:bg-gray-100 transition-all transform hover:-translate-y-1 duration-300">
                   Get Free Recommendations
                   <ArrowRight className="ml-2" />
                 </Link>
@@ -572,40 +572,40 @@ const CityMspPage = ({ city, cityData }) => {
             
             {/* Benefits List */}
             <div className="bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg border border-gray-200 p-6 mb-8 transition-all duration-300 hover:shadow-xl">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-[#265ba3] pl-2">Why Choose Managed IT Services?</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-[#E11D2E] pl-2">Why Choose Managed IT Services?</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <div className="bg-[#265ba3] p-2 rounded-lg mr-3 flex-shrink-0">
+                  <div className="bg-[#E11D2E] p-2 rounded-lg mr-3 flex-shrink-0">
                     <Check className="text-white w-5 h-5" />
                   </div>
                   <span className="text-gray-700">Reduce IT costs by up to 35%</span>
                 </li>
                 <li className="flex items-start">
-                  <div className="bg-[#265ba3] p-2 rounded-lg mr-3 flex-shrink-0">
+                  <div className="bg-[#E11D2E] p-2 rounded-lg mr-3 flex-shrink-0">
                     <Check className="text-white   w-5 h-5" />
                   </div>
                   <span className="text-gray-700">24/7 proactive monitoring & support</span>
                 </li>
                 <li className="flex items-start">
-                  <div className="bg-[#265ba3] p-2 rounded-lg mr-3 flex-shrink-0">
+                  <div className="bg-[#E11D2E] p-2 rounded-lg mr-3 flex-shrink-0">
                     <Check className="text-white w-5 h-5" />
                   </div>
                   <span className="text-gray-700">Expert cybersecurity protection</span>
                 </li>
                 <li className="flex items-start">
-                  <div className="bg-[#265ba3] p-2 rounded-lg mr-3 flex-shrink-0">
+                  <div className="bg-[#E11D2E] p-2 rounded-lg mr-3 flex-shrink-0">
                     <Check className="text-white w-5 h-5" />
                   </div>
                   <span className="text-gray-700">Predictable monthly IT expenses</span>
                 </li>
                 <li className="flex items-start">
-                  <div className="bg-[#265ba3] p-2 rounded-lg mr-3 flex-shrink-0">
+                  <div className="bg-[#E11D2E] p-2 rounded-lg mr-3 flex-shrink-0">
                     <Check className="text-white w-5 h-5" />
                   </div>
                   <span className="text-gray-700">Access to enterprise-level expertise</span>
                 </li>
                 <li className="flex items-start">
-                  <div className="bg-[#265ba3] p-2 rounded-lg mr-3 flex-shrink-0">
+                  <div className="bg-[#E11D2E] p-2 rounded-lg mr-3 flex-shrink-0">
                     <Check className="text-white w-5 h-5" />
                   </div>
                   <span className="text-gray-700">Focus on core business activities</span>
