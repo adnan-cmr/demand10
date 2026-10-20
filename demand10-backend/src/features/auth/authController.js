@@ -79,7 +79,7 @@ export async function register(req, res) {
       user: publicUser(user),
     });
   } catch (err) {
-    console.error('register error:', err);
+    req.log.error({ err }, 'register failed');
     return res.status(500).json({ ok: false, message: 'Server error' });
   }
 }
@@ -108,7 +108,7 @@ export async function verifyEmail(req, res) {
 
     return res.json({ ok: true, message: 'Email verified. You can now log in.' });
   } catch (err) {
-    console.error('verifyEmail error:', err);
+    req.log.error({ err }, 'verifyEmail failed');
     return res.status(500).json({ ok: false, message: 'Server error' });
   }
 }
@@ -153,7 +153,7 @@ export async function login(req, res) {
 
     return res.json({ ok: true, user: publicUser(user) });
   } catch (err) {
-    console.error('login error:', err);
+    req.log.error({ err }, 'login failed');
     return res.status(500).json({ ok: false, message: 'Server error' });
   }
 }
@@ -186,7 +186,7 @@ export async function refresh(req, res) {
     setAuthCookies(res, accessToken, newRaw);
     return res.json({ ok: true, user: publicUser(user) });
   } catch (err) {
-    console.error('refresh error:', err);
+    req.log.error({ err }, 'refresh failed');
     return res.status(500).json({ ok: false, message: 'Server error' });
   }
 }
@@ -208,7 +208,7 @@ export async function logout(req, res) {
     clearAuthCookies(res);
     return res.json({ ok: true, message: 'Logged out' });
   } catch (err) {
-    console.error('logout error:', err);
+    req.log.error({ err }, 'logout failed');
     // Even if DB update failed, clear cookies
     clearAuthCookies(res);
     return res.json({ ok: true, message: 'Logged out' });
@@ -224,7 +224,7 @@ export async function me(req, res) {
     if (!user) return res.status(404).json({ ok: false, message: 'User not found' });
     return res.json({ ok: true, user: publicUser(user) });
   } catch (err) {
-    console.error('me error:', err);
+    req.log.error({ err }, 'me failed');
     return res.status(500).json({ ok: false, message: 'Server error' });
   }
 }
@@ -257,7 +257,7 @@ export async function forgotPassword(req, res) {
 
     return res.json({ ok: true, message: 'If that email exists, a reset link was sent.' });
   } catch (err) {
-    console.error('forgotPassword error:', err);
+    req.log.error({ err }, 'forgotPassword failed');
     return res.status(500).json({ ok: false, message: 'Server error' });
   }
 }
@@ -290,7 +290,7 @@ export async function resetPassword(req, res) {
 
     return res.json({ ok: true, message: 'Password reset. Please log in.' });
   } catch (err) {
-    console.error('resetPassword error:', err);
+    req.log.error({ err }, 'resetPassword failed');
     return res.status(500).json({ ok: false, message: 'Server error' });
   }
 }

@@ -1,5 +1,3 @@
-export const dynamic = 'force-dynamic';
-
 // Global metadata fallback
 export const metadata = {
   metadataBase: new URL('https://demand10.com'),
@@ -43,7 +41,6 @@ export const metadata = {
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
 import LayoutWrapper from "@/Componenets/ui/LayoutWrapper";
-import { fetchCategories } from "@/services/api";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import NextTopLoader from 'nextjs-toploader';
@@ -67,8 +64,7 @@ const jsonLd = {
   }
 };
 
-export default async function RootLayout({ children }) {
-  const categories = await fetchCategories();
+export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
@@ -105,7 +101,7 @@ export default async function RootLayout({ children }) {
             '--toastify-color-error': '#EF4444',
           }}
         />
-        <LayoutWrapper categories={categories}>
+        <LayoutWrapper>
           {children}
         </LayoutWrapper>
       </body>

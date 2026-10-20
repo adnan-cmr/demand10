@@ -1,6 +1,4 @@
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
+import { Suspense } from 'react';
 
 export const metadata = {
   title: "Verify Email | Demand10",
@@ -12,9 +10,5 @@ export const metadata = {
 };
 
 export default function VerifyEmailLayout({ children }) {
-  return (
-    <html lang="en" className={inter.className}>
-      <body>{children}</body>
-    </html>
-  );
+  return <Suspense fallback={null}>{children}</Suspense>;
 }

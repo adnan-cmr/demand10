@@ -1,5 +1,5 @@
 "use client";
-import { getAdminUsers, deleteAdminUserById } from '@/services/adminApi';
+import { getAdminUsers, deleteAdminUserById } from '@/services/adminUsersApi';
 import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 
@@ -9,12 +9,12 @@ const Users = () => {
   const [deleteLoading, setDeleteLoading] = useState(null);
 
   // Fetch admin users function
-  const loadUsers  = async () => {
+  const loadUsers = async (notify = false) => {
     try {
       setLoading(true);
       const usersData = await getAdminUsers();
       setUsers(usersData);
-      toast.success('Admin users loaded successfully!');
+      if (notify === true) toast.success('Admin users refreshed');
     } catch (error) {
       console.error('Error fetching admin users:', error);
       toast.error('Failed to load admin users');
@@ -69,7 +69,7 @@ const Users = () => {
               <p className="text-gray-600 mt-2">Total Admin Users: {users?.length}</p>
             </div>
             <button
-              onClick={loadUsers}
+              onClick={() => loadUsers(true)}
               className="bg-[#B91C1C]  text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-200"
             >
               Refresh Users

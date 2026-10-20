@@ -7,6 +7,10 @@
  *
  * Idempotent: safe to run multiple times.
  *
+ * Dry-run by default (nothing is written). Pass --confirm to apply.
+ * The first admin is promoted to superadmin only if you also set
+ * PROMOTE_FIRST_ADMIN=1 together with --confirm.
+ *
  * Usage:
  *   1. Back up your DB:  mongodump --db postzio --out ./backups/pre-phase2
  *   2. node src/scripts/migrate-admins-to-users.js
@@ -30,7 +34,10 @@ const legacyAdminSchema = new mongoose.Schema(
   { collection: 'users', strict: false }
 );
 
+const confirm = process.argv.includes('--confirm') && process.env.DRY_RUN !== '1';
+
 async function run() {
+  if (!confirm) console.log('DRY RUN: no changes will be written. Use --confirm to apply.');
   await mongoose.connect(env.MONGO_URI);
   console.log('✅ Connected to MongoDB');
 
@@ -60,8 +67,8 @@ async function run() {
     if (existing) {
       // Already a new User — just ensure role is admin/superadmin
       if (!['admin', 'superadmin'].includes(existing.role)) {
-        existing.role = doc.role === 'admin' ? 'admin' : 'admin';
-        await existing.save();
+        existing.role = 'admin';
+        if (confirm) await existing.save();
         updated++;
       } else {
         skipped++;
@@ -74,6 +81,10 @@ async function run() {
       ? doc.password                        // already bcrypt
       : await bcrypt.hash(doc.password, 12); // plain (rare) — hash it
 
+    if (!confirm) {
+      created++;
+      continue;
+    }
     await rawCollection.updateOne(
       { _id: doc._id },
       {
@@ -102,7 +113,11 @@ async function run() {
 
   // Ensure at least one superadmin exists
   const superAdminCount = await User.countDocuments({ role: 'superadmin' });
-  if (superAdminCount === 0) {
+  if (superAdminCount === 0 && process.env.PROMOTE_FIRST_ADMIN !== '1') {
+    console.log('No superadmin exists. Re-run with --confirm and PROMOTE_FIRST_ADMIN=1, or use promote-user.js.');
+  } else if (superAdminCount === 0 && !confirm) {
+    console.log('[dry-run] would promote the oldest admin to superadmin.');
+  } else if (superAdminCount === 0) {
     const firstAdmin = await User.findOne({ role: 'admin' }).sort({ createdAt: 1 });
     if (firstAdmin) {
       firstAdmin.role = 'superadmin';

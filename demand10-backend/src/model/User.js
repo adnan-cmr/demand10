@@ -42,11 +42,6 @@ const userSchema = new mongoose.Schema(
     lastLoginAt: Date,
     lastLoginIp: String,
     deletedAt: { type: Date, default: null, index: true },
-    claimedCompany: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'companyTeam',
-      default: null,
-    },
   },
   { timestamps: true }
 );

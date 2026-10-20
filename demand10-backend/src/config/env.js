@@ -2,13 +2,12 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
+const isProduction = (process.env.NODE_ENV || 'development') === 'production';
+// SMTP is only mandatory in production; locally emails are logged instead of sent.
 const required = [
   'MONGO_URI',
   'JWT_SECRET',
-  'EMAIL_HOST',
-  'EMAIL_PORT',
-  'EMAIL_USER',
-  'EMAIL_APP_PASSWORD',
+  ...(isProduction ? ['EMAIL_HOST', 'EMAIL_PORT', 'EMAIL_USER', 'EMAIL_APP_PASSWORD'] : []),
 ];
 
 const missing = required.filter((k) => !process.env[k]);
@@ -32,7 +31,7 @@ export const env = {
   JWT_SECRET: process.env.JWT_SECRET,
   EMAIL: {
     host: process.env.EMAIL_HOST,
-    port: Number(process.env.EMAIL_PORT),
+    port: Number(process.env.EMAIL_PORT) || 587,
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_APP_PASSWORD,
     admin: process.env.ADMIN_EMAIL || process.env.EMAIL_USER,
@@ -43,5 +42,7 @@ export const env = {
     cloudName: process.env.CLOUDINARY_CLOUD_NAME,
   },
   FRONTEND_URL: process.env.FRONTEND_URL || 'http://localhost:3001',
+  COOKIE_SAMESITE: (process.env.COOKIE_SAMESITE || '').toLowerCase(),
+  COOKIE_DOMAIN: process.env.COOKIE_DOMAIN || undefined,
   isProd: (process.env.NODE_ENV || 'development') === 'production',
 };

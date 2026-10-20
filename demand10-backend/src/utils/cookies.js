@@ -1,11 +1,18 @@
 // backend/src/utils/cookies.js
 import { env } from '../config/env.js';
 
+const SAME_SITE = ['strict', 'lax', 'none'].includes(env.COOKIE_SAMESITE)
+  ? env.COOKIE_SAMESITE
+  : env.isProd ? 'strict' : 'lax';
+
+export const cookieConfig = { sameSite: SAME_SITE, secure: env.isProd || SAME_SITE === 'none' };
+
 const BASE = {
   httpOnly: true,
-  secure: env.isProd,
-  sameSite: env.isProd ? 'none' : 'lax',
+  secure: cookieConfig.secure,
+  sameSite: SAME_SITE,
   path: '/',
+  ...(env.COOKIE_DOMAIN ? { domain: env.COOKIE_DOMAIN } : {}),
 };
 
 const ACCESS_MAX_AGE = 15 * 60 * 1000;             // 15 min

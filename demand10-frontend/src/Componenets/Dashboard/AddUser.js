@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Eye, EyeOff, Mail, Lock, User, CheckCircle, XCircle, UserPlus } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { signinUser } from "@/services/adminApi";
+import { createUserAccount } from "@/services/adminUsersApi";
 import { toast } from "react-hot-toast";
 import { handleApiError, showSuccess } from "@/utils/errorHandler";
 
@@ -63,7 +63,7 @@ const UserAddPage = () => {
     setIsLoading(true);
 
     try {
-      const data = await signinUser(signUpData);
+      const data = await createUserAccount(signUpData);
 
       if (data.ok) {
         showSuccess("User added successfully! 🎉");

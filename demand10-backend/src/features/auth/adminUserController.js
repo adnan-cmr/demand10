@@ -25,7 +25,7 @@ export async function updateUserRole(req, res) {
       user: { id: user._id, email: user.email, role: user.role },
     });
   } catch (err) {
-    console.error('updateUserRole error:', err);
+    req.log.error({ err }, 'updateUserRole failed');
     return res.status(500).json({ ok: false, message: 'Server error' });
   }
 }
@@ -42,7 +42,45 @@ export async function listUsers(req, res) {
       .lean();
     return res.json({ ok: true, count: users.length, users });
   } catch (err) {
-    console.error('listUsers error:', err);
+    req.log.error({ err }, 'listUsers failed');
     return res.status(500).json({ ok: false, message: 'Server error' });
   }
 }
+/**
+ * Soft-delete a user. DELETE /api/v1/admin/users/:userId
+ */
+export async function deleteUser(req, res) {
+  try {
+    if (String(req.user?.userId) === req.params.userId) {
+      return res.status(400).json({ ok: false, message: 'You cannot delete your own account' });
+    }
+    const user = await User.findOneAndUpdate(
+      { _id: req.params.userId, deletedAt: null },
+      { deletedAt: new Date() },
+      { new: true }
+    ).select('-password');
+    if (!user) return res.status(404).json({ ok: false, message: 'User not found' });
+    return res.json({ ok: true, message: 'User deleted successfully', user });
+  } catch (err) {
+    req.log.error({ err }, 'deleteUser failed');
+    return res.status(500).json({ ok: false, message: 'Error deleting user' });
+  }
+}
+
+async function updateUserStatus(req, res, status) {
+  try {
+    const user = await User.findOneAndUpdate(
+      { _id: req.params.userId, deletedAt: null },
+      { status },
+      { new: true }
+    ).select('-password');
+    if (!user) return res.status(404).json({ ok: false, message: 'User not found' });
+    return res.json({ ok: true, message: `User ${status === 'blocked' ? 'blocked' : 'activated'} successfully`, user });
+  } catch (err) {
+    req.log.error({ err, status }, 'updateUserStatus failed');
+    return res.status(500).json({ ok: false, message: 'Error updating user status' });
+  }
+}
+
+export const blockUser = (req, res) => updateUserStatus(req, res, 'blocked');
+export const activateUser = (req, res) => updateUserStatus(req, res, 'active');

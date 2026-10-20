@@ -1,80 +1,33 @@
-import JobHeroSection from "@/Componenets/Home/HeroSection";
-import { fetchCategories, fetchHomepageCompanies } from "@/services/api";
-import ResetPasswordForm from "@/Componenets/ui/ResetPasswordForm";
-import Testimonials from "@/Componenets/Home/Testimonials";
-import ListProduct from "@/Componenets/Home/ListProduct";
-import SoftwareCategories from "@/Componenets/Home/Categories";
-import ReviewSection from "@/Componenets/Home/ClientReviews";
-import GartnerReviews from "@/Componenets/Home/GartnerReviews";
-import SectionErrorBoundary from "@/Componenets/Home/SectionErrorBoundary";
+import Link from "next/link";
+import { fetchTopLists } from "@/services/publicDataApi";
 
-export const metadata = {
-  title: "Top Managed Service Providers & Security Solutions 2025",
-  description:
-    "Connect with premier Managed Service Providers and Security Service Providers delivering enterprise-grade IT infrastructure, cybersecurity, and cloud solutions. Access our verified database of industry leaders.",
-  keywords: [
-    "managed service provider",
-    "managed security service provider",
-    "MSP",
-    "MSSP",
-    "IT support services",
-    "cybersecurity outsourcing",
-    "cloud service provider",
-    "best managed service providers",
-    "top managed security providers",
-    "B2B companies",
-    "company directory",
-    "verified vendors"
-  ],
-  metadataBase: new URL("https://demand10.com"),
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    title: "Top Managed Service Providers & Security Solutions 2025",
-    description:
-      "Access our curated database of top-tier Managed Service Providers and Security Service Providers with Demand10's verified B2B intelligence. Connect with 10K+ vetted suppliers across 500+ specialized categories.",
-    url: "https://demand10.com/",
-    siteName: "Demand10",
-  
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Top Managed Service Providers & Security Solutions 2025",
-    description:
-      "Connect with premier Managed Service Providers and Security Service Providers delivering enterprise-grade IT infrastructure, cybersecurity, and cloud solutions. Access our verified database of industry leaders.",
-    site: "@demand10",
-  },
-};
-
-export default async function Home({ searchParams }) {
-  const params = await searchParams;
-  const resetToken = params["reset-token"];
-
-  // Fetch categories and homepage companies data
-  const [categories, homepageCompanies] = await Promise.all([
-    fetchCategories(),
-    fetchHomepageCompanies()
-    
-  ]);
+export default async function Home() {
+  const res = await fetchTopLists();
+  const lists = (res?.lists || []).slice(0, 6);
 
   return (
-    <main>
-      {resetToken ? (
-        <ResetPasswordForm token={resetToken} />
-      ) : (
-        <>
-          <SectionErrorBoundary><JobHeroSection homepageCompanies={homepageCompanies} /></SectionErrorBoundary>
-          <SectionErrorBoundary><SoftwareCategories categories={categories} /></SectionErrorBoundary>
-          <SectionErrorBoundary><ListProduct /></SectionErrorBoundary>
-          
-          
-       
-             <SectionErrorBoundary><GartnerReviews/></SectionErrorBoundary>
-          <SectionErrorBoundary><ReviewSection/></SectionErrorBoundary>
-          <SectionErrorBoundary><Testimonials /></SectionErrorBoundary>
-        </>
+    <main className="max-w-6xl mx-auto px-4 py-16">
+      <section className="text-center">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-[#0F1B3D]">Company data, ranked and searchable</h1>
+        <p className="mt-4 text-lg text-gray-600">Browse the full company database or explore curated top 10 lists by category.</p>
+        <div className="mt-8 flex justify-center gap-4">
+          <Link href="/data" className="bg-[#E11D2E] text-white px-6 py-3 rounded-lg font-semibold">Browse data</Link>
+          <Link href="/categories" className="border border-[#0F1B3D] text-[#0F1B3D] px-6 py-3 rounded-lg font-semibold">Top 10 lists</Link>
+        </div>
+      </section>
+
+      {lists.length > 0 && (
+        <section className="mt-16">
+          <h2 className="text-2xl font-bold text-[#0F1B3D] mb-4">Featured top 10s</h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {lists.map((l) => (
+              <Link key={l._id} href={`/categories/${l.slug}`} className="block bg-white border rounded-xl p-5 hover:shadow-md transition-shadow">
+                <h3 className="font-semibold text-[#0F1B3D]">Top {l.count}: {l.title}</h3>
+                <p className="text-xs text-gray-500 mt-2">{l.preview.map((p) => p.name).join(" · ")}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
       )}
     </main>
   );

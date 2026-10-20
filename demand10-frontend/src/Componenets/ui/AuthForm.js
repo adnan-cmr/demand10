@@ -40,11 +40,6 @@ export default function AuthForm({ onClose, onAuthSuccess, initialView = 'login'
       return;
     }
 
-    if (user?.role === 'vendor') {
-      router.push('/vendor/dashboard');
-      return;
-    }
-
     router.push('/');
   };
 
@@ -105,9 +100,10 @@ export default function AuthForm({ onClose, onAuthSuccess, initialView = 'login'
               color: 'white'
             }
           });
-          console.log('Calling onAuthSuccess with user:', result.user);
-          onAuthSuccess(result.user);
-          onClose();
+          // Order matters: update the parent first, then navigate. No onClose here:
+          // on /login it would push '/' and race with the role-based redirect.
+          onAuthSuccess?.(result.user);
+          window.dispatchEvent(new Event('auth:changed'));
           redirectAfterLogin(result.user);
         } else {
           // Show specific error messages for different login failure cases

@@ -2,7 +2,6 @@
 import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-import path from 'path';
 import compression from 'compression';
 import helmet from 'helmet';
 import crypto from 'crypto';
@@ -10,10 +9,12 @@ import pinoHttp from 'pino-http';
 
 import { env } from './config/env.js';
 import connectDB, { isDbConnected } from './config/db.js';
-import { connectRedis } from './config/redisClient.js';
 import { authLimiter, generalLimiter } from './middleware/rateLimit.js';
 import errorHandler from './middleware/errorHandler.js';
 import logger from './utils/logger.js';
+import { isAllowedOrigin } from './config/origins.js';
+import originGuard from './middleware/csrf.js';
+import { cookieConfig } from './utils/cookies.js';
 
 // ── Auth (new) ─────────────────────────────────────────
 import authRoutes from './features/auth/authRoutes.js';
@@ -21,16 +22,7 @@ import adminUserRoutes from './features/auth/adminUserRoutes.js';
 
 // ── Other feature routers (still under ./Router during transition) ──
 import userRoutes           from './Router/UserRoutes.js';
-import companyClaimRoutes   from './Router/CompanyClaimRoutes.js';
-import PostRoute            from './Router/PostRoutes.js';
-import RequestRoute         from './Router/RequestRoute.js';
-import CategoryRoute        from './Router/CategoryRoute.js';
-import CompanyTeamUpload    from './Router/CompanyTeamRoute.js';
-import cacheRoutes          from './Router/ClearCache.js';
-import companyListingRoutes from './Router/CompanyListingRoutes.js';
-import reviewRoutes         from './Router/ReviewRoutes.js';
-import badgeRoutes          from './Router/BadgeRoutes.js';
-import heroSearchRoutes     from './Router/HeroSearchRoutes.js';
+import dataRoutes           from './Router/DataRoutes.js';
 
 const app = express();
 app.set('trust proxy', 1);
@@ -44,24 +36,10 @@ app.use((req, res, next) => {
 });
 
 // ── CORS ────────────────────────────────────────────────
-const allowedOrigins = [
-  'http://localhost:3000',
-  'http://localhost:3001',
-  'http://localhost:3006',
-  'http://localhost:5173',
-  'https://admin.demand10.com',
-  'https://demand10.com',
-  'https://www.demand10.com',
-  'https://api.demand10.com',
-  'https://vendor.demand10.com',
-];
-
 app.use(cors({
   origin(origin, cb) {
     if (!origin) return cb(null, true);
-    if (allowedOrigins.includes(origin)) return cb(null, origin);
-    if (!env.isProd) return cb(null, true);
-    return cb(null, false);
+    return cb(null, isAllowedOrigin(origin) ? origin : false);
   },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS', 'HEAD'],
@@ -84,8 +62,13 @@ app.use(helmet({
       scriptSrc: ["'self'", "'unsafe-inline'", 'https://cdn.jsdelivr.net'],
       styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
       fontSrc: ["'self'", 'https://fonts.gstatic.com', 'data:'],
-      imgSrc: ["'self'", 'data:', 'blob:', 'https://res.cloudinary.com', 'https://api.demand10.com'],
-      connectSrc: ["'self'", 'https://api.demand10.com', 'https://demand10.com', 'https://www.demand10.com'],
+      imgSrc: ["'self'", 'data:', 'blob:', 'https://res.cloudinary.com', 'https://api.rankb2b.com'],
+      connectSrc: [
+         "'self'",
+        'https://api.rankb2b.com',
+        'https://rankb2b.com',
+        'https://www.rankb2b.com',
+],
       frameAncestors: ["'none'"],
     },
   },
@@ -96,9 +79,6 @@ app.use(express.urlencoded({ extended: true, limit: '5mb' }));
 app.use(cookieParser());
 
 // ── Static ──────────────────────────────────────────────
-app.use('/badges', express.static(path.join(process.cwd(), 'public', 'badges'), { maxAge: '7d' }));
-app.use('/sponsor-badges', express.static(path.join(process.cwd(), 'public', 'sponsor-badges'), { maxAge: '7d' }));
-app.use('/uploads', express.static(path.join(process.cwd(), 'uploads'), { maxAge: '7d' }));
 
 // ── Health ──────────────────────────────────────────────
 app.get('/health', (req, res) => res.json({ ok: true, db: isDbConnected() ? 'up' : 'down' }));
@@ -106,6 +86,7 @@ app.get('/', (req, res) => res.json({ message: 'Server is running' }));
 
 // ── Rate limits ─────────────────────────────────────────
 app.use(generalLimiter);
+app.use('/api/v1', originGuard);
 
 // ── Routes ──────────────────────────────────────────────
 // Auth (new, feature-based)
@@ -114,16 +95,7 @@ app.use('/api/v1', adminUserRoutes);   // /admin/users  endpoints
 
 // Everything else (still legacy routing during Phase 2)
 app.use('/api/v1', userRoutes);
-app.use('/api/v1', companyClaimRoutes);
-app.use('/api/v1', companyListingRoutes);
-app.use('/api/v1', reviewRoutes);
-app.use('/api/v1', badgeRoutes);
-app.use('/api/v1', heroSearchRoutes);
-app.use('/api/v1', PostRoute);
-app.use('/api/v1', RequestRoute);
-app.use('/api/v1', CategoryRoute);
-app.use('/api/v1', CompanyTeamUpload);
-app.use('/api/v1', cacheRoutes);
+app.use('/api/v1', dataRoutes);
 
 // ── 404 ─────────────────────────────────────────────────
 app.use((req, res) => {
@@ -133,7 +105,7 @@ app.use((req, res) => {
 // ── Errors ──────────────────────────────────────────────
 app.use((err, req, res, next) => {
   const origin = req.headers.origin;
-  if (origin && (allowedOrigins.includes(origin) || !env.isProd)) {
+  if (origin && isAllowedOrigin(origin)) {
     res.setHeader('Access-Control-Allow-Origin', origin);
     res.setHeader('Access-Control-Allow-Credentials', 'true');
   }
@@ -143,13 +115,16 @@ app.use((err, req, res, next) => {
 
 // ── Boot ────────────────────────────────────────────────
 if (process.env.NODE_ENV !== 'test') {
+  if (env.isProd && !/^https:/i.test(env.FRONTEND_URL)) {
+    logger.warn('FRONTEND_URL is not https; secure cookies will be rejected by browsers over plain HTTP');
+  }
+  if (cookieConfig.sameSite === 'none' && !cookieConfig.secure) {
+    logger.warn('SameSite=None requires Secure cookies');
+  }
   (async () => {
     await connectDB();
     const PORT = env.PORT;
     app.listen(PORT, () => logger.info({ port: PORT }, 'Server running'));
-    connectRedis().catch((e) =>
-      logger.error({ err: e }, 'Redis connection failed')
-    );
   })();
 }
 

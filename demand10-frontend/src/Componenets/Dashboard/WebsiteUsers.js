@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
-import { getUsers, deleteUserById, blockUserById, activateUserById } from '@/services/adminApi';
+import { getAdminUsers, deleteAdminUserById, blockUserById, activateUserById } from '@/services/adminUsersApi';
 
 const WebsiteUsers = () => {
   const [users, setUsers] = useState([]);
@@ -9,12 +9,12 @@ const WebsiteUsers = () => {
   const [actionLoading, setActionLoading] = useState(null);
 
   // Fetch users function
-  const loadUsers = async () => {
+  const loadUsers = async (notify = false) => {
     try {
       setLoading(true);
-      const usersData = await getUsers();
+      const usersData = await getAdminUsers();
       setUsers(usersData);
-      toast.success('Website users loaded successfully!');
+      if (notify === true) toast.success('Website users refreshed');
     } catch (error) {
       console.error('Error fetching website users:', error);
       toast.error('Failed to load website users');
@@ -31,7 +31,7 @@ const WebsiteUsers = () => {
 
     try {
       setActionLoading(`delete-${userId}`);
-      await deleteUserById(userId);
+      await deleteAdminUserById(userId);
       setUsers(prev => prev.filter(user => user._id !== userId));
       toast.success('User deleted successfully!');
     } catch (error) {
@@ -104,7 +104,7 @@ const WebsiteUsers = () => {
               <p className="text-gray-500 text-sm mt-1">Total Users: {users?.length}</p>
             </div>
             <button
-              onClick={loadUsers}
+              onClick={() => loadUsers(true)}
               className="bg-[#B91C1C]  text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-200 flex items-center gap-2"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

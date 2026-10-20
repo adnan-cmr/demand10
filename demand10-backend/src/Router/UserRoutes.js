@@ -1,18 +1,17 @@
 import express from 'express';
 const router = express.Router();
-import { getAllUsers, deleteUser, blockUser, activateUser } from '../controller/userController.js';
 import { register, verifyEmail, login, logout, me, forgotPassword, resetPassword } from '../features/auth/authController.js';
 import { authMiddleware } from '../middleware/authMiddleware.js';
-import { adminAuthMiddleware } from '../middleware/adminAuthMiddleware.js';
+import { authLimiter } from '../middleware/rateLimit.js';
 
 // User signup
-router.post('/user/signup', register);
+router.post('/user/signup', authLimiter, register);
 
 // Verify email
-router.get('/user/verify-email', verifyEmail);
+router.get('/user/verify-email', authLimiter, verifyEmail);
 
 // User login
-router.post('/user/login', login);
+router.post('/user/login', authLimiter, login);
 
 // User logout
 router.post('/user/logout', authMiddleware, logout);
@@ -21,21 +20,9 @@ router.post('/user/logout', authMiddleware, logout);
 router.get('/user', authMiddleware, me);
 
 // Forgot password
-router.post('/user/forgot-password', forgotPassword);
+router.post('/user/forgot-password', authLimiter, forgotPassword);
 
 // Reset password
-router.post('/user/reset-password', resetPassword);
-
-// Get all users (admin only)
-router.get('/users', adminAuthMiddleware, getAllUsers);
-
-// Delete user by ID (admin only)
-router.delete('/user/:userId', adminAuthMiddleware, deleteUser);
-
-// Block user by ID (admin only)
-router.put('/user/:userId/block', adminAuthMiddleware, blockUser);
-
-// Activate user by ID (admin only)
-router.put('/user/:userId/activate', adminAuthMiddleware, activateUser);
+router.post('/user/reset-password', authLimiter, resetPassword);
 
 export default router;

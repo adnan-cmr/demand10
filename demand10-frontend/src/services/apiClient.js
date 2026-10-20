@@ -21,29 +21,36 @@ export async function safeJson(res) {
   }
 }
 
+// One refresh at a time: concurrent requests that hit TOKEN_EXPIRED share this promise,
+// so the backend only rotates the refresh token once.
+let refreshInFlight = null;
+
+function refreshSession() {
+  if (!refreshInFlight) {
+    refreshInFlight = fetch(`${API_BASE}/auth/refresh`, { method: 'POST', credentials: 'include' })
+      .then((r) => r.ok)
+      .catch(() => false)
+      .finally(() => {
+        refreshInFlight = null;
+      });
+  }
+  return refreshInFlight;
+}
+
 /**
  * fetch + safe parse + credentials. Never throws.
+ * Failures: { ok:false, status, message } for HTTP errors (status >= 500 means server error),
+ * { ok:false, networkError:true, message } when the server could not be reached.
  */
 export async function request(path, options = {}) {
+  const send = () => fetch(`${API_BASE}${path}`, { credentials: 'include', ...options });
   try {
-    let res = await fetch(`${API_BASE}${path}`, {
-      credentials: 'include',
-      ...options,
-    });
+    let res = await send();
 
     if (res.status === 401) {
       const body = await res.clone().json().catch(() => ({}));
-      if (body.code === 'TOKEN_EXPIRED') {
-        const refreshRes = await fetch(`${API_BASE}/auth/refresh`, {
-          method: 'POST',
-          credentials: 'include',
-        });
-        if (refreshRes.ok) {
-          res = await fetch(`${API_BASE}${path}`, {
-            credentials: 'include',
-            ...options,
-          });
-        }
+      if (body.code === 'TOKEN_EXPIRED' && (await refreshSession())) {
+        res = await send();
       }
     }
 
@@ -52,12 +59,14 @@ export async function request(path, options = {}) {
       return {
         ok: false,
         status: res.status,
+        serverError: res.status >= 500,
+        code: data?.code,
         message: data?.message || `HTTP ${res.status}`,
       };
     }
     return data || { ok: true };
   } catch (err) {
     console.error(`request(${path}) failed:`, err.message);
-    return { ok: false, message: 'Network error' };
+    return { ok: false, networkError: true, message: 'Network error. Check your connection.' };
   }
 }
