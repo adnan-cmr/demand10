@@ -9,7 +9,7 @@ ${verificationUrl}
 This link will expire in 24 hours.
 
 Best regards,
-Demand10 Team`,
+RankB2B Team`,
     html: `<!DOCTYPE html>
 <html>
 <head><meta charset="UTF-8"><title>Email Verification</title></head>
@@ -38,9 +38,9 @@ Demand10 Team`,
       <p style="color:#666666;font-size:14px;">This link will expire in 24 hours.</p>
     </td></tr>
     <tr><td style="padding:20px 30px;background-color:#f8f8f8;text-align:center;">
-      <p style="color:#999999;font-size:12px;margin:0;">&copy; ${new Date().getFullYear()} Demand10. All rights reserved.</p>
+      <p style="color:#999999;font-size:12px;margin:0;">&copy; ${new Date().getFullYear()} RankB2B. All rights reserved.</p>
       <p style="color:#999999;font-size:12px;margin:5px 0 0 0;">
-        <a href="https://demand10.com" style="color:#1a365d;text-decoration:none;">https://demand10.com</a>
+        <a href="https://rankb2b.com" style="color:#1a365d;text-decoration:none;">https://rankb2b.com</a>
       </p>
     </td></tr>
   </table>
@@ -59,7 +59,7 @@ ${resetUrl}
 This link expires in 1 hour. If you did not request this, ignore this email.
 
 Best regards,
-Demand10 Team`,
+RankB2B Team`,
     html: `<!DOCTYPE html>
 <html>
 <head><meta charset="UTF-8"><title>Password Reset</title></head>
@@ -84,7 +84,7 @@ Demand10 Team`,
       <p style="color:#666666;font-size:14px;">If you did not request this, ignore this email.</p>
     </td></tr>
     <tr><td style="padding:20px 30px;background-color:#f8f8f8;text-align:center;">
-      <p style="color:#999999;font-size:12px;margin:0;">&copy; ${new Date().getFullYear()} Demand10. All rights reserved.</p>
+      <p style="color:#999999;font-size:12px;margin:0;">&copy; ${new Date().getFullYear()} RankB2B. All rights reserved.</p>
     </td></tr>
   </table>
 </body>

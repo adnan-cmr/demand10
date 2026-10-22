@@ -3,15 +3,15 @@ import Link from 'next/link';
 
 
 export const metadata = {
-  title: "Terms & Policies - User Agreements | Demand10",
+  title: "Terms & Policies - User Agreements | RankB2B",
   description:
-    "Understand Demand10 user agreements, data usage policies, and platform guidelines. Essential information for businesses using our managed IT services and cybersecurity solutions.",
+    "Understand RankB2B user agreements, data usage policies, and platform guidelines. Essential information for businesses using our managed IT services and cybersecurity solutions.",
   keywords: [
     "Terms and Conditions",
     "User Agreements",
     "Data Usage Policy",
     "Platform Guidelines",
-    "Demand10 Terms",
+    "RankB2B Terms",
     "Managed Service Provider Terms",
     "IT Managed Services Agreement",
     "Cybersecurity Service Terms",
@@ -20,25 +20,25 @@ export const metadata = {
     "Technology Partner Agreement",
     "Data Protection Policy"
   ],
-  metadataBase: new URL("https://demand10.com"),
+  metadataBase: new URL("https://rankb2b.com"),
   alternates: {
     canonical: "/term-policies",
   },
   openGraph: {
-    title: "Terms & Policies - User Agreements | Demand10",
+    title: "Terms & Policies - User Agreements | RankB2B",
     description:
-      "Understand Demand10 user agreements, data usage policies, and platform guidelines. Essential information for businesses using our managed IT services and cybersecurity solutions.",
-    url: "https://demand10.com/term-policies",
-    siteName: "Demand10",
+      "Understand RankB2B user agreements, data usage policies, and platform guidelines. Essential information for businesses using our managed IT services and cybersecurity solutions.",
+    url: "https://rankb2b.com/term-policies",
+    siteName: "RankB2B",
    
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Terms & Policies - User Agreements | Demand10",
+    title: "Terms & Policies - User Agreements | RankB2B",
     description:
-      "Understand Demand10 user agreements, data usage policies, and platform guidelines. Essential information for businesses using our managed IT services and cybersecurity solutions.",
-    site: "@demand10",
+      "Understand RankB2B user agreements, data usage policies, and platform guidelines. Essential information for businesses using our managed IT services and cybersecurity solutions.",
+    site: "@RankB2B",
   },
 };
 
@@ -121,7 +121,7 @@ const TermsOfUse = () => {
                   1. Acceptance of Terms
                 </h2>
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  Welcome to Demand10. By accessing or using our platform, you acknowledge that you have read, understood, and agreed to be bound by these Terms of Service. If you do not agree with any part of these terms, you must not use our services. We reserve the right to modify these terms at any time. Your continued use of our services after any changes constitutes your acceptance of the revised terms.
+                  Welcome to RankB2B. By accessing or using our platform, you acknowledge that you have read, understood, and agreed to be bound by these Terms of Service. If you do not agree with any part of these terms, you must not use our services. We reserve the right to modify these terms at any time. Your continued use of our services after any changes constitutes your acceptance of the revised terms.
                 </p>
               </section>
 
@@ -131,7 +131,7 @@ const TermsOfUse = () => {
                   2. Description of Services
                 </h2>
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  Demand10 provides a comprehensive platform that connects businesses with verified managed service providers (MSPs), managed security service providers (MSSPs), and cloud service providers. Our services include vendor discovery tools, comparison features, project management capabilities, and secure communication channels. We strive to deliver accurate information, but cannot guarantee the accuracy, completeness, or reliability of third-party content. Your relationship with any service provider you connect with through our platform is solely between you and that provider.
+                  RankB2B provides a comprehensive platform that connects businesses with verified managed service providers (MSPs), managed security service providers (MSSPs), and cloud service providers. Our services include vendor discovery tools, comparison features, project management capabilities, and secure communication channels. We strive to deliver accurate information, but cannot guarantee the accuracy, completeness, or reliability of third-party content. Your relationship with any service provider you connect with through our platform is solely between you and that provider.
                 </p>
               </section>
 
@@ -171,7 +171,7 @@ const TermsOfUse = () => {
                   <li>Your content does not contain harmful code or viruses</li>
                 </ul>
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  We reserve the right to review, modify, or remove any content that violates these terms or is otherwise objectionable. By submitting content, you grant Demand10 a worldwide, royalty-free, perpetual license to use, reproduce, modify, publish, translate, distribute, and display your content in connection with our services.
+                  We reserve the right to review, modify, or remove any content that violates these terms or is otherwise objectionable. By submitting content, you grant RankB2B a worldwide, royalty-free, perpetual license to use, reproduce, modify, publish, translate, distribute, and display your content in connection with our services.
                 </p>
               </section>
 
@@ -181,7 +181,7 @@ const TermsOfUse = () => {
                   5. Intellectual Property Rights
                 </h2>
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  All content, features, and functionality on our platform, including but not limited to text, graphics, logos, icons, images, audio clips, digital downloads, data compilations, and software, are the exclusive property of Demand10 or its licensors and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws. You may not reproduce, distribute, modify, create derivative works of, publicly display, publicly perform, republish, download, store, or transmit any of our content without our express written permission.
+                  All content, features, and functionality on our platform, including but not limited to text, graphics, logos, icons, images, audio clips, digital downloads, data compilations, and software, are the exclusive property of RankB2B or its licensors and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws. You may not reproduce, distribute, modify, create derivative works of, publicly display, publicly perform, republish, download, store, or transmit any of our content without our express written permission.
                 </p>
               </section>
 
@@ -251,7 +251,7 @@ const TermsOfUse = () => {
                   12. Limitation of Liability
                 </h2>
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  To the fullest extent permitted by law, Demand10 and its affiliates shall not be liable for any direct, indirect, incidental, special, consequential, or exemplary damages, including but not limited to damages for loss of profits, goodwill, use, data, or other intangible losses resulting from your use of or inability to use our services. Our total liability for any claims arising from your use of our services is limited to one hundred U.S. dollars ($100.00).
+                  To the fullest extent permitted by law, RankB2B and its affiliates shall not be liable for any direct, indirect, incidental, special, consequential, or exemplary damages, including but not limited to damages for loss of profits, goodwill, use, data, or other intangible losses resulting from your use of or inability to use our services. Our total liability for any claims arising from your use of our services is limited to one hundred U.S. dollars ($100.00).
                 </p>
               </section>
 
@@ -261,7 +261,7 @@ const TermsOfUse = () => {
                   13. Indemnification
                 </h2>
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  You agree to indemnify, defend, and hold harmless Demand10, its affiliates, officers, directors, employees, agents, licensors, and suppliers from and against all claims, losses, expenses, damages, and costs, including reasonable attorneys&apos; fees, arising from or related to your use of our services, your content, your violation of these terms, or your violation of any rights of another party.
+                  You agree to indemnify, defend, and hold harmless RankB2B, its affiliates, officers, directors, employees, agents, licensors, and suppliers from and against all claims, losses, expenses, damages, and costs, including reasonable attorneys&apos; fees, arising from or related to your use of our services, your content, your violation of these terms, or your violation of any rights of another party.
                 </p>
               </section>
 
@@ -282,7 +282,7 @@ const TermsOfUse = () => {
                   <li>Your physical or electronic signature</li>
                 </ul>
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  Send notifications to: support@demand10.com
+                  Send notifications to: support@rankb2b.com
                 </p>
               </section>
 
@@ -302,7 +302,7 @@ const TermsOfUse = () => {
                   16. Entire Agreement
                 </h2>
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  These Terms of Service, together with our Privacy Policy and any other legal notices published by us on our services, constitute the entire agreement between you and Demand10 regarding your use of our services. If any provision of these terms is held to be invalid or unenforceable, the remaining provisions will continue in full force and effect.
+                  These Terms of Service, together with our Privacy Policy and any other legal notices published by us on our services, constitute the entire agreement between you and RankB2B regarding your use of our services. If any provision of these terms is held to be invalid or unenforceable, the remaining provisions will continue in full force and effect.
                 </p>
               </section>
 
@@ -314,7 +314,7 @@ const TermsOfUse = () => {
                 <p className="text-gray-600 mb-4 leading-relaxed">
                   If you have any questions about these Terms of Service, please contact us at:
                   <br />
-                  Email: support@demand10.com
+                  Email: support@rankb2b.com
                 </p>
               </section>
 

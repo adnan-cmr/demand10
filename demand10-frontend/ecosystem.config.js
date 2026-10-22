@@ -1,13 +1,13 @@
 module.exports = {
   apps: [
     {
-      name: "demand10-frontend",
+      name: "rankb2b-frontend",
       script: "npm",
       args: "start",
       env: {
         NODE_ENV: "production",
-        PORT: 8000
-      }
-    }
-  ]
+        PORT: 8000,
+      },
+    },
+  ],
 };

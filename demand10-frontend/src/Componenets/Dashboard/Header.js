@@ -44,7 +44,7 @@ export default function Header({ toggleSidebar }) {
             </div>
             <div className="hidden md:block">
               <p className="text-sm font-medium">Admin</p>
-              <p className="text-xs text-gray-500">support@demand10.com </p>
+              <p className="text-xs text-gray-500">support@rankb2b.com </p>
             </div>
           </div>
 

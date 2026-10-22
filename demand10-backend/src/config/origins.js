@@ -13,9 +13,9 @@ export const allowedOrigins = [
   'https://admin.rankb2b.com',
   'https://vendor.rankb2b.com',
   // Optional: keep the old domain alive during cutover
-  // 'https://demand10.com',
-  // 'https://www.demand10.com',
-  // 'https://api.demand10.com',
+  // 'https://rankb2b.com',
+  // 'https://www.rankb2b.com',
+  // 'https://api.rankb2b.com',
   ...(env.FRONTEND_URL ? [env.FRONTEND_URL.replace(/\/+$/, '')] : []),
   ...String(process.env.EXTRA_ORIGINS || '').split(',').map((s) => s.trim()).filter(Boolean),
 ];

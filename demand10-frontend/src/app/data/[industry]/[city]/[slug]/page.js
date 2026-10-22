@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { fetchDataCompany } from '@/services/publicDataApi';
 
-const SITE = 'https://demand10.com';
+const SITE = 'https://rankb2b.com';
 
 const location = (c) => [c.city, c.state, c.country].filter(Boolean).join(', ');
 
@@ -40,7 +40,7 @@ export async function generateMetadata({ params }) {
       url: `${SITE}${path}`,
       title,
       description,
-      siteName: 'Demand10',
+      siteName: 'RankB2B',
       ...(c.logo ? { images: [{ url: c.logo, alt: `${c.name} logo` }] } : {}),
     },
     twitter: { card: 'summary', title, description, ...(c.logo ? { images: [c.logo] } : {}) },

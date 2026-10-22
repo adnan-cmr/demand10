@@ -1,25 +1,25 @@
-# Demand10
+# RankB2B
 
 B2B company-data site: a searchable company directory built from bulk Excel/CSV imports, plus curated Top-10 category lists.
 
 | Part | Stack | Folder |
 |------|-------|--------|
-| API | Node (ESM), Express, Mongoose/MongoDB, Jest + mongodb-memory-server | [demand10-backend](./demand10-backend) |
-| Website + admin | Next.js 15 (app router) | [demand10-frontend](./demand10-frontend) |
+| API | Node (ESM), Express, Mongoose/MongoDB, Jest + mongodb-memory-server | [RankB2B-backend](./RankB2B-backend) |
+| Website + admin | Next.js 15 (app router) | [RankB2B-frontend](./RankB2B-frontend) |
 
 ## Quick start
 
 ```bash
 # API (http://localhost:4000)
-cd demand10-backend && npm install && npm run dev
+cd RankB2B-backend && npm install && npm run dev
 
 # Website (http://localhost:3000)
-cd demand10-frontend && npm install && npm run dev
+cd RankB2B-frontend && npm install && npm run dev
 ```
 
 ## Environment
 
-**Backend (`demand10-backend/.env`)**
+**Backend (`RankB2B-backend/.env`)**
 
 | Variable | Required | Notes |
 |----------|----------|-------|
@@ -28,9 +28,9 @@ cd demand10-frontend && npm install && npm run dev
 | `FRONTEND_URL` | recommended | Added to the trusted-origin list; should be `https://` in production |
 | `EXTRA_ORIGINS` | optional | Comma-separated extra trusted origins |
 | `COOKIE_SAMESITE` | optional | `strict` (default in production), `lax`, `none` (needs HTTPS) |
-| `COOKIE_DOMAIN` | production | e.g. `.demand10.com`, so the Next.js server can read the auth cookies for the admin page guard |
+| `COOKIE_DOMAIN` | production | e.g. `.rankb2b.com`, so the Next.js server can read the auth cookies for the admin page guard |
 
-**Frontend (`demand10-frontend/.env.local`)**
+**Frontend (`RankB2B-frontend/.env.local`)**
 
 | Variable | Notes |
 |----------|-------|
@@ -49,11 +49,11 @@ cd demand10-frontend && npm install && npm run dev
 ## Scripts and tests
 
 ```bash
-cd demand10-backend && npm test        # Jest
-cd demand10-frontend && npx eslint src && npx next build
+cd RankB2B-backend && npm test        # Jest
+cd RankB2B-frontend && npx eslint src && npx next build
 ```
 
-Maintenance scripts in `demand10-backend/src/scripts` are dry-run unless you pass `--confirm`:
+Maintenance scripts in `RankB2B-backend/src/scripts` are dry-run unless you pass `--confirm`:
 
 ```bash
 node src/scripts/promote-user.js user@example.com admin --confirm

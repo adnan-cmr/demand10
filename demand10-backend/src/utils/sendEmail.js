@@ -21,7 +21,7 @@ export default async function sendEmail({ to, subject, text, html }) {
   }
   try {
     const info = await transporter.sendMail({
-      from: `"Demand10 Support" <${env.EMAIL.user}>`,
+      from: `"RankB2B Support" <${env.EMAIL.user}>`,
       to,
       subject,
       text,

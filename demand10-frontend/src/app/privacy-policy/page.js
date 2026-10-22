@@ -2,13 +2,13 @@ import Link from "next/link";
 import { Lock, ShieldCheck, EyeOff, Mail, Globe, User, RefreshCw, HelpCircle, ChevronRight, Server, Cloud, Shield } from "lucide-react";
 
 export const metadata = {
-  title: "Privacy Policy - Data Protection | Demand10",
-  description: "Discover how Demand10 protects your business data. Our comprehensive privacy policy explains data collection, usage, and security practices for IT service providers and B2B clients.",
+  title: "Privacy Policy - Data Protection | RankB2B",
+  description: "Discover how RankB2B protects your business data. Our comprehensive privacy policy explains data collection, usage, and security practices for IT service providers and B2B clients.",
   keywords: [
     "Privacy Policy",
     "Data Protection",
     "Business Data Security",
-    "Demand10 Privacy",
+    "RankB2B Privacy",
     "IT Service Provider Privacy",
     "B2B Data Protection",
     "GDPR Compliance",
@@ -18,23 +18,23 @@ export const metadata = {
     "Cloud Services Privacy",
     "Technology Partner Data Security"
   ],
-  metadataBase: new URL("https://demand10.com"),
+  metadataBase: new URL("https://rankb2b.com"),
   alternates: {
     canonical: "/privacy-policy",
   },
   openGraph: {
-    title: "Privacy Policy - Data Protection | Demand10",
-    description: "Discover how Demand10 protects your business data. Our comprehensive privacy policy explains data collection, usage, and security practices for IT service providers and B2B clients.",
-    url: "https://demand10.com/privacy-policy",
-    siteName: "Demand10",
+    title: "Privacy Policy - Data Protection | RankB2B",
+    description: "Discover how RankB2B protects your business data. Our comprehensive privacy policy explains data collection, usage, and security practices for IT service providers and B2B clients.",
+    url: "https://rankb2b.com/privacy-policy",
+    siteName: "RankB2B",
     
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Privacy Policy - Data Protection | Demand10",
-    description: "Discover how Demand10 protects your business data. Our comprehensive privacy policy explains data collection, usage, and security practices for IT service providers and B2B clients.",
-    site: "@demand10",
+    title: "Privacy Policy - Data Protection | RankB2B",
+    description: "Discover how RankB2B protects your business data. Our comprehensive privacy policy explains data collection, usage, and security practices for IT service providers and B2B clients.",
+    site: "@RankB2B",
   },
 };
 
@@ -123,7 +123,7 @@ const PrivacyPolicy = () => {
                    
                   <p className="text-gray-600 mb-4 leading-relaxed">
                     <span className="text-md font-semibold text-gray-700 mb-3">Reporting Copyright Infringement</span>
-                    If you believe that content available through Demand10 platform infringes upon your copyright, please notify our Copyright Agent with a detailed report. We take intellectual property rights seriously and will respond promptly to valid notifications.
+                    If you believe that content available through RankB2B platform infringes upon your copyright, please notify our Copyright Agent with a detailed report. We take intellectual property rights seriously and will respond promptly to valid notifications.
                   </p>
                   <p className="text-gray-600 mb-4 leading-relaxed">
                     Before submitting a report, please ensure you understand that you may be liable for damages if you make false claims. If you&apos;re uncertain about copyright infringement, we recommend consulting with a legal professional first.
@@ -141,7 +141,7 @@ const PrivacyPolicy = () => {
                   </ol>
                   <div className="bg-[#f0f4f9] rounded-lg p-4 border border-[#314158]/20">
                     <p className="text-gray-600 leading-relaxed">
-                      Send copyright notifications to: <span className="font-medium text-[#314158]">support@demand10.com</span>.
+                      Send copyright notifications to: <span className="font-medium text-[#314158]">support@rankb2b.com</span>.
                     </p>
                   </div>
                 </section>
@@ -149,11 +149,11 @@ const PrivacyPolicy = () => {
                 {/* EULA Section */}
                 <section id="eula">
                   <div className="border-l-4 border-[#314158] pl-4 mb-6">
-                    <h2 className="text-2xl font-semibold text-gray-800 mb-2">Demand10 End User License Agreement</h2>
+                    <h2 className="text-2xl font-semibold text-gray-800 mb-2">RankB2B End User License Agreement</h2>
                     <p className="text-gray-500 text-sm">Last Updated: May 24, 2018</p>
                   </div>
                   <p className="text-gray-600 mb-4 leading-relaxed">
-                    This Legal Agreement governs your use of Demand10 services. By accessing or using our platform, you agree to comply with these terms and conditions.
+                    This Legal Agreement governs your use of RankB2B services. By accessing or using our platform, you agree to comply with these terms and conditions.
                   </p>
                   
                   <div className="space-y-6 mt-8">
@@ -163,7 +163,7 @@ const PrivacyPolicy = () => {
                         1. Service Definitions
                       </h3>
                       <p className="text-gray-600 mb-4 leading-relaxed">
-                        The Service refers to Demand10 technology platform that connects businesses with managed service providers. This includes our website, applications, and related tools designed to facilitate B2B technology partnerships.
+                        The Service refers to RankB2B technology platform that connects businesses with managed service providers. This includes our website, applications, and related tools designed to facilitate B2B technology partnerships.
                       </p>
                       <p className="text-gray-600 mb-4 leading-relaxed">
                         User Data encompasses any information, content, or materials you submit to our platform during your use of our services, including project specifications, requirements, and communications.
@@ -176,7 +176,7 @@ const PrivacyPolicy = () => {
                         2. Service Access and Usage
                       </h3>
                       <p className="text-gray-600 mb-4 leading-relaxed">
-                        Demand10 provides two service tiers: Professional Edition for businesses requiring full platform access, and Community Edition for users exploring our services with limited functionality.
+                        RankB2B provides two service tiers: Professional Edition for businesses requiring full platform access, and Community Edition for users exploring our services with limited functionality.
                       </p>
                       <p className="text-gray-600 mb-4 leading-relaxed">
                         As a business user, you may utilize our platform to discover managed IT service providers, evaluate technology solutions, and connect with qualified partners. As a service provider, you can showcase your offerings to potential clients.
@@ -207,11 +207,11 @@ const PrivacyPolicy = () => {
                 {/* Privacy Policy Section */}
                 <section id="privacy">
                   <div className="border-l-4 border-[#314158] pl-4 mb-6">
-                    <h2 className="text-2xl font-semibold text-gray-800 mb-2">Demand10 Privacy Policy</h2>
+                    <h2 className="text-2xl font-semibold text-gray-800 mb-2">RankB2B Privacy Policy</h2>
                     <p className="text-gray-500 text-sm">(Last Updated: June 20, 2024)</p>
                   </div>
                   <p className="text-gray-600 mb-4 leading-relaxed">
-                    At Demand10, we are committed to protecting your privacy and ensuring the security of your information. This policy explains how we collect, use, and safeguard your data when you use our services.
+                    At RankB2B, we are committed to protecting your privacy and ensuring the security of your information. This policy explains how we collect, use, and safeguard your data when you use our services.
                   </p>
                   <p className="text-gray-600 mb-4 leading-relaxed">
                     We may update this policy periodically to reflect changes in our practices or legal requirements. We encourage you to review this policy regularly.
@@ -331,7 +331,7 @@ const PrivacyPolicy = () => {
                       If you have questions about this Privacy Policy or concerns about your privacy, please contact our Data Protection Officer:
                     </p>
                     <p className="text-gray-600 leading-relaxed">
-                      Email: <span className="font-medium text-[#314158]">support@demand10.com</span>
+                      Email: <span className="font-medium text-[#314158]">support@rankb2b.com</span>
                     </p>
                   </div>
                 </section>

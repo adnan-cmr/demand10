@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Forgot Password | Demand10",
+  title: "Forgot Password | RankB2B",
   description: "Reset your password for your Deman10 account.",
   robots: {
     index: false,

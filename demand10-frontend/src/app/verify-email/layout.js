@@ -1,8 +1,8 @@
 import { Suspense } from 'react';
 
 export const metadata = {
-  title: "Verify Email | Demand10",
-  description: "Verify your email address for your Demand10 account.",
+  title: "Verify Email | RankB2B",
+  description: "Verify your email address for your RankB2B account.",
   robots: {
     index: false,
     follow: false,

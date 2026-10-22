@@ -6,7 +6,7 @@ export async function generateMetadata({ searchParams }) {
   const industrySlug = typeof sp?.industry === 'string' ? sp.industry : '';
   const facets = await fetchDataFacets();
   const industry = facets?.industries?.find((i) => i.slug === industrySlug);
-  const title = industry ? `${industry.label} Companies` : 'Company Data – Search & Filter Companies';
+  const title = industry ? `${industry.label} Companies` : 'Company Data â€“ Search & Filter Companies';
   const description = industry
     ? `Browse ${industry.count.toLocaleString()} ${industry.label.toLowerCase()} companies. Filter by location, size and founding year.`
     : 'Browse and filter companies by industry, location, size and founding year.';
@@ -22,7 +22,7 @@ export async function generateMetadata({ searchParams }) {
     description,
     keywords,
     alternates: { canonical: industry ? `/data?industry=${industrySlug}` : '/data' },
-    openGraph: { title, description, type: 'website', siteName: 'Demand10' },
+    openGraph: { title, description, type: 'website', siteName: 'RankB2B' },
   };
 }
 

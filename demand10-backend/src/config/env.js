@@ -41,7 +41,7 @@ export const env = {
     apiSecret: process.env.CLOUDINARY_API_SECRET,
     cloudName: process.env.CLOUDINARY_CLOUD_NAME,
   },
-  FRONTEND_URL: process.env.FRONTEND_URL || 'http://localhost:3001',
+  FRONTEND_URL: process.env.FRONTEND_URL || 'https://rankb2b.com',
   COOKIE_SAMESITE: (process.env.COOKIE_SAMESITE || '').toLowerCase(),
   COOKIE_DOMAIN: process.env.COOKIE_DOMAIN || undefined,
   isProd: (process.env.NODE_ENV || 'development') === 'production',

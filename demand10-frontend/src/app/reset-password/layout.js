@@ -1,8 +1,8 @@
 import { Suspense } from 'react';
 
 export const metadata = {
-  title: "Reset Password | Demand10",
-  description: "Set a new password for your Demand10 account.",
+  title: "Reset Password | RankB2B",
+  description: "Set a new password for your RankB2B account.",
   robots: {
     index: false,
     follow: false,

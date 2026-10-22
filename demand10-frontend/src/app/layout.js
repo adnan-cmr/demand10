@@ -1,15 +1,16 @@
 // Global metadata fallback
 export const metadata = {
-  metadataBase: new URL('https://demand10.com'),
+  metadataBase: new URL('https://rankb2b.com'),
   title: {
-    default: 'Demand10 - Top MSP & MSSP Database Platform',
-    template: '%s | Demand10'
+    default: 'RankB2B - Top MSP & MSSP Database Platform',
+    template: '%s | RankB2B',
   },
-  description: 'Discover top Managed Service Providers & MSSPs with Demand10\'s 95% accurate B2B data. Connect with 10K+ suppliers in 500+ categories.',
-  keywords: ['MSP', 'MSSP', 'Managed Service Provider', 'B2B data', 'Demand10', 'IT services'],
-  authors: [{ name: 'Demand10 Team' }],
-  creator: 'Demand10',
-  publisher: 'Demand10',
+  description:
+    "Discover top Managed Service Providers & MSSPs with RankB2B's 95% accurate B2B data. Connect with 10K+ suppliers in 500+ categories.",
+  keywords: ['MSP', 'MSSP', 'Managed Service Provider', 'B2B data', 'RankB2B', 'IT services'],
+  authors: [{ name: 'RankB2B Team' }],
+  creator: 'RankB2B',
+  publisher: 'RankB2B',
   robots: {
     index: true,
     follow: true,
@@ -24,17 +25,16 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://demand10.com',
-    siteName: 'Demand10',
-    title: 'Demand10 - Top MSP & MSSP Database Platform',
-    description: 'Discover top Managed Service Providers & MSSPs with Demand10\'s 95% accurate B2B data.',
-   
+    url: 'https://rankb2b.com',
+    siteName: 'RankB2B',
+    title: 'RankB2B - Top MSP & MSSP Database Platform',
+    description: "Discover top Managed Service Providers & MSSPs with RankB2B's 95% accurate B2B data.",
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Demand10 - Top MSP & MSSP Database Platform',
-    description: 'Discover top Managed Service Providers & MSSPs with Demand10\'s 95% accurate B2B data.',
-    site: '@demand10',
+    title: 'RankB2B - Top MSP & MSSP Database Platform',
+    description: "Discover top Managed Service Providers & MSSPs with RankB2B's 95% accurate B2B data.",
+    site: '@rankb2b',
   },
 };
 
@@ -52,15 +52,13 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Demand10",
-  "url": "https://demand10.com",
-  "description": "Discover top Managed Service Providers & MSSPs with Demand10's 95% accurate B2B data. Connect with 10K+ suppliers in 500+ categories.",
+  "name": "RankB2B",
+  "url": "https://rankb2b.com",
+  "description": "Discover top Managed Service Providers & MSSPs with RankB2B's 95% accurate B2B data.",
   "publisher": {
     "@type": "Organization",
-    "name": "Demand10",
-    "logo": {
-      "@type": "ImageObject",
-    }
+    "name": "RankB2B",
+    "logo": { "@type": "ImageObject" }
   }
 };
 
