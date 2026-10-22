@@ -11,7 +11,7 @@ export default async function connectDB() {
       await mongoose.connect(env.MONGO_URI, {
         serverSelectionTimeoutMS: 5000,
       });
-      console.log('✅ MongoDB connected');
+      // console.log('✅ MongoDB connected');
       return;
     } catch (err) {
       console.error(
@@ -22,7 +22,7 @@ export default async function connectDB() {
         return; // ← do NOT process.exit. Let the app stay up; health check reports failure.
       }
       const delay = BASE_DELAY_MS * attempt;
-      console.log(`   Retrying in ${delay}ms…`);
+      // console.log(`   Retrying in ${delay}ms…`);
       await new Promise((r) => setTimeout(r, delay));
     }
   }

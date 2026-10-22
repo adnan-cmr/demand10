@@ -15,7 +15,7 @@ export function getDataConnection() {
       serverSelectionTimeoutMS: 5000,
     });
   } else {
-    conn = mongoose.connection.useDb(process.env.DATA_DB_NAME || 'demand10_data', {
+    conn = mongoose.connection.useDb(process.env.DATA_DB_NAME || 'rankb2b', {
       useCache: true,
     });
   }

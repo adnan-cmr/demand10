@@ -39,7 +39,7 @@ const confirm = process.argv.includes('--confirm') && process.env.DRY_RUN !== '1
 async function run() {
   if (!confirm) console.log('DRY RUN: no changes will be written. Use --confirm to apply.');
   await mongoose.connect(env.MONGO_URI);
-  console.log('✅ Connected to MongoDB');
+  // console.log('✅ Connected to MongoDB');
 
   const rawCollection = mongoose.connection.db.collection('users');
 

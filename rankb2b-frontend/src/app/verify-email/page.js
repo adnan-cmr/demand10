@@ -32,7 +32,7 @@ export default function VerifyEmailPage() {
       } catch (error) {
         setStatus('error');
         setMessage('An error occurred during email verification.');
-        console.error('Verification error:', error);
+        // console.error('Verification error:', error);
       }
     };
 
