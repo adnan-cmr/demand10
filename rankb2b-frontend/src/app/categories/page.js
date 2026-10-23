@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import { fetchTopLists } from '@/services/publicDataApi';
+import CategoryGrid from '@/Componenets/Data/CategoryGrid';
+import { Trophy, ArrowRight } from 'lucide-react';
 
 export const metadata = {
-  title: 'Top 10 Lists by Category',
-  description: 'Curated top 10 company rankings across categories.',
+  title: 'Top 10 Lists by Category | RankB2B',
+  description: 'Curated top 10 company rankings across categories. Discover the industry leaders.',
   alternates: { canonical: '/categories' },
 };
 
@@ -12,20 +14,34 @@ export default async function CategoriesPage() {
   const lists = res?.lists || [];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold text-[#0F1B3D]">Top 10 by Category</h1>
-      <p className="text-gray-600 mt-1">Hand-picked rankings of the leading companies in each category.</p>
+    <div className="bg-gray-50 min-h-screen pb-16">
+      
+      {/* ── HEADER ── */}
+      <div className="bg-white border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="p-3 bg-red-50 rounded-xl">
+              <Trophy className="h-8 w-8 text-[#E11D2E]" />
+            </div>
+            <h1 className="text-4xl font-extrabold text-[#0F1B3D]">Top 10 by Category</h1>
+          </div>
+          <p className="text-lg text-gray-600 max-w-2xl">
+            Hand-picked rankings of the leading companies. Use these curated lists to discover top MSPs, MSSPs, and technology providers in specific niches.
+          </p>
+        </div>
+      </div>
 
-      {!lists.length && <p className="mt-8 text-gray-500">No lists published yet.</p>}
-
-      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {lists.map((l) => (
-          <Link key={l._id} href={`/categories/${l.slug}`} className="block bg-white border rounded-xl p-5 hover:shadow-md transition-shadow">
-            <h2 className="font-semibold text-lg text-[#0F1B3D]">Top {l.count}: {l.title}</h2>
-            {l.description && <p className="text-sm text-gray-600 mt-2 line-clamp-2">{l.description}</p>}
-            <p className="text-xs text-gray-500 mt-3">{l.preview.map((p) => p.name).join(' · ')}{l.count > 3 ? ' …' : ''}</p>
-          </Link>
-        ))}
+      {/* ── MAIN CONTENT ── */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        {!lists.length ? (
+          <div className="bg-white rounded-2xl border border-gray-200 p-12 text-center">
+            <Trophy className="h-12 w-12 text-gray-300 mx-auto mb-4" />
+            <h3 className="text-xl font-bold text-gray-700">No lists published yet</h3>
+            <p className="text-gray-500 mt-2">Check back soon for curated industry rankings.</p>
+          </div>
+        ) : (
+          <CategoryGrid lists={lists} />
+        )}
       </div>
     </div>
   );
