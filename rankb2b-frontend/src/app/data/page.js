@@ -44,9 +44,10 @@ export default function DataExplorer({ initialIndustry = '', initialData = null 
   const skipInitial = useRef(Boolean(initialData));
 
   useEffect(() => {
-    if (initialData?.facets && !filters.country) return;
-    fetchDataFacets(filters.country).then((f) => f && setFacets(f));
-  }, [filters.country]);
+  if (initialData?.facets && !filters.country) return;
+  fetchDataFacets(filters.country).then((f) => f && setFacets(f));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [filters.country]);
 
   const load = useCallback(async (params, after) => {
     if (after && loadingRef.current) return;

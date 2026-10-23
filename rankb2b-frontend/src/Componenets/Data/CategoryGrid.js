@@ -59,7 +59,7 @@ export default function CategoryGrid({ lists }) {
           <div className="bg-white rounded-2xl border border-gray-200 p-12 text-center">
             <Search className="h-12 w-12 text-gray-300 mx-auto mb-4" />
             <h3 className="text-xl font-bold text-gray-700">No categories found</h3>
-            <p className="text-gray-500 mt-2">We couldn't find any lists matching "{searchQuery}".</p>
+            <p className="text-gray-500 mt-2">We couldn&apos;t find any lists matching &quot;{searchQuery}&quot;.</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
