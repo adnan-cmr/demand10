@@ -1,7 +1,6 @@
-import Link from 'next/link';
 import { fetchTopLists } from '@/services/publicDataApi';
 import CategoryGrid from '@/Componenets/Data/CategoryGrid';
-import { Trophy, ArrowRight } from 'lucide-react';
+import { Trophy } from 'lucide-react';
 
 export const metadata = {
   title: 'Top 10 Lists by Category | RankB2B',
@@ -14,24 +13,24 @@ export default async function CategoriesPage() {
   const lists = res?.lists || [];
 
   return (
-    <div className="bg-gray-50 min-h-screen pb-16">
-      
-      {/* ── HEADER ── */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="bg-gray-50 min-h-screen">
+      {/* ── HERO ── */}
+      <section className="bg-[#0F1B3D] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="flex items-center gap-3 mb-4">
-            <div className="p-3 bg-red-50 rounded-xl">
+            <div className="p-3 bg-white/10 rounded-xl">
               <Trophy className="h-8 w-8 text-[#E11D2E]" />
             </div>
-            <h1 className="text-4xl font-extrabold text-[#0F1B3D]">Top 10 by Category</h1>
+            <span className="text-sm font-semibold uppercase tracking-wider text-blue-100">Rankings</span>
           </div>
-          <p className="text-lg text-gray-600 max-w-2xl">
-            Hand-picked rankings of the leading companies. Use these curated lists to discover top MSPs, MSSPs, and technology providers in specific niches.
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Top 10 by Category</h1>
+          <p className="text-lg text-blue-100 max-w-2xl">
+            Hand-picked rankings of the leading companies. Discover top MSPs, MSSPs, and technology providers in every niche.
           </p>
         </div>
-      </div>
+      </section>
 
-      {/* ── MAIN CONTENT ── */}
+      {/* ── MAIN ── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         {!lists.length ? (
           <div className="bg-white rounded-2xl border border-gray-200 p-12 text-center">

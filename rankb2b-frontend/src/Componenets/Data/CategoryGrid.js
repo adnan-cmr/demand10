@@ -67,40 +67,42 @@ export default function CategoryGrid({ lists }) {
               <Link
                 key={l._id}
                 href={`/categories/${l.slug}`}
-                className="group flex flex-col bg-white border border-gray-200 rounded-2xl p-6 hover:border-[#E11D2E] hover:shadow-lg transition-all duration-300 h-full"
+                className="group block"
               >
-                <div className="flex items-center justify-between mb-4">
-                  <div className="inline-flex items-center justify-center px-2.5 py-1 rounded-md bg-red-50 text-[#E11D2E] text-xs font-bold uppercase tracking-wider">
-                    Top {l.count}
+                <div className="flex flex-col bg-white border border-gray-200 rounded-2xl p-6 hover:border-[#E11D2E] hover:shadow-lg transition-all duration-300 h-full cursor-pointer">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="inline-flex items-center justify-center px-2.5 py-1 rounded-md bg-red-50 text-[#E11D2E] text-xs font-bold uppercase tracking-wider">
+                      Top {l.count}
+                    </div>
+                    <Award className="h-6 w-6 text-gray-200 group-hover:text-[#E11D2E] transition-colors" />
                   </div>
-                  <Award className="h-6 w-6 text-gray-200 group-hover:text-[#E11D2E] transition-colors" />
-                </div>
-                
-                <h2 className="text-xl font-bold text-[#0F1B3D] group-hover:text-[#E11D2E] transition-colors line-clamp-2 mb-2">
-                  {l.title}
-                </h2>
-                
-                {l.description && (
-                  <p className="text-sm text-gray-500 line-clamp-2 mb-4 flex-grow">
-                    {l.description}
-                  </p>
-                )}
+                  
+                  <h2 className="text-xl font-bold text-[#0F1B3D] group-hover:text-[#E11D2E] transition-colors line-clamp-2 mb-2">
+                    {l.title}
+                  </h2>
+                  
+                  {l.description && (
+                    <p className="text-sm text-gray-500 line-clamp-2 mb-4 flex-grow">
+                      {l.description}
+                    </p>
+                  )}
 
-                <div className="mt-auto pt-4 border-t border-gray-50">
-                  <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Featured</p>
-                  <div className="flex flex-wrap gap-2">
-                    {l.preview?.slice(0, 2).map((p, i) => (
-                      <div key={i} className="flex items-center gap-2 bg-gray-50 rounded-full pr-3 pl-1 py-1 border border-gray-100">
-                        {p.logo ? (
-                          <img src={p.logo} alt={p.name} className="w-6 h-6 rounded-full object-contain bg-white" />
-                        ) : (
-                          <div className="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center text-[10px] font-bold text-gray-500">
-                            {p.name.charAt(0)}
-                          </div>
-                        )}
-                        <span className="text-xs text-gray-600 font-medium truncate max-w-[80px]">{p.name}</span>
-                      </div>
-                    ))}
+                  <div className="mt-auto pt-4 border-t border-gray-50">
+                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Featured</p>
+                    <div className="flex flex-wrap gap-2">
+                      {l.preview?.slice(0, 2).map((p, i) => (
+                        <div key={i} className="flex items-center gap-2 bg-gray-50 rounded-full pr-3 pl-1 py-1 border border-gray-100">
+                          {p.logo ? (
+                            <img src={p.logo} alt={p.name} className="w-6 h-6 rounded-full object-contain bg-white" />
+                          ) : (
+                            <div className="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center text-[10px] font-bold text-gray-500">
+                              {p.name.charAt(0)}
+                            </div>
+                          )}
+                          <span className="text-xs text-gray-600 font-medium truncate max-w-[80px]">{p.name}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </Link>
